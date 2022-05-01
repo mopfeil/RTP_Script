@@ -1,0 +1,110 @@
+\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}NFC challenges}{6}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Future work}{7}{section.1.2}%
+\contentsline {chapter}{\numberline {2}RFID}{8}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Basic types of RFID}{8}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Near field and Far field RFID}{8}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Architecture}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}RFID Architecture}{12}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Key components}{13}{subsection.3.1.1}%
+\contentsline {chapter}{\numberline {4}Technology}{19}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Modes of operation}{19}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Modes of communication}{20}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Tag types}{21}{section.4.3}%
+\contentsline {section}{\numberline {4.4}RF field and over-the-air interface}{22}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Antenna}{24}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Energy harvesting}{26}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Data transfer}{26}{section.4.5}%
+\contentsline {section}{\numberline {4.6}NFC system architecture}{30}{section.4.6}%
+\contentsline {section}{\numberline {4.7}NDEF structure}{30}{section.4.7}%
+\contentsline {chapter}{\numberline {5}NFC Standards}{32}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Legacy ISO/IEC standards}{33}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Standards specific to NFC}{34}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Physical Layer}{36}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Physical layer for passive tags}{36}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Link budget and range}{37}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Tag influence on range}{37}{subsection.6.2.1}%
+\contentsline {section}{\numberline {6.3}Power distribution}{38}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Power estimate}{38}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Reciprocation}{39}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Antenna - directional}{40}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Antenna patterns}{40}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Effective reflected power}{40}{section.6.8}%
+\contentsline {section}{\numberline {6.9}RF readers}{41}{section.6.9}%
+\contentsline {section}{\numberline {6.10}Encoding}{42}{section.6.10}%
+\contentsline {section}{\numberline {6.11}Interference}{43}{section.6.11}%
+\contentsline {section}{\numberline {6.12}Oscillator noise}{44}{section.6.12}%
+\contentsline {section}{\numberline {6.13}Mixing procedures}{45}{section.6.13}%
+\contentsline {section}{\numberline {6.14}Reader antennas}{45}{section.6.14}%
+\contentsline {section}{\numberline {6.15}Size issues}{46}{section.6.15}%
+\contentsline {section}{\numberline {6.16}RFID tags}{47}{section.6.16}%
+\contentsline {section}{\numberline {6.17}Close up}{48}{section.6.17}%
+\contentsline {section}{\numberline {6.18}Tag antenna gain}{49}{section.6.18}%
+\contentsline {subsection}{\numberline {6.18.1}More gain}{49}{subsection.6.18.1}%
+\contentsline {section}{\numberline {6.19}Instant voltage}{50}{section.6.19}%
+\contentsline {subsection}{\numberline {6.19.1}Response}{50}{subsection.6.19.1}%
+\contentsline {section}{\numberline {6.20}Phase modulation}{51}{section.6.20}%
+\contentsline {section}{\numberline {6.21}RFID frequencies}{51}{section.6.21}%
+\contentsline {subsection}{\numberline {6.21.1}More frequencies}{52}{subsection.6.21.1}%
+\contentsline {subsection}{\numberline {6.21.2}Even more frequencies}{53}{subsection.6.21.2}%
+\contentsline {section}{\numberline {6.22}UHV eavesdropping}{54}{section.6.22}%
+\contentsline {section}{\numberline {6.23}Setup}{54}{section.6.23}%
+\contentsline {chapter}{\numberline {7}Interlude Systems Engineering}{57}{chapter.7}%
+\contentsline {section}{\numberline {7.1}System architecture modelling}{57}{section.7.1}%
+\contentsline {section}{\numberline {7.2}System engineering process}{59}{section.7.2}%
+\contentsline {chapter}{\numberline {8}Multi-Access methods in RFID System}{61}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Communication protocols}{61}{section.8.1}%
+\contentsline {section}{\numberline {8.2}RFID system}{62}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}TDMA(Time division multiple access) based solution}{63}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}Beacon based solution}{63}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}Different forms of communication}{64}{subsection.8.2.3}%
+\contentsline {subsection}{\numberline {8.2.4}Multi-Access procedures (anticollision)}{66}{subsection.8.2.4}%
+\contentsline {section}{\numberline {8.3}Anti-collision algorithms in RFID system}{66}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Overview}{72}{subsection.8.3.1}%
+\contentsline {chapter}{\numberline {9}Privacy Security}{75}{chapter.9}%
+\contentsline {subsection}{\numberline {9.0.1}Symmetric-key tags(capable of computing symmetric key)}{78}{subsection.9.0.1}%
+\contentsline {section}{\numberline {9.1}RFID devices and cryptography analysis of the DST40}{80}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Reverse engineering the cipher}{81}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Build the key cracker}{81}{section.9.3}%
+\contentsline {chapter}{\numberline {10}Mode of Operations}{84}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Secure elements}{91}{chapter.11}%
+\contentsline {section}{\numberline {11.1}UICC / SIM}{91}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Host card emulation}{92}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}HCE models}{94}{subsection.11.2.1}%
+\contentsline {subsection}{\numberline {11.2.2}Mitigating risks}{94}{subsection.11.2.2}%
+\contentsline {chapter}{\numberline {12}Payment Comparison}{97}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Introduction of Apple Pay}{97}{section.12.1}%
+\contentsline {subsection}{\numberline {12.1.1}Apple Pay Security}{97}{subsection.12.1.1}%
+\contentsline {section}{\numberline {12.2}Ali Pay security}{99}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Authentication}{99}{section.12.3}%
+\contentsline {section}{\numberline {12.4}Real name registration}{99}{section.12.4}%
+\contentsline {subsection}{\numberline {12.4.1}QR code - Scan and Pay}{101}{subsection.12.4.1}%
+\contentsline {subsection}{\numberline {12.4.2}NFC - Touch and Pay}{102}{subsection.12.4.2}%
+\contentsline {chapter}{\numberline {13}Security in NFC Readers}{103}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Under the hood of NFC based devices}{105}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Security needs: secure data exchange}{106}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Secure data exchange}{108}{section.13.3}%
+\contentsline {section}{\numberline {13.4}Protection from unauthorized access}{111}{section.13.4}%
+\contentsline {section}{\numberline {13.5}Use cases}{113}{section.13.5}%
+\contentsline {section}{\numberline {13.6}NFC security cookbook}{115}{section.13.6}%
+\contentsline {chapter}{\numberline {14}Cryptography}{117}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Secure communication}{118}{section.14.1}%
+\contentsline {subsection}{\numberline {14.1.1}History}{122}{subsection.14.1.1}%
+\contentsline {subsection}{\numberline {14.1.2}Birthday paradox}{127}{subsection.14.1.2}%
+\contentsline {subsection}{\numberline {14.1.3}One time pad}{128}{subsection.14.1.3}%
+\contentsline {section}{\numberline {14.2}Pseudo random generators}{130}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Attacks on OTP and stream ciphers}{133}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Real-world stream ciphers}{136}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Semantic security}{140}{section.14.5}%
+\contentsline {section}{\numberline {14.6}Stream ciphers are semantically secure}{142}{section.14.6}%
+\contentsline {section}{\numberline {14.7}Block ciphers}{143}{section.14.7}%
+\contentsline {subsection}{\numberline {14.7.1}Abstractly: PRPs and PRFs}{144}{subsection.14.7.1}%
+\contentsline {subsection}{\numberline {14.7.2}Running example}{145}{subsection.14.7.2}%
+\contentsline {subsection}{\numberline {14.7.3}Secure PRFs}{145}{subsection.14.7.3}%
+\contentsline {subsection}{\numberline {14.7.4}An easy application: PRF $\rightarrow $ PRG}{146}{subsection.14.7.4}%
+\contentsline {section}{\numberline {14.8}Data encryption standard (DES)}{147}{section.14.8}%
+\contentsline {subsection}{\numberline {14.8.1}DES core idea - Feistel Network}{147}{subsection.14.8.1}%
+\contentsline {subsubsection}{DES: 16 round Feistel network}{148}{section*.244}%
+\contentsline {section}{\numberline {14.9}DES challenge}{151}{section.14.9}%
+\contentsline {section}{\numberline {14.10}More attacks on }{152}{section.14.10}%
+\contentsline {section}{\numberline {14.11}AES block cipher}{154}{section.14.11}%
