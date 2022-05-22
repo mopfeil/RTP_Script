@@ -68,7 +68,7 @@ Examples for Real-Time Systems
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=13cm, height=10cm]{Images/image9.png}
+    \includegraphics[width=15cm, height=11cm]{Images/image9.png}
     \caption{Moore's Law}
     \label{fig:Fig 3}
 \end{figure}
@@ -78,11 +78,11 @@ Examples for Real-Time Systems
 Many methods of \textbf{classical software development} of non-real-time systems can not be used due to the lack of predictability.\\
 
 For the development of real-time systems, special methods are required.\\
-
+\newpage
 
 \section{ Requirements}
 
-\newpage The validity of an operation of a real-time system depends on
+The validity of an operation of a real-time system depends on
 
 \begin{enumerate}
 	\item  its logical result, and
@@ -119,20 +119,20 @@ For real-time systems, the logical correctness \textbf{and} the timing correctne
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=14cm, height=8cm]{Images/image13.png}
+    \includegraphics[width=15cm, height=9cm]{Images/image13.png}
     %\caption{Moore's Law}
     \label{fig:Fig 3}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=14cm, height=8cm]{Images/image14.png}
+    \includegraphics[width=15cm, height=9cm]{Images/image14.png}
     %\caption{Moore's Law}
     \label{fig:Fig 3}
 \end{figure}
 
 \newpage
-\textbf{Solution}: Critical Section (Mutex) in AmpelTask:  see FSM Exercise
+\textbf{Solution}: Critical Section (Mutex) in AmpelTask:  see FSM Exercise\\
 
 \begin{lstlisting}[style=mystyle, language=c]
  	// called periodic with T1  
@@ -475,7 +475,7 @@ Not OK with Real-Time programming   \hspace{3cm}  OK with Real-Time programming 
 (Exec.-Time of malloc() non deterministic)\\
 - but: malloc() in initialization possible  
 
-\subsection{  Timing Definitions}
+\section{Timing Definitions}
 
 {\rot\bf Process Time and Processing Time}\\
 
@@ -535,7 +535,7 @@ The total utilization ${}_{ges}$ is the sum of the utilization of all individual
 \label{EQ 3}
 \end{equation}
 
-\subsection{Real-Time Evidence}
+\section{Real-Time Evidence}
 
 Evidence that all time requirements of all requests are met under all conditions, is very difficult (practically impossible). \\
 
