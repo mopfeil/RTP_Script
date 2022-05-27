@@ -1,58 +1,70 @@
-\contentsline {chapter}{\numberline {1}Real-Time Systems}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1} Introduction}{3}{section.1.1}%
-\contentsline {section}{\numberline {1.2} Requirements}{6}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Hard and Soft Real-Time Systems}{13}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Concurrency}{14}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3} Realizations of Real-Time Systems with Concurrency Requirement}{15}{subsection.1.2.3}%
-\contentsline {section}{\numberline {1.3}Timing Definitions}{17}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Real-Time Evidence}{19}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Static Code Analysis}{21}{subsection.1.4.1}%
-\contentsline {chapter}{\numberline {2}Real-Time Operating Systems}{23}{chapter.2}%
-\contentsline {subsection}{\numberline {2.0.1}Structure of an RTOS}{23}{subsection.2.0.1}%
-\contentsline {section}{\numberline {2.1}Task Management}{25}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Real-Time Scheduling}{27}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Preemption}{30}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}FIFO Scheduling}{34}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4} Task-Synchronization and Communication}{40}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Semaphores}{43}{subsection.2.1.5}%
-\contentsline {subsection}{\numberline {2.1.6}Deadlocks}{46}{subsection.2.1.6}%
-\contentsline {subsection}{\numberline {2.1.7}Livelocks}{47}{subsection.2.1.7}%
-\contentsline {subsection}{\numberline {2.1.8}Task Communication}{48}{subsection.2.1.8}%
-\contentsline {subsection}{\numberline {2.1.9}Events}{48}{subsection.2.1.9}%
-\contentsline {subsection}{\numberline {2.1.10}Signals}{52}{subsection.2.1.10}%
-\contentsline {subsection}{\numberline {2.1.11}Messages Queues, Mailboxes}{52}{subsection.2.1.11}%
-\contentsline {subsection}{\numberline {2.1.12}Socket Interface}{54}{subsection.2.1.12}%
-\contentsline {section}{\numberline {2.2}Memory Management}{56}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Input/Output Management (I/O)}{57}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}I/O Synchronization}{59}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Interrupts and Task-Scheduling}{62}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}Specialized RTOS}{65}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1} Overview of some RTOS}{65}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2} Classification of Real-Time Operating Systems}{65}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3} Selection Criteria}{66}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4} VxWorks}{67}{subsection.2.4.4}%
-\contentsline {subsection}{\numberline {2.4.5} FreeRTOS}{69}{subsection.2.4.5}%
-\contentsline {subsection}{\numberline {2.4.6} FreeRTOS Task-Model}{70}{subsection.2.4.6}%
-\contentsline {subsection}{\numberline {2.4.7}OSEK (AUTOSAR OS)}{74}{subsection.2.4.7}%
-\contentsline {chapter}{\numberline {3}Real-Time Programming}{75}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Real-Time Programming}{75}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Signal Conversion}{76}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Digital Sampling Systems}{77}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3} Digital Filters}{80}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4} Digital Controls}{84}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}Finite State Machines (FSM)}{92}{subsection.3.1.5}%
-\contentsline {chapter}{\numberline {4}Microprocessor Peripherals}{97}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Processor Core and Peripherals}{97}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Timers and Counters}{99}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Watchdog}{100}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}DA Converters}{102}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}DA Converter (PWM)}{104}{subsection.4.1.4}%
-\contentsline {section}{\numberline {4.2} AD Converters }{107}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Direct Memory Access (DMA)}{113}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Serial IO (Synchronous SPI)}{114}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3} Serial IO (USART)}{115}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4} Parallel IO (Ports)}{118}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Interrupts}{120}{subsection.4.2.5}%
-\contentsline {subsection}{\numberline {4.2.6}CAN Networking}{122}{subsection.4.2.6}%
-\contentsline {subsection}{\numberline {4.2.7} Ethernet }{125}{subsection.4.2.7}%
-\contentsline {chapter}{\numberline {5}Real-Time System Development}{128}{chapter.5}%
+\contentsline {chapter}{\numberline {1}Real-Time Systems}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduction}{7}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Requirements}{10}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Technical Process and Process Model}{13}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Timeliness}{14}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Periodic Time Condition}{16}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Non-Periodic Time Condition}{17}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Hard and Soft Real-Time Systems}{18}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.6}Concurrency}{19}{subsection.1.2.6}%
+\contentsline {subsection}{\numberline {1.2.7}Realizations of Real-Time Systems with Concurrency Requirement}{20}{subsection.1.2.7}%
+\contentsline {subsection}{\numberline {1.2.8}Availability}{21}{subsection.1.2.8}%
+\contentsline {section}{\numberline {1.3}Timing Definitions}{23}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Real-Time Evidence}{25}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Static Code Analysis}{27}{subsection.1.4.1}%
+\contentsline {chapter}{\numberline {2}Real-Time Operating Systems}{29}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Structure of an RTOS}{30}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Task Management}{31}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Real-Time Scheduling}{34}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Preemption}{37}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}FIFO Scheduling}{43}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Task-Synchronization and Communication}{50}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Semaphores}{53}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Deadlocks}{56}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Livelocks}{57}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Task Communication}{58}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Events}{59}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.4.6}Signals}{63}{subsection.2.4.6}%
+\contentsline {subsection}{\numberline {2.4.7}Messages Queues, Mailboxes}{63}{subsection.2.4.7}%
+\contentsline {subsection}{\numberline {2.4.8}Socket Interface}{65}{subsection.2.4.8}%
+\contentsline {section}{\numberline {2.5}Memory Management}{67}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Input/Output Management (I/O)}{68}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}I/O Synchronization}{71}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Interrupts and Task-Scheduling}{75}{subsection.2.6.2}%
+\contentsline {section}{\numberline {2.7}Specialized RTOS}{77}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1} Overview of some RTOS}{77}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2} Classification of Real-Time Operating Systems}{77}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}Selection Criteria}{78}{subsection.2.7.3}%
+\contentsline {subsection}{\numberline {2.7.4} VxWorks}{79}{subsection.2.7.4}%
+\contentsline {subsection}{\numberline {2.7.5} FreeRTOS}{81}{subsection.2.7.5}%
+\contentsline {subsection}{\numberline {2.7.6} FreeRTOS Task-Model}{83}{subsection.2.7.6}%
+\contentsline {subsection}{\numberline {2.7.7}OSEK (AUTOSAR OS)}{87}{subsection.2.7.7}%
+\contentsline {chapter}{\numberline {3}Real-Time Programming}{88}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Signal Conversion}{89}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Digital Sampling Systems}{90}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Digital Filters}{95}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Digital Controls}{99}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Finite State Machines (FSM)}{108}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Microprocessor Peripherals}{113}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Processor Core and Peripherals}{113}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Timers and Counters}{115}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Watchdog}{117}{section.4.3}%
+\contentsline {section}{\numberline {4.4}DA Converters}{118}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Successive Approximation DAC}{120}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}DA Converter (PWM)}{121}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}DA Converter (Delta-Sigma Method)}{124}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}AD Converters}{124}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}AD Converters (Flash-Method)}{125}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}AD Converter (Successive Approximation Method)}{126}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}AD Converter (Counting Method)}{127}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}AD Converter (Delta-Sigma Method)}{129}{subsection.4.5.4}%
+\contentsline {section}{\numberline {4.6}Direct Memory Access (DMA)}{132}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Serial IO (Synchronous SPI)}{133}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Serial IO (USART)}{134}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Parallel IO (Ports)}{137}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Interrupts}{139}{section.4.10}%
+\contentsline {section}{\numberline {4.11}CAN Networking}{141}{section.4.11}%
+\contentsline {section}{\numberline {4.12}Ethernet}{144}{section.4.12}%
+\contentsline {subsection}{\numberline {4.12.1}MII-Interface}{144}{subsection.4.12.1}%
+\contentsline {subsection}{\numberline {4.12.2}RAW-Socket Interface}{144}{subsection.4.12.2}%
+\contentsline {chapter}{\numberline {5}Real-Time System Development}{147}{chapter.5}%

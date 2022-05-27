@@ -4,7 +4,7 @@
     \centering
     \includegraphics[width=8cm, height=7.5cm]{Images/image160.png}
     \caption{Layer model of a microcontroller (single chip) or a Microprocessor (more chips)}
-    \label{fig:Fig }
+    \label{fig:Fig 112}
     \end{figure}
 
 The microprocessor cores are often common CPU types used in the past as microprocessors. e.g. formerly: Motorola 680x0, 32 bit microprocessor (+ multi-board bodies)Today: Freescale "Coldfire" microcontroller = 68k CPU + integrated peripherals. \\
@@ -25,26 +25,26 @@ The physical layer (ISO layer 1) of these networks though, is still implemented 
     \centering
     \includegraphics[width=15cm, height=16cm]{Images/image29.png}
     \caption{Layer model of a microcontroller (single chip) or a Microprocessor (more chips)}
-    \label{fig:Fig }
+    \label{fig:Fig 113}
     \end{figure}
     
     \begin{figure}[h]
     \centering
     \includegraphics[width=5cm, height=5cm]{Images/image161.png}
     \caption{TQFP plastic housing 9 x 9 mm}
-    \label{fig:Fig }
+    \label{fig:Fig 114}
     \end{figure}
 
 price $\mathrm{\approx}$ 1-2 € (2009, in larger volumes).
 \newpage
 
-\subsection {Timers and Counters}
+\section{Timers and Counters}
 
     \begin{figure}[h]
     \centering
-    \includegraphics[width=11cm, height=4cm]{Images/image162.png}
+    \includegraphics[width=14cm, height=5cm]{Images/image162.png}
     \caption{Basic structure of a timer-counter unit (CPU independent hardware)}
-    \label{fig:Fig }
+    \label{fig:Fig 115}
     \end{figure}
 
 Timers and counters are very important components for real-time operation: Fed from an internal (RC) or external (quartz, ceramic resonator) oscillator, interrupts can be triggered with minimal delay, if
@@ -57,9 +57,9 @@ Timers and counters are very important components for real-time operation: Fed f
 Other important applications of the timer are PWM (Pulse Width Modulation) timers whose period length is usually fixed and the pulse width in terms of a short-term average can be controlled by a control register.\\
 
 The short-term average value is changed, and an analog signal can be measured after an analog low pass filter. This filtering effect can be done for example by the inductance (winding) an electric motor, which filters the square wave voltage to a DC to a short time average with the same short-term arithmetic mean (see 4.4.2).\\
+\newpage
 
-
-\textbf{Example}: Periodic Event with AVR TCNT0 Hardware Timer  ISR(SIG\_OVERFLOW0) (similar to the "AVR Timer Interrupts" exercise in the RTP-Lab)
+\textbf{Example}: Periodic Event with AVR TCNT0 Hardware Timer  ISR(SIG\_OVERFLOW0) (similar to the "AVR Timer Interrupts" exercise in the RTP-Lab)\\
 
 \begin{lstlisting}[style=mystyle, language=c]
 #include	<avr\io.h>		  // AVR Register and constant definitions
@@ -105,10 +105,10 @@ int main(void)  // is executed after a reset
     \centering
     \includegraphics[width=12cm, height=3.5cm]{Images/image163.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 116}
     \end{figure}
-    
-\subsection{Watchdog}
+\newpage
+\section{Watchdog}
 
 The term watchdog is used for a component of a system, which monitors the function of other components. If a possible malfunction is detected, this can be either 
 
@@ -129,9 +129,9 @@ Prevents the failure of an microcomputer system by triggering a special watchdog
 
     \begin{figure}[h]
     \centering
-    \includegraphics[width=10cm, height=3cm]{Images/image164.png}
+    \includegraphics[width=12cm, height=4cm]{Images/image164.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 117}
     \end{figure}
 
 To achieve even higher security against errors in the µC, the same functionality as the internal watchdog timer can be realized by an external watchdog module, which is independent of the µC supply and its clock. \\
@@ -150,9 +150,8 @@ In case of failure not only a reset of the microcontroller is generated, but the
 
 \textbf{Example}: Intelligent watchdog for the electronic accelerator (e-gas) in the car:\\
 By careful choice of the challenges caused by arithmetic operations, the CPU's internal modules (ALU, program memory, working memory and registers are monitored).
-\newpage
 
-\subsection{DA Converters}
+\section{DA Converters}
 
 A  voltage DA converter (DAC) converts an integer number \textit{Z} (in a digital computer), into a voltage. The voltage \textit{U${}_{a}$} is proportional to the number \textit{Z} (with a linear DAC), by\\
 
@@ -166,29 +165,34 @@ One can distinguish three fundamentally different methods:
     \centering
     \includegraphics[width=14cm, height=6cm]{Images/image31.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 118}
     \end{figure}
+\begin{enumerate}
+\newpage
+\item \textbf{parallel (direct) method}\\
 
-\textbf{parallel (direct) method}\\
-with a voltage divider all possible output voltages are provided. With a 1-of-n decoder then closes the right switch, the desired output voltage is associated with.\\
+with a voltage divider all possible output voltages are provided. With a 1-of-n decoder then closes the right switch, the desired output voltage is associated with.
 
-\textbf{successive approximation method (SAR)}\\
-each bit is associated with a switch. Using appropriately weighted resistors (often R-2R) the output voltage is setup by a loaded DC voltage divider.\\
+\item \textbf{successive approximation method (SAR)}\\
 
-\textbf{counting methods (PWM)}\\
+each bit is associated with a switch. Using appropriately weighted resistors (often R-2R) the output voltage is setup by a loaded DC voltage divider.
+
+\item \textbf{counting methods (PWM)}\\
+
 requires only a single switch, which is periodically opened and closed. Its duty cycle is controlled by a pulse width modulator such, that the arithmetic mean of the output voltage corresponds to the desired value.\\
 
 The comparison of the three methods shows that the parallel method (a) requires \textit{Z${}_{max}$} switches, the SAR type needs ld(\textit{Z${}_{max}$}) switches, and the PWM type only one switch. \\
 
-Because of the large number of switches required for high precision DACs, the parallel methods are used rarely. The counting methods become increasingly important, because here the pulse width modulator is an easy-to-integrate digital circuitry. If it operates at a frequency which is much higher than the sampling frequency (\textbf{\textit{oversampling}}), only a simple \textbf{analog} lowpass filter is necessary.\\
+Because of the large number of switches required for high precision DACs, the parallel methods are used rarely. The counting methods become increasingly important, because here the pulse width modulator is an easy-to-integrate digital circuitry. If it operates at a frequency which is much higher than the sampling frequency (\textbf{\textit{oversampling}}), only a simple \textbf{analog} lowpass filter is necessary.
+\end{enumerate}
 \newpage
-{\rot\bf Successive Approximation DAC}
+\subsection{Successive Approximation DAC}
 
     \begin{figure}[h]
     \centering
     \includegraphics[width=14cm, height=7cm]{Images/image32.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 119}
     \end{figure}
 
 here: \textit{Z}${}_{max}$ = 15\\
@@ -199,7 +203,7 @@ here: \textit{Z}${}_{max}$ = 15\\
     \centering
     \includegraphics[width=14cm, height=7cm]{Images/image166.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 120}
     \end{figure}
 
 Both SAR type DA converters shown above, are found in separate integrated circuits, often with a serial interface to a µC. \\
@@ -219,7 +223,7 @@ Pulse-width modulation (PWM) is a modulation, where a physical quantity (e.g. an
     \centering
     \includegraphics[width=12cm, height=3cm]{Images/image167.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 121}
     \end{figure}
 
 \textbf{Example 2}:  PWM control of an R-L impedance with \textit{T} $\mathrm{<}$ $\mathrm{<}$ \textit{L}/\textit{R}.
@@ -228,16 +232,16 @@ Pulse-width modulation (PWM) is a modulation, where a physical quantity (e.g. an
     \centering
     \includegraphics[width=12cm, height=3cm]{Images/image168.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 122}
     \end{figure}
 
 \textbf{Example 3}:  PWM Control with Direction Control of a DC-Motor  Full Bridge.
 
     \begin{figure}[h]
     \centering
-    \includegraphics[width=15cm, height=11cm]{Images/image169.png}
+    \includegraphics[width=15cm, height=10cm]{Images/image169.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 123}
     \end{figure}
 \newpage
 
@@ -245,9 +249,9 @@ Pulse-width modulation (PWM) is a modulation, where a physical quantity (e.g. an
 
     \begin{figure}[h]
     \centering
-    \includegraphics[width=14cm, height=8cm]{Images/image170.png}
+    \includegraphics[width=14cm, height=7.5cm]{Images/image170.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 124}
     \end{figure}
 
 A PWM signal is demodulated, generally, by a low pass filter. The resulting demodulated technical quantity \textit{d}(\textit{t}) is the short-term mean and thus, the mean height of the area under the modulated quantity \textit{U${}_{D}$}(\textit{t}). With an integration time constant  = \textit{R$\bullet$C} \\
@@ -264,7 +268,7 @@ In power electronics PWM is widely used, because the power dissipated into heat 
     \centering
     \includegraphics[width=14cm, height=4cm]{Images/image171.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 125}
     \end{figure}
 
 A vivid example of PWM modulation is a pair of switches (realized as power MOSFETs), which is used to control the DC motor of a drive by constantly switching on and off.\\
@@ -281,7 +285,7 @@ In a real-time program for a microcontroller a PWM DAC shall be realized for gen
     \centering
     \includegraphics[width=7cm, height=3cm]{Images/image172.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 126}
     \end{figure}
 
 Which pulse width \textit{D}${}_{1}$ (or \textit{D}${}_{2}$) must be programmed to get \textit{U${}_{a}$}${}_{1\ }$= 1 V (to get \textit{U${}_{a}$}${}_{2\ }$= 3 V) at the output of the RC-lowpass ?\\
@@ -298,21 +302,20 @@ $\tau$ $RC=$ $R.C >>T$ \hspace{0.80cm} $\rightarrow$ $2ms >> 50 us$ OK\\
 
 $\rightarrow$ The lower the time constant, the higher the \textbf{PWM-ripple amplitude} ! \\
 
-When switching the pulse durations \textit{D}${}_{1}$ (\textit{D}${}_{2}$) each 5 ms, one gets the signal \textit{U${}_{a}$}(\textit{t})\\
+When switching the pulse durations \textit{D}${}_{1}$ (\textit{D}${}_{2}$) each 5 ms, one gets the signal \textit{U${}_{a}$}(\textit{t})
 
     \begin{figure}[h]
     \centering
     \includegraphics[width=10cm, height=4cm]{Images/image173.png}
     %\caption{DA Converter (Delta-Sigma Method)}
-    \label{fig:Fig }
+    \label{fig:Fig 127}
     \end{figure}
 
-{\rot\bf 	DA Converter (Delta-Sigma Method)}\\
+\subsection{DA Converter (Delta-Sigma Method)}
 
 see 4.5.4
 
-\newpage
-\section{ AD Converters }
+\section{AD Converters}
 
 If an analog voltage shall be processed by a digital computer, that voltage must be translated into a corresponding number. This is the task is an analog-digital converter (ADC). With \textit{$Z$} as an integer number, proportional to the analog input voltage \textit{U}${}_{e}$\\
 
@@ -332,17 +335,17 @@ One can basically distinguish four different methods:
 \end{enumerate}
 
 There is a compromise between flash- and SAR-concerters: \textbf{cascade converters} ("half-flash converters"), which are not presented here. These converters provide high resolution at high sampling frequencies [Tietze]. Cascade converters behave like flash ADCs from the perspective of software.\\
-
+\newpage
 {\rot\bf AD-Converters - Resolution and max. Sampling Frequencies}
 
     \begin{figure}[h]
     \centering
     \includegraphics[width=11cm, height=6cm]{Images/image174.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 128}
     \end{figure}
 
-{\rot\bf AD Converters (Flash-Method)}\\
+\subsection{AD Converters (Flash-Method)}
 
 A flash ADC compares the input voltage simultaneously (in parallel) with \textit{n} reference voltages and states, and compares the interval between the unknown input voltage is beween. By this, one gets the full conversion in one step ("one word at a time"), very quickly.\\
 
@@ -369,21 +372,21 @@ However, the cost is very high, as is required for any possible number 1 .. \tex
     \centering
     \includegraphics[width=15cm, height=9cm]{Images/image175.png}
     \caption{3-Bit Flash AD Converter (Parallel Method)}
-    \label{fig:Fig }
+    \label{fig:Fig 129}
     \end{figure}
 
-{\rot\bf AD Converter (Successive Approximation Method)}\\
+\subsection{AD Converter (Successive Approximation Method)}
 
 With the successive approximation register (SAR) method, the final result is not produced in one step, but rather a sequence of results of successive comparison steps, similar to weighing a mass using a balance.Each digit, having a different significance, of the binary representation of the corresponding binary number is determined separately and successively.\\
 
-It starts with the highest bit and determines whether the input voltage is higher or lower than the reference voltage for the highest bit. If it is greater, the voltage for the highest bit is subtracted. The rest is compared with the next bit, {\dots}. So as many comparison steps are needed, as bits are necessary to represent the number.\\
+It starts with the highest bit and determines whether the input voltage is higher or lower than the reference voltage for the highest bit. If it is greater, the voltage for the highest bit is subtracted. The rest is compared with the next bit, {\dots}. So as many comparison steps are needed, as bits are necessary to represent the number.
 
-\[Z=round\left[\frac{U_{e} }{U_{ref} } \left(2^{N} -1\right)\right]\] \\
+\[Z=round\left[\frac{U_{e} }{U_{ref} } \left(2^{N} -1\right)\right]\] 
     \begin{figure}[h]
     \centering
     \includegraphics[width=13cm, height=4cm]{Images/image176.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 130}
     \end{figure}
 
 SAR-Converter with \textit{Z${}_{max}$} = 7 $\rightarrow$  3 steps. The SA-register is a digital sequential logic, which generates a voltage by a DAC a comparison voltage \textit{U}(\textit{Z}), and by the following sequential algorithm:
@@ -392,7 +395,7 @@ SAR-Converter with \textit{Z${}_{max}$} = 7 $\rightarrow$  3 steps. The SA-regis
     \centering
     \includegraphics[width=12cm, height=4.5cm]{Images/image177.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 131}
     \end{figure}
 
 \textbf{Application}: Microcontroller, fast metrology, radar, ...\\
@@ -426,7 +429,7 @@ tmp_hi = ADCH;
 
 \end{lstlisting}
 
-{\rot\bf AD Converter (Counting Method)}\\
+\subsection{AD Converter (Counting Method)}
 
 The simplest ADC method is the counting method. It is determined, how often some  reference voltage has to be added, until the input voltage is reached. The number of steps is equal to the result. If the largest representable number is \textit{n}, up to \textit{n} steps are needed to get the result.
 
@@ -434,7 +437,7 @@ The simplest ADC method is the counting method. It is determined, how often some
     \centering
     \includegraphics[width=10cm, height=4.5cm]{Images/image39.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 132}
     \end{figure}
 
 AD conversion by the counting method requires low electronic circuit complexity, but conversion time is significantly larger as with other methods. It is usually between 1 ms and 1 s. This is sufficient for slowly changing signals, such as in temperature measurement or for laboratory instruments, which are read by eye (digital voltmeter). \\
@@ -469,11 +472,11 @@ print keithley.ask("*IDN?")
     \centering
     \includegraphics[width=5cm, height=3cm]{Images/image40.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 133}
     \end{figure}
 \newpage
 
-{\rot\bf AD Converter (Delta-Sigma Method)}\\
+\subsection{AD Converter (Delta-Sigma Method)}
 
 A delta-sigma-ADC consists of a delta-sigma modulator which produces the so-called \textbf{\textit{bitstream}}, and a low pass filter in series.
 
@@ -481,14 +484,14 @@ A delta-sigma-ADC consists of a delta-sigma modulator which produces the so-call
     \centering
     \includegraphics[width=12cm, height=4.5cm]{Images/image41.png}
     \caption{Delta-Sigma Modulator}
-    \label{fig:Fig }
+    \label{fig:Fig 134}
     \end{figure}
 
     \begin{figure}[h]
     \centering
     \includegraphics[width=15cm, height=11cm]{Images/image42.png}
     \caption{Signals with the Delta-Sigma Modulator}
-    \label{fig:Fig }
+    \label{fig:Fig 135}
     \end{figure}
     
 The output signal at the 1-bit memory contains the analog signal with a resolution of only one bit, but with considerably higher frequency components (in the picture factor 64). This is referred as oversampling \textit{M} (here \textit{M} = 64). Since the original analog signal is included in the 1-bit signal as a short-term average, it can be obtained by a low pass filter as a very good approximation to the analog signal (see also section 4.4.2 PWM DACs):
@@ -498,9 +501,9 @@ The output signal at the 1-bit memory contains the analog signal with a resoluti
 
     \begin{figure}[h]
     \centering
-    \includegraphics[width=12cm, height=2cm]{Images/image178.png}
-    \caption{}
-    \label{fig:Fig }
+    \includegraphics[width=10cm, height=1.5cm]{Images/image178.png}
+    %\caption{}
+    \label{fig:Fig 136}
     \end{figure}
     
 Thus, the digital low pass filter realizes the short-term average (interpolation) on the 1-bit square wave signal with a high oversampling factor \textit{M}. Since both the input and the output of the filter are discrete-in-time and disctrete-in-value, this low-pass filter is realized as a digital filter (in hardware, an easy task with standard CMOS semiconductor technology).
@@ -508,15 +511,15 @@ Thus, the digital low pass filter realizes the short-term average (interpolation
     \begin{figure}[h]
     \centering
     \includegraphics[width=15cm, height=4cm]{Images/image179.png}
-    \caption{}
-    \label{fig:Fig }
+    %\caption{}
+    \label{fig:Fig 137}
     \end{figure}
     
     \begin{figure}[h]
     \centering
     \includegraphics[width=15cm, height=10cm]{Images/image43.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 138}
     \end{figure}
 
 Waveforms in a -ADC with 8 kHz sampling frequency and 64-times oversampling. The low-pass filter is realized as a digital filter (usually as a FIR filter of high order). \\
@@ -529,7 +532,7 @@ A change of input- and output signal with the flowchart of the -ADC leads to a \
     \centering
     \includegraphics[width=14cm, height=2cm]{Images/image180.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 139}
     \end{figure}
 
 The realization of the delta-sigma modulator is purely digital, the low pass filter is usually a combination of a high order FIR digital filter and a (quite simple) analog lowpass filter. With a -DAC no decimator is needed.\\
@@ -553,8 +556,8 @@ The realization of the delta-sigma modulator is purely digital, the low pass fil
 \item  specification only possible in the frequency
 \item  Main application: audio signal processing ("the ear works like a (magnitude) spectrum analyzer")
 \end{itemize}
-
-\subsection{Direct Memory Access (DMA)}
+\newpage
+\section{Direct Memory Access (DMA)}
 
 Peripherals are connected to the main processor by the processor- (system) bus. If data arrives with high frequency, the processor can not fetch the data word-by-word from the periphery effectively, due to the overhead. This can be avoided with transferring complete data blocks directly to the memory under control of the CPU:\\
 
@@ -562,11 +565,11 @@ Peripherals are connected to the main processor by the processor- (system) bus. 
     \centering
     \includegraphics[width=12cm, height=6cm]{Images/image181.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 140}
     \end{figure}
 
 Once started, the DMA controller, as a hardware component, reads data from the periphery in a loop and places them in memory (RAM), or vice versa.\\
-\newpage
+
 When DMA operation three phases:
 
 \begin{enumerate}
@@ -584,7 +587,7 @@ DMA is used to
 
 \textbf{Applications}: Fast peripherals, Video ADC / DAC, Audio Codecs, Hi-Speed Networks,          mass storage.
 
-\subsection{Serial IO (Synchronous SPI)}
+\section{Serial IO (Synchronous SPI)}
 
 The Serial Peripheral Interface (SPI) allows synchronous communication between a master device, which provides the clock (clock), and a slave device:
 
@@ -592,28 +595,39 @@ The Serial Peripheral Interface (SPI) allows synchronous communication between a
     \centering
     \includegraphics[width=12cm, height=5cm]{Images/image44.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 141}
     \end{figure}
     
 The clock frequency can be several MHz. A microcontroller can be configured as SPI master or slave device. The physical interface consists of three or four wires / pins:\\
-\newpage
+
 4 interface pins:
 
-\begin{itemize}
-\item  MOSI  master out slave in
-\item  MIOS  master in slave out
-\item  SCK   serial clock
-\item  SS\_n  slave select
-\end{itemize}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item  MOSI  master out slave in
+		\item  MIOS  master in slave out 
+	\end{itemize}
+	\columnbreak
+	\begin{itemize}
+		\item  SCK   serial clock
+		\item  SS\_n  slave select
+	\end{itemize}
+	\columnbreak
+\end{multicols}	
 
 3 registers are needed:
 
-\begin{itemize}
-\item  SPCR  control register
-\item  SPSR  status register
-\item  SPDR  data register
-\end{itemize}
-
+\begin{multicols}{2}
+	\begin{itemize}
+	\item  SPCR  control register
+	\item  SPSR  status register
+	\end{itemize}
+	\vfill\null
+	\columnbreak
+	\begin{itemize}
+		\item  SPDR  data register
+	\end{itemize}
+\end{multicols}
 \textbf{Code example:}
 
 \begin{lstlisting}[style=mystyle, language=c]
@@ -635,7 +649,7 @@ void spi_send(uint8_t data[], uint8_t n){
 
 \textbf{Example}: LTC1453 - Dual 12-Bit SAR-DAC with SPI-Interface.
 
-\subsection{ Serial IO (USART)}
+\section{Serial IO (USART)}
 
 The Universal Synchronous / Asynchronous Receiver Transmitter (UART) interface provides both, synchronous data exchange (with clock, similar to the SPI) and asynchronous data exchange without clock. The interface is used primarily as a UART (asynchronous), to implement a RS-232 or RS-485 interface
 
@@ -643,9 +657,8 @@ The Universal Synchronous / Asynchronous Receiver Transmitter (UART) interface p
     \centering
     \includegraphics[width=13cm, height=5cm]{Images/image45.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 142}
     \end{figure}
-\newpage
  
 \textbf{Typical Application of an RS-232 Interface ($\pm$ 10V) µC $\iff$ PC Communication}
 
@@ -653,20 +666,19 @@ The Universal Synchronous / Asynchronous Receiver Transmitter (UART) interface p
     \centering
     \includegraphics[width=14cm, height=12cm]{Images/image46.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 143}
     \end{figure}
 
 For synchronization, byte by byte (or by 7-,6- or 5 bit wide words), always the beginning of the start bit is used. The baud rates can be set by the AT Mega UBRR register:
 
     \begin{figure}[h]
     \centering
-    \includegraphics[width=9cm, height=6cm]{Images/image47.png}
+    \includegraphics[width=7cm, height=7cm]{Images/image47.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 144}
     \end{figure}
-
-\textbf{Code Examples:}\\
-
+\newpage
+\textbf{Code Examples:}
 \begin{lstlisting}[style=mystyle, language=c]
 void uart_init(){
   //rx and tx enable, 8 bit characters
@@ -686,7 +698,6 @@ void uart_putc(char data){
   UDR0 = data;  // Send data byte
   while (!(UCSR0A & (1<<UDRE))); // Wait for previous transmission
 }
-
 // ..Modified to not block indefinately in the case of a lost byte
 char uart_getc(void) {
   uint16_t timer = 0;
@@ -695,20 +706,20 @@ char uart_getc(void) {
     if(timer >= 16000) return 0; // ..not block indefinately
   }  // Wait for byte to arrive
   return UDR0;
-
+}
 \end{lstlisting}
 
 Higher Baudrates than 115.2 kBd are possible with most microcontrollers (see table above, up to 2 MBd) possible, if the physical layer is capable of higher baudrates. \\
 
-This is true for the RS-485 interface, where the UART is used in connection with a highspeed-transceiver for tristed-pair lines for up to12 MBd:\\
-
+This is true for the RS-485 interface, where the UART is used in connection with a highspeed-transceiver for tristed-pair lines for up to12 MBd:
+\newpage
 {\rot\bf Half-Duplex RS-485 Network with MAX488-MAX491}\\
 
     \begin{figure}[h]
     \centering
     \includegraphics[width=15cm, height=6cm]{Images/image48.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 145}
     \end{figure}
     
 For short line lengths USB transceivers for TTL levels (0 .. 3.3V oder 5V) are available (z.B. FT232), which can be operated at baudrates up to 2 MBd.
@@ -717,32 +728,32 @@ For short line lengths USB transceivers for TTL levels (0 .. 3.3V oder 5V) are a
     \centering
     \includegraphics[width=8cm, height=2.5cm]{Images/image49.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 146}
     \end{figure}
-\newpage
+
 Bluetooth-modules offer a "virtual serial interface" with baudraten up to 2~MBd either:
 
     \begin{figure}[h]
     \centering
     \includegraphics[width=8cm, height=2.5cm]{Images/image50.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 147}
     \end{figure}
 
 All these UART variants can be controlled via the "Streaming API" of Unix, Windows, .. \\
 
 \begin{lstlisting}[style=mystyle, language=c]
 // open some com port ... 
-	hCom = CreateFile("com9", GENERIC_READ | GENERIC_WRITE, 0, NULL, ... );
-	...
-  	ReadFile(hCom, buffer, sizeof(buffer), &read, NULL);  		// read from com port
-	...
-	WriteFile(hCom, buffer, sizeof(buffer), &written, NULL);  // write to com port
-	...
-	CloseHandle(hCom);
+hCom = CreateFile("com9", GENERIC_READ | GENERIC_WRITE, 0, NULL, ... );
+...
+ReadFile(hCom, buffer, sizeof(buffer), &read, NULL);     // read from com port
+...
+WriteFile(hCom, buffer, sizeof(buffer), &written, NULL);  // write to com port
+...
+CloseHandle(hCom);
 \end{lstlisting}
-
-\subsection{ Parallel IO (Ports)}
+\newpage
+\section{Parallel IO (Ports)}
 
 A pin of a microcontroller is the only \textbf{path to the process}. As only a limited number of pins is  available, the pins are designed to be as universal as possible, so that a pin can be used for various applications, such, it can be used either as input or output.\\
 
@@ -750,9 +761,9 @@ As the \textbf{technology of the microcontroller (CMOS)} is sensitive to electro
 
     \begin{figure}[h]
     \centering
-    \includegraphics[width=8cm, height=5cm]{Images/image51.png}
+    \includegraphics[width=10cm, height=6cm]{Images/image51.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 148}
     \end{figure}
 
 It is important to note that
@@ -763,14 +774,14 @@ It is important to note that
 \item  inputs with a selectable pull-up resistor can be provided.
 \item  IO ports can be usually programmed for both directions. After a reset all pins are inputs \textbf{by default}, and thus are \textbf{high impedance} (3-state) Later, at software initialization the port can be set as output (by setting bits in the Data Direction Register (DDR),  or, a pull-up resistor can be switched active.
 \end{enumerate}
-
+\newpage
 {\rot\bf AVR Port Architecture:}
 
     \begin{figure}[h]
     \centering
-    \includegraphics[width=15cm, height=14cm]{Images/image52.png}
+    \includegraphics[width=15cm, height=12cm]{Images/image52.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 149}
     \end{figure}
 
 All ports have
@@ -836,7 +847,7 @@ void inline set_LED0(int bit) {
 
 Ports can be configured to issue an interrupt, if a certain slope (rising/falling) is applied.
 
-\subsection{Interrupts}
+\section{Interrupts}
 
 When an interrupt occurs, execution jumps to a specific location in program memory, these locations (addresses) are called interrupt vectors, which can be used for assigning a user function to a certain interrupt. The interrupt assignments are fixed and can not be changed, 
 \newpage
@@ -897,24 +908,24 @@ void main()
 
 $\rightarrow$ behavior of a slope-triggered flip-flop
 
-\subsection{CAN Networking}
+\section{CAN Networking}
 
 CAN-Networks are widespread un both automotive and industrial applications. With the well-proven twisted pair physical layer in line (bus) structure datarates up to 1 MBit/s are possible. The CAN-typical bus arbitration method uses prioritized message-IDs, using the dominance of a 0-bit over a 1-bit to avoid collisions.
 
     \begin{figure}[h]
     \centering
-    \includegraphics[width=14cm, height=8cm]{Images/image53.png}
+    \includegraphics[width=14cm, height=7cm]{Images/image53.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 150}
     \end{figure}
 
 \textbf{CAN Standard Data Frame (CAN 2.0 A, BCAN, ``Basic CAN'')}
 
     \begin{figure}[h]
     \centering
-    \includegraphics[width=15cm, height=6cm]{Images/image54.png}
+    \includegraphics[width=15cm, height=5cm]{Images/image54.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 151}
     \end{figure}
 
 \begin{enumerate}
@@ -932,15 +943,15 @@ A \textbf{full}-CAN microcontroller provides the whole hardware for convenient a
 
     \begin{figure}[h]
     \centering
-    \includegraphics[width=15cm, height=12cm]{Images/image55.png}
+    \includegraphics[width=15cm, height=11cm]{Images/image55.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 152}
     \end{figure}
 
 During the initialization of the peripheral, the application defines which messages are to be sent and which are to be received. Only if the CAN controller receives a message whose identifier matches with one of the identifiers of the programmed (receive-) message objects the message is stored and the application is informed by interrupt. \\
 
 Another feature is, that incoming remote frames can be answered automatically with the corresponding data frame. In this way, the CPU load is strongly reduced compared to a basic-CAN solution.\\
-
+\newpage
 \textbf{ Example}: CAN Workshop CAN Application (FreeRTOS)// @brief CAN message object structure\\
 
 \begin{lstlisting}[style=mystyle, language=c]
@@ -1008,23 +1019,23 @@ void CAN0_IRQHandler(void) 					// CAN RX interrupt service routine:
 				Chip_CCAN_ClearIntPend(LPC_C_CAN0, can_int, CCAN_RX_DIR);
 				...	
 \end{lstlisting}
-\newpage
-\subsection{ Ethernet }
+
+\section{Ethernet}
 
     \begin{figure}[h]
     \centering
     \includegraphics[width=12cm, height=6cm]{Images/image56.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 153}
     \end{figure}
 
-{\rot\bf MII-Interface }\\
+\subsection{MII-Interface}
 
 On the hardware side, the Media Independent Interface (\textbf{MII}) is a standard interface used to connect a Fast Ethernet (i.e. 100 Mbit/s) MAC-block to a PHY chip (see 3.3.7). \\
 
-While formerly the MII was used as a physical pluggable connector, it is used mainly to connect the MAC layer to a PHY chip. Being media independent means that any of several different types of PHY devices for connecting to different media (i.e. twisted pair copper, fiber optic, etc.). The equivalents of \textbf{MII} for other speeds are \textbf{AUI} (for 10-Base Ethernet), \textbf{GMII} (for Gigabit Ethernet), and \textbf{XGMII} (for 10 Gigabit Ethernet).\\
+While formerly the MII was used as a physical pluggable connector, it is used mainly to connect the MAC layer to a PHY chip. Being media independent means that any of several different types of PHY devices for connecting to different media (i.e. twisted pair copper, fiber optic, etc.). The equivalents of \textbf{MII} for other speeds are \textbf{AUI} (for 10-Base Ethernet), \textbf{GMII} (for Gigabit Ethernet), and \textbf{XGMII} (for 10 Gigabit Ethernet).
 
-{\rot\bf RAW-Socket Interface}\\
+\subsection{RAW-Socket Interface}
 
 On the software side, the socket interface (see section 2.3.9) is most popular and well established on almost any platform for TCP/IP and UDP/IP communications. For bypassing transport and network layers 4 and 3, socket interface provides  a "Raw-Socket" interface allowing to send/receive Ethernet frames directly.\\
 
@@ -1032,11 +1043,10 @@ On the software side, the socket interface (see section 2.3.9) is most popular a
 
     \begin{figure}[h]
     \centering
-    \includegraphics[width=15cm, height=4cm]{Images/image57.png}
+    \includegraphics[width=15cm, height=3.5cm]{Images/image57.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 154}
     \end{figure}
-\newpage
 
 \textbf{ 1. Create a RAW ethernet socket {\dots}}
 

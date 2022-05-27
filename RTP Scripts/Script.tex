@@ -29,6 +29,7 @@
 \usepackage{wrapfig}
 \usepackage[most]{tcolorbox}
 \usepackage{xcolor}
+\usepackage{multicol}
 
 %Define the listings environment for code
 \usepackage{listings}
@@ -181,8 +182,11 @@ captionpos=b
 \include{cover}
 
 \setcounter{tocdepth}{1}
+\input{general.tex}
+\input{bibliography.tex}
+\input{moodle.tex}
 \tableofcontents
-
+\newpage
 \input{text.tex}
 
 \newpage

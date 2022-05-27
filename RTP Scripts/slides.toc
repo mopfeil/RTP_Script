@@ -1,83 +1,33 @@
 \contentsline {chapter}{Reference}{3}{chapter*.1}%
-\contentsline {chapter}{Introduction}{3}{chapter.1}%
-\contentsline {section}{NFC challenges}{8}{section.1.1}%
-\contentsline {section}{Future work}{9}{section.1.2}%
-\contentsline {chapter}{RFID}{10}{chapter.2}%
-\contentsline {section}{Basic types of RFID}{11}{section.2.1}%
-\contentsline {section}{Near field and Far field RFID}{12}{section.2.2}%
-\contentsline {chapter}{Architecture}{18}{chapter.3}%
-\contentsline {section}{RFID Architecture}{19}{section.3.1}%
-\contentsline {chapter}{Technology}{30}{chapter.4}%
-\contentsline {section}{Modes of operation}{31}{section.4.1}%
-\contentsline {section}{Modes of communication}{33}{section.4.2}%
-\contentsline {section}{Tag types}{35}{section.4.3}%
-\contentsline {section}{RF field and over-the-air interface}{36}{section.4.4}%
-\contentsline {section}{Data transfer}{41}{section.4.5}%
-\contentsline {section}{NFC system architecture}{48}{section.4.6}%
-\contentsline {section}{NDEF structure}{49}{section.4.7}%
-\contentsline {chapter}{NFC Standards}{52}{chapter.5}%
-\contentsline {section}{Legacy ISO/IEC standards}{55}{section.5.1}%
-\contentsline {section}{Standards specific to NFC}{58}{section.5.2}%
-\contentsline {chapter}{Physical Layer}{60}{chapter.6}%
-\contentsline {section}{Physical layer for passive tags}{61}{section.6.1}%
-\contentsline {section}{Link budget and range}{62}{section.6.2}%
-\contentsline {section}{Power distribution}{65}{section.6.3}%
-\contentsline {section}{Power estimate}{66}{section.6.4}%
-\contentsline {section}{Reciprocation}{68}{section.6.5}%
-\contentsline {section}{Antenna - directional}{69}{section.6.6}%
-\contentsline {section}{Antenna patterns}{70}{section.6.7}%
-\contentsline {section}{Effective reflected power}{71}{section.6.8}%
-\contentsline {section}{RF readers}{72}{section.6.9}%
-\contentsline {section}{Encoding}{73}{section.6.10}%
-\contentsline {section}{Interference}{74}{section.6.11}%
-\contentsline {section}{Oscillator noise}{75}{section.6.12}%
-\contentsline {section}{Mixing procedures}{76}{section.6.13}%
-\contentsline {section}{Reader antennas}{77}{section.6.14}%
-\contentsline {section}{Size issues}{79}{section.6.15}%
-\contentsline {section}{RFID tags}{80}{section.6.16}%
-\contentsline {section}{Close up}{81}{section.6.17}%
-\contentsline {section}{Tag antenna gain}{82}{section.6.18}%
-\contentsline {section}{Instant voltage}{84}{section.6.19}%
-\contentsline {section}{Phase modulation}{86}{section.6.20}%
-\contentsline {section}{RFID frequencies}{87}{section.6.21}%
-\contentsline {section}{UHV eavesdropping}{90}{section.6.22}%
-\contentsline {section}{Setup}{91}{section.6.23}%
-\contentsline {chapter}{Interlude Systems Engineering}{95}{chapter.7}%
-\contentsline {section}{System architecture modelling}{96}{section.7.1}%
-\contentsline {section}{System engineering process}{100}{section.7.2}%
-\contentsline {chapter}{Multi-Access methods in RFID System}{103}{chapter.8}%
-\contentsline {section}{Communication protocols}{104}{section.8.1}%
-\contentsline {section}{RFID system}{105}{section.8.2}%
-\contentsline {section}{Anti-collision algorithms in RFID system}{115}{section.8.3}%
-\contentsline {chapter}{Privacy Security}{133}{chapter.9}%
-\contentsline {section}{RFID devices and cryptography analysis of the DST40}{144}{section.9.1}%
-\contentsline {section}{Reverse engineering the cipher}{147}{section.9.2}%
-\contentsline {section}{Build the key cracker}{148}{section.9.3}%
-\contentsline {chapter}{Mode of Operations}{152}{chapter.10}%
-\contentsline {chapter}{Secure elements}{167}{chapter.11}%
-\contentsline {section}{UICC / SIM}{169}{section.11.1}%
-\contentsline {section}{Host card emulation}{170}{section.11.2}%
-\contentsline {chapter}{Payment Comparison}{179}{chapter.12}%
-\contentsline {section}{Introduction of Apple Pay}{180}{section.12.1}%
-\contentsline {section}{Ali Pay security}{184}{section.12.2}%
-\contentsline {section}{Authentication}{185}{section.12.3}%
-\contentsline {section}{Real name registration}{186}{section.12.4}%
-\contentsline {chapter}{Security in NFC Readers}{194}{chapter.13}%
-\contentsline {section}{Under the hood of NFC based devices}{198}{section.13.1}%
-\contentsline {section}{Security needs: secure data exchange}{200}{section.13.2}%
-\contentsline {section}{Secure data exchange}{204}{section.13.3}%
-\contentsline {section}{Protection from unauthorized access}{211}{section.13.4}%
-\contentsline {section}{Use cases}{214}{section.13.5}%
-\contentsline {section}{NFC security cookbook}{219}{section.13.6}%
-\contentsline {chapter}{Cryptography}{222}{chapter.14}%
-\contentsline {section}{Secure communication}{223}{section.14.1}%
-\contentsline {section}{Pseudo random generators}{249}{section.14.2}%
-\contentsline {section}{Attacks on OTP and stream ciphers}{255}{section.14.3}%
-\contentsline {section}{Real-world stream ciphers}{261}{section.14.4}%
-\contentsline {section}{Semantic security}{272}{section.14.5}%
-\contentsline {section}{Stream ciphers are semantically secure}{276}{section.14.6}%
-\contentsline {section}{Block ciphers}{279}{section.14.7}%
-\contentsline {section}{Data encryption standard (DES)}{285}{section.14.8}%
-\contentsline {section}{DES challenge}{294}{section.14.9}%
-\contentsline {section}{More attacks on }{297}{section.14.10}%
-\contentsline {section}{AES block cipher}{301}{section.14.11}%
+\contentsline {chapter}{Real-Time Systems}{3}{chapter.1}%
+\contentsline {section}{Introduction}{4}{section.1.1}%
+\contentsline {section}{Requirements}{7}{section.1.2}%
+\contentsline {section}{Timing Definitions}{26}{section.1.3}%
+\contentsline {section}{Real-Time Evidence}{29}{section.1.4}%
+\contentsline {chapter}{Real-Time Operating Systems}{35}{chapter.2}%
+\contentsline {section}{Structure of an RTOS}{37}{section.2.1}%
+\contentsline {section}{Task Management}{39}{section.2.2}%
+\contentsline {section}{Real-Time Scheduling}{43}{section.2.3}%
+\contentsline {section}{Task-Synchronization and Communication}{66}{section.2.4}%
+\contentsline {section}{Memory Management}{92}{section.2.5}%
+\contentsline {section}{Input/Output Management (I/O)}{94}{section.2.6}%
+\contentsline {section}{Specialized RTOS}{104}{section.2.7}%
+\contentsline {chapter}{Real-Time Programming}{122}{chapter.3}%
+\contentsline {section}{Signal Conversion}{123}{section.3.1}%
+\contentsline {section}{Digital Filters}{132}{section.3.2}%
+\contentsline {section}{Digital Controls}{137}{section.3.3}%
+\contentsline {section}{Finite State Machines (FSM)}{150}{section.3.4}%
+\contentsline {chapter}{Microprocessor Peripherals}{158}{chapter.4}%
+\contentsline {section}{Processor Core and Peripherals}{159}{section.4.1}%
+\contentsline {section}{Timers and Counters}{161}{section.4.2}%
+\contentsline {section}{Watchdog}{164}{section.4.3}%
+\contentsline {section}{DA Converters}{167}{section.4.4}%
+\contentsline {section}{AD Converters}{175}{section.4.5}%
+\contentsline {section}{Direct Memory Access (DMA)}{187}{section.4.6}%
+\contentsline {section}{Serial IO (Synchronous SPI)}{188}{section.4.7}%
+\contentsline {section}{Serial IO (USART)}{190}{section.4.8}%
+\contentsline {section}{Parallel IO (Ports)}{194}{section.4.9}%
+\contentsline {section}{Interrupts}{198}{section.4.10}%
+\contentsline {section}{CAN Networking}{200}{section.4.11}%
+\contentsline {section}{Ethernet}{205}{section.4.12}%
+\contentsline {chapter}{Real-Time System Development}{210}{chapter.5}%

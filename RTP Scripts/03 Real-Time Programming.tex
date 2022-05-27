@@ -1,12 +1,10 @@
-\section{Real-Time Programming}
-
 Real-time programming is about the acquisition and the processing of process variables (see section 1.1.1) of a technical process by means of digital programmable processors. 
 
     \begin{figure}[h]
     \centering
-    \includegraphics[width=12cm, height=3cm]{Images/image135.png}
+    \includegraphics[width=10cm, height=2.5cm]{Images/image135.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 86}
     \end{figure}
     
 For the acquisition of physical quantities, there are \textbf{sensors}, which convert a physical quantity to be measured into an electrical signal (= a function of time).\\
@@ -19,14 +17,14 @@ Since \textbf{computers} can \textbf{process time discrete} and \textbf{value di
 
     \begin{figure}[h]
     \centering
-    \includegraphics[width=14cm, height=5.5cm]{Images/image136.png}
+    \includegraphics[width=14cm, height=5cm]{Images/image136.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 87}
     \end{figure}
 
-Since a process can be affected by actor (actuator), the \textbf{digital}, \textbf{time discrete} control signal, produced by a real-time computer program, must be converted back into an analog signal.\\
+Since a process can be affected by actor (actuator), the \textbf{digital}, \textbf{time discrete} control signal, produced by a real-time computer program, must be converted back into an analog signal.
 
-\subsection{Signal Conversion}
+\section{Signal Conversion}
 
 An analog sensor signal \textit{x}(\textit{t}) (time- and value continuous) is first made time discrete by a sample-and-hold element. The sampling times are given from the I/O system of the computer. Analog signals are sampled at a constant sampling frequency \textit{f${}_{s}$} with sampling period \textit{T${}_{s}$} = 1${}_{\ }$/${}_{\ }$\textit{f${}_{s}$} .\\
 
@@ -36,7 +34,7 @@ It is usually ensured that the signal \textit{x}(\textit{t}) has no higher frequ
     \centering
     \includegraphics[width=15cm, height=3cm]{Images/image137.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 88}
     \end{figure}
 
 The amplitudes of the signal \textit{x}(k·\textit{T${}_{s}$}) are still value continuous (real valued), but values change only at discrete times k·\textit{T${}_{s}$} (= \textbf{sampling}).\\
@@ -51,16 +49,16 @@ After that \textit{Qx}[\textit{k}] is a digital signal (time- and value discrete
     \centering
     \includegraphics[width=6cm, height=2cm]{Images/image183.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 89}
     \end{figure}
 
 a sequence \textit{Qx}[\textit{k}] as actual sampling value and with \textit{Qx}[\textit{k}-1] as the previous and \textit{Qx}[\textit{k}-2] as the pre-previous sample.\\
 
 In the computer, the value discrete sequence \textit{Qx}[k] can be identified with the value continuous, time discrete sequence \textit{x}[k] and thus the analog signal \textit{x}(\textit{t}). \\
 
-The quantization error \textit{e} = \textit{x} - \textit{Q${}_{x}$}·\textit{c${}_{x}$} with the sampling process can be minimized, since high resolution AD- and DA-converters are available\\
+The quantization error \textit{e} = \textit{x} - \textit{Q${}_{x}$}·\textit{c${}_{x}$} with the sampling process can be minimized, since high resolution AD- and DA-converters are available
 $\rightarrow$  \textit{e} can be usually neglected.
-\newpage
+
 \subsection{Digital Sampling Systems}
 
 Digital sampling systems are suitable for processing analog signals \textit{x}(\textit{t}) with discrete values as a time discrete sequence \textit{x}[k] = \textit{x}(k·\textit{T${}_{s}$}). \\
@@ -87,7 +85,7 @@ From the sampling theorem follows how the analog signal x(t-) can be reconstruct
     \centering
     \includegraphics[width=14cm, height=2.5cm]{Images/image138.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 90}
     \end{figure}
 
 The reconstruction is done by a periodic pulse train, sampling the DA converted, thus value discrete signal, which is finally (analog) lowpass filtered at cutoff frequency \textit{f}${}_{g}$ = 0.5$.$\textit{f}${}_{s}$\\ 
@@ -132,7 +130,7 @@ output of the calculated signal sample &  \\ \hline
     \centering
     \includegraphics[width=14cm, height=5cm]{Images/image139.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 91}
     \end{figure}
 
 *the Queue q2 must be initialized, before the ADDA Task starts.\\
@@ -151,7 +149,7 @@ Instead of a queue, often just a semaphore is used for synchronization \\
     \centering
     \includegraphics[width=10cm, height=4.5cm]{Images/image184.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 92}
     \end{figure}
 \newpage
 {\rot\bf Quantization}\\
@@ -185,7 +183,7 @@ The quantization of the sensor signal is a step function with a linear increase.
     \centering
     \includegraphics[width=12cm, height=4.5cm]{Images/image141.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 93}
     \end{figure}
 
 The pressure signal is to be scanned by a process computer at a sampling frequency of 10 Hz. A warning signal at a low pressure \textit{p}${}_{L}$ = 0.7 bar and at overpressure \textit{p}${}_{H}$ = 1.2 bar shall be issued.\\
@@ -211,10 +209,10 @@ set Output\_pmin, if (x[n] $\mathrm{<}$ \textit{Qp}${}_{min}$)\\
     \centering
     \includegraphics[width=12cm, height=7cm]{Images/image142.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 94}
     \end{figure}
 
-\subsection{  Digital Filters}
+\section{Digital Filters}
 
 Linear digital filters can be described as LTI-Systems (\textbf{l}inear, \textbf{time-i}nvariant) by means of difference equations. The general form of a linear difference equation with constant, real coefficients \textit{a${}_{j}$},\textit{b${}_{j}$} is
 
@@ -232,7 +230,7 @@ it is always possible to define \textit{a}${}_{0}$ = 1, which results in a  recu
     \centering
     \includegraphics[width=5cm, height=1.5cm]{Images/image185.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 95}
     \end{figure}
 
 {\rot\bf Structure of the general LTI-System}
@@ -241,7 +239,7 @@ it is always possible to define \textit{a}${}_{0}$ = 1, which results in a  recu
     \centering
     \includegraphics[width=14cm, height=5.5cm]{Images/image143.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 96}
     \end{figure}
 
 The z${}^{-1}$ rectangles symbolize a delay by one sample in time, the triangles symbolize a multiplication with a constant. The denominator degree \textit{N} is also known as filter order. There are 2 basic types of digital filters 
@@ -303,32 +301,31 @@ Wanted:  impulse-response and step-response for \textit{n} $\mathrm{\ge}$ 0.    
     \centering
     \includegraphics[width=12cm, height=4cm]{Images/image144.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 97}
     \end{figure}
 
 Impulse-response is infinite long \hspace{1cm} $\rightarrow$ IIR
-\newpage
+
 \item \textbf{Step-response} \textit{x}[\textit{n}] = [\textit{n}]:   \textit{x} = {1, 1, 1, 1, ...}
 	\begin{figure}[h]
     \centering
     \includegraphics[width=12cm, height=4cm]{Images/image145.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 98}
     \end{figure}
 
 $\rightarrow$ The step-response approximates the value 1.0 for large \textit{n}, as expected.
-
 \end{itemize}
 
 {\rot\bf C- Realization (float): } \\
 
 On microcontrollers without float-hardware needs hundreds of machine cycles and is thus very un-effective ( section 3.2.1) !
-
+\newpage
 	\begin{figure}[h]
     \centering
     \includegraphics[width=14cm, height=4cm]{Images/image146.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 99}
     \end{figure}
 
 {\rot\bf C- Realization (integer): } \\
@@ -342,18 +339,17 @@ For example, if \textit{ldS} = 12 is chosen, S = 2${}^{12}$ = 4096 follows
 \[\begin{array}{l} {4096\cdot y[n]=1365\cdot x[n]-(-2761)\cdot y[n-1]} \\ {\qquad Sb_{0} =1365} \\ {\qquad Sa_{1} =-2731} \\ {y[n]=\frac{1365\cdot x[n]+2761\cdot y[n-1]}{4096} =\frac{A}{4096} \approx (A>>12)} \end{array}\] 
 
 Thus, with the scaled difference equation the \textit{S}-fold result is calculated and stored in the accumulator \textit{A}. Instead of dividing \textit{A} by \textit{S}, the effective right-shift operation (here: $\mathrm{>}$ $\mathrm{>}$ 12) is used.
-\newpage
 
 	\begin{figure}[h]
     \centering
-    \includegraphics[width=14cm, height=6cm]{Images/image147.png}
+    \includegraphics[width=14cm, height=5.5cm]{Images/image147.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 100}
     \end{figure}
 
 Even on microcontrollers without float-hardware, but hardware multiplyer for integers utilizes only a handful of machine cycles and thus is very effective (on AVR ca. factor 100 faster than the float-version) !
-
-\subsection{  Digital Controls}
+\newpage
+\section{Digital Controls}
 
 {\rot\bf PID Controller}\\
 
@@ -363,7 +359,7 @@ For many control systems in engineering, controls are used, which follow the so-
     \centering
     \includegraphics[width=14cm, height=4cm]{Images/image148.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 101}
     \end{figure}
 
 {\rot\bf System behavior of an analog PID Controller}\\
@@ -374,13 +370,12 @@ For many control systems in engineering, controls are used, which follow the so-
 \end{equation}
 
 For an analog PID controller the circuit principle below was chosen in the past, the parameters were often calculated approximately. Finally, with the complete system, the parameters were finely adjusted empirically by adjustment of the balancing resistors.
-\newpage
 
 	\begin{figure}[h]
     \centering
     \includegraphics[width=12cm, height=5.5cm]{Images/image149.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 102}
     \end{figure}
 
 dimensioning:$k_{R} =\frac{R_{p} }{R_{1} } ,\, \, \, T_{N} =R_{I} \cdot C_{I} ,\, \, \, T_{V} =R_{D} \cdot C_{D} $     [Tietze]\\
@@ -391,7 +386,7 @@ The PID controller behavior \eqref{GrindEQ__3_4_} can be simulated using a digit
     \centering
     \includegraphics[width=5cm, height=2cm]{Images/image150.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 103}
     \end{figure}
 
 \textbf{Standard PID Regler Algorithmus}  ([LutzW] p. 477)
@@ -429,7 +424,7 @@ The PID-control algorithm (3.5) can be expressed as a digital filter in
     \centering
     \includegraphics[width=5cm, height=2cm]{Images/image151.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 104}
     \end{figure}
     
 \begin{equation}
@@ -457,7 +452,7 @@ A digital filter on 2. order in direct form can be represented as signal flow fo
     \centering
     \includegraphics[width=8cm, height=4cm]{Images/image152.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 105}
     \end{figure}
 
 The algorithm (3.8) calculates a new output value \textit{y}[\textit{n}], for each new sampling period \textit{T${}_{S}$} with a new input value \textit{x}[\textit{n}] and two previous input values \textit{x}[\textit{n}-1] and \textit{x}[\textit{n}-2] and the last output value \textit{y}[\textit{n}-1], which is stored.\\
@@ -466,7 +461,7 @@ For calculating digital filters on microcontrollers, it is generally advantageou
 
 {\rot\bf PID Algorithm in C }\\
 
-The algorithm (3.8) can be programmed in its general form in floating-point arithmetic easily with the C programming language:\\
+The algorithm (3.8) can be programmed in its general form in floating-point arithmetic easily with the C programming language:
 
 \begin{itemize}
 \item  \textbf{IIR2}() realizes (3.8), which is the actual digital filter, and, buffering of the 2 past output values \textit{y}[\textit{n}-1] and \textit{y}[\textit{n}-2]
@@ -524,7 +519,7 @@ As real-time software realization, it can be favorable, to calculate the FIR and
 
 Since this controller is a digital sampling system, it must respect the requirements of the sampling theorem on the strict periodicity with \textit{T${}_{s}$} with sampling of the control variable \textit{x} and the output of the actuating variable \textit{y}. \\
 
-For the input signal, an AD converter, either working as SAR (usually integrated on microcontrollers) or as flash type, a good strategy for getting an ADC value within the strict timing must be found (starting conversion, waiting on the result).\\
+For the input signal, an AD converter, either working as SAR (usually integrated on microcontrollers) or as flash type, a good strategy for getting an ADC value within the strict timing must be found (starting conversion, waiting on the result).
 
 \begin{enumerate}
 
@@ -566,7 +561,6 @@ A real-time program with 4 tasks can meet the specified requirements:
 \end{itemize}
 
 Although the input buffer xd[], and the buffer of output values y[] is accessed by the two tasks T1 and T2, it is guaranteed by the order synchronization of T1-T2, that there will be no conflict, even without a mutex.\\
-\newpage
 
 {\rot\bf  Realization of a Digital PID Control with 4 Tasks}
 
@@ -574,7 +568,7 @@ Although the input buffer xd[], and the buffer of output values y[] is accessed 
     \centering
     \includegraphics[width=13cm, height=7cm]{Images/image154.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 106}
     \end{figure}
 
 This real-time program 
@@ -588,7 +582,7 @@ This real-time program
 
 \item  assumption is, that the utilization of task 2 was determined by measuring WCET to be \textit{H}${}_{2}$ $\mathrm{\approx}$ 50\%. If \textit{H}${}_{2\ }$is too large, optimizations are necessary (e.g. integer arithmetic) 
 \end{itemize}
-
+\newpage
 \textbf{Exercise 1:} Write C Code for Realizing Task T2 under FreeRTOS.\\
 
 - develop by re-factoring PingPong, realize Ts = 2 ms
@@ -646,6 +640,7 @@ void vT1(void * pvParameters)					// re-factored vPrintTask
 	}	
 }
 \end{lstlisting}
+\newpage
 
 \textbf{Exercise 2: }PI controller (for ATmega microcontrollers)
 
@@ -666,7 +661,7 @@ $\rightarrow$ periodic timer events with basic time-slice\textit{ T${}_{TS}$} = 
     \centering
     \includegraphics[width=14cm, height=9cm]{Images/image156.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 107}
     \end{figure}
     
 \begin{itemize}
@@ -675,7 +670,7 @@ $\rightarrow$ periodic timer events with basic time-slice\textit{ T${}_{TS}$} = 
 \item T3 runs every 16 ms (= time-slice 32), all synchronous to the periodic timer events
 \item the execution times of all 4 tasks are well below the maximum time $T_{TS}$ = 0.5 ms.
 \end{itemize}
-\newpage
+
 \item  Doubled execution time (e.g. due to reduction of the CPU clock frequency)\\  \textit{T}${}_{e1}$ = 100 µs, \textit{T}${}_{e2}$ = 600 µs, \textit{T}${}_{e3}$ = 200 µs und \textit{T}${}_{e4}$ = 100 µs\textit{ }\\
 
 \textit{ H}${}_{1}$ = 10 \%, \textit{H}${}_{2}$ = 60 \%, \textit{H}${}_{3}$ = 0.2/20 = 1 \%, \textit{H}${}_{4}$ = 0.1/20 = 0.5 \%  \textit{H} = 71.5 \%\\
@@ -689,17 +684,18 @@ $\rightarrow$ periodic timer events with basic time-slice \textit{T${}_{TS}$} = 
     \centering
     \includegraphics[width=14cm, height=9cm]{Images/image157.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 108}
     \end{figure}
-\newpage    
+   
 \begin{itemize}
 \item T4 runs every 8 ms (=time-slice 8)
 \item T3 runs every 16 ms (=time-slice16), both asynchronous to the periodic timer events  (after T1-T2) !
 \item The maximum execution time is within time-slice 8: $T_{e1}$ + $T_{e2}$ + $T_{e3}$ = 900 µs.
 \end{itemize}
 \end{enumerate} 
+\newpage 
 
-\subsection{Finite State Machines (FSM)}
+\section{Finite State Machines (FSM)}
 
 In most embedded applications finite state machines are used to interface with non-synchronous, periodic devices, such as switches, slow actuators, indication lamps, networks {\dots} \\
 
@@ -709,7 +705,7 @@ Traditional event-based programming is used with modern GUI based standard OS, W
     \centering
     \includegraphics[width=14cm, height=12cm]{Images/image158.png}
     \caption{Finite State Machines (FSM)}
-    \label{fig:Fig }
+    \label{fig:Fig 109}
     \end{figure}                   
 
 Moore Finite State Machine: Each state has assigned exactly one output. \\
@@ -718,9 +714,9 @@ Moore Finite State Machine: Each state has assigned exactly one output. \\
 
 	\begin{figure}[h]
     \centering
-    \includegraphics[width=12cm, height=9cm]{Images/image186.png}
+    \includegraphics[width=12cm, height=8cm]{Images/image186.png}
     %\caption{Finite State Machines (FSM)}
-    \label{fig:Fig }
+    \label{fig:Fig 110}
     \end{figure} 
      
 \textbf{Coffee Automat: Implementation in C	 ($\rightarrow$ ProgC\ \ FSM\_CoffeeAutomat)}\\
@@ -749,7 +745,6 @@ const int fsm_output[NUM_FSM_STATES] = { 	// output is fsm_output[fsm_state]
 		1,	3,
 		5,	7
  };
-
 
 // ----------------------------------------------------------------------------
 // the FSM inputs
@@ -816,15 +811,14 @@ Recipe for Realizing an FSM in C  (Moore FSM)
 \item Define input conditions causing the state transitions as enums as well
 \item Realize a periodicaly called fsm\_tic function, realize transients and outputs
 \end{itemize}
-\newpage
 
 \textbf{Exercise:} Develop a Traffic-Light including yellow phases from section 1.2 as a Moore-FSM as the above Coffee Automat with C-Code. The yellow phases shall last 2 s, the main green/red phases shall be 8 s each. Assume the fsm\_tic() is called with 1 s periodic time. Plot a State Diagram and the state transient table.
 
 	\begin{figure}[h]
     \centering
-    \includegraphics[width=15cm, height=14cm]{Images/image159.png}
+    \includegraphics[width=15cm, height=12.5cm]{Images/image159.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 111}
     \end{figure}
 
 {\rot\bf C-Code	($\rightarrow$ ProgC \ FSM\_TrafficLight)}\\
@@ -844,6 +838,7 @@ enum fsm_state_e {
 // ----------------------------------------------------------------------------
 int fsm_state = FSM_STATE_1;	// initial state
 int fsm_count = 0;					// the FSM counter
+
 // ----------------------------------------------------------------------------
 // the FSM outputs, bit assignments, one for each state (Moore)
 // ----------------------------------------------------------------------------
@@ -859,6 +854,7 @@ const int fsm_output[NUM_FSM_STATES] = {				// output is fsm_output[fsm_state]
 		FSM_OUT_A2_Y|FSM_OUT_A2_R|FSM_OUT_A3_R
 					|FSM_OUT_A2_Y|FSM_OUT_A3_Y				// output with FSM_STATE_2Y
 };
+
 // ----------------------------------------------------------------------------
 #define T_RED_GREEN	8	// Time for Red/Green phases in Ts
 #define T_YELLOW	2		// Time for Yellow    phases in Ts

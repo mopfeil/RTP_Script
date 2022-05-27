@@ -1,28 +1,21 @@
 Digital, computer-based real-time systems became widespread rapidly with the availability of microprocessors getting more powerful and cheaper from year to year.
 
-\section{ Introduction}
+\section{Introduction}
 
 Real-Time systems, as used in the wide area of automation, have 2 basic requirements,
 
-\begin{enumerate}
+\begin{itemize}
 	\item  The \textbf{logical correctness} of the systems output as a response to its inputs, and
 	\item  The \textbf{timeliness} of the outputs available.
-\end{enumerate}
-
+\end{itemize}
 
 For example, this is obvious for an airbag control, for which a correct decision for ignition is required at the right millisecond, otherwise the resulting behaviour can be harmful !\\
 
-Since there is a "digital revolution" the past few decades, a strong trend to applications with microprocessors and witch microcontrollers particularly can be observed.\\
-
-This means, that classical solutions for \textbf{real-time systems} (e.g. analog controller circuits) are replaced by \textbf{software applications} running on a microprocessor or a microcontroller.\\
+Since there is a "digital revolution" the past few decades, a strong trend to applications with microprocessors and witch microcontrollers particularly can be observed. This means, that classical solutions for \textbf{real-time systems} (e.g. analog controller circuits) are replaced by \textbf{software applications} running on a microprocessor or a microcontroller.\\
 
 Thus, an important part of \textbf{a real-time system is software}. This type of software is much different from commonly used software known from PC applications like office programs, or internet browsers, since real-time requirements have to be met.\\
 
-In the area of real-time software development, the classical C programming language is widely used, due to its outstanding maturity and flexibility, especially with industrial PC applications, or with microcontroller applications.\\
-
-Furthermore there is a need for PLC controls (de: SPS) in industrial automation.\\
-
-Examples for Real-Time Systems
+In the area of real-time software development, the classical C programming language is widely used, due to its outstanding maturity and flexibility, especially with industrial PC applications, or with microcontroller applications. Furthermore there is a need for PLC controls (de: SPS) in industrial automation. Examples for Real-Time Systems
 
 \begin{figure}%
     \centering
@@ -39,28 +32,32 @@ Examples for Real-Time Systems
     \subfloat[\centering wikipedia.de: Arc welding of metal parts with industrial robots (KUKA). IPC, PLC]{{\includegraphics[width=8cm, height=5cm]{Images/image7.png} }}%
     \qquad
     \caption{ Comparison of results of video 1 (checkerboard000)}%
-    \label{v1}%
+    \label{fig:Fig 1}%
 \end{figure}
-
 
 \begin{itemize}
 	\item Examples of the use of real-time systems are found in the following areas: 
-	\begin{enumerate}
+	\begin{multicols}{2}
+	\begin{itemize}
 		\item  Production 
 		\item  Aerospace 
 		\item  Automotive Electronics
 		\item  Medicine
 		\item  Military Technology, 
 		\item  e-Banking, 
+	\end{itemize}
+	\columnbreak
+	\begin{itemize}
 		\item  e-Trading, 
 		\item  Telecommunications, 
 		\item  Network Management, 
 		\item  Power Generation/Management, 
 		\item  Navigation
-	\end{enumerate}
-\end{itemize}
+	\end{itemize}
+	\columnbreak
+	\end{multicols}
 
-\textbf{The} need for Software\textbf{(mainly C-Code)in all areas of application grows rapidly}. 
+$\rightarrow$ \textbf{The} need for Software\textbf{(mainly C-Code)in all areas of application grows rapidly}. 
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
   Moore's Law: “die Anzahl der Transistoren pro Chipfläche verdoppelt sich alle 2 Jahre”
@@ -70,32 +67,31 @@ Examples for Real-Time Systems
     \centering
     \includegraphics[width=15cm, height=11cm]{Images/image9.png}
     \caption{Moore's Law}
-    \label{fig:Fig 3}
+    \label{fig:Fig 2}
 \end{figure}
 
-\textbf{ Software for Real-Time Systems} differs substantially from software for generalpurpose computers (PC) due to the \textbf{requirements on the real-time behavior} !\\
+\item \textbf{ Software for Real-Time Systems} differs substantially from software for general purpose computers (PC) due to the \textbf{requirements on the real-time behaviour} !
 
-Many methods of \textbf{classical software development} of non-real-time systems can not be used due to the lack of predictability.\\
+\item Many methods of \textbf{classical software development} of non-real-time systems can not be used due to the lack of predictability.
 
-For the development of real-time systems, special methods are required.\\
-\newpage
+\item For the development of real-time systems, special methods are required.
+\end{itemize}
 
-\section{ Requirements}
+\section{Requirements}
 
 The validity of an operation of a real-time system depends on
 
-\begin{enumerate}
+\begin{itemize}
 	\item  its logical result, and
 	\item  the physical time this result is available
-\end{enumerate}
+\end{itemize}
 
-\begin{figure}%
+\begin{figure}[h]
     \centering
     \subfloat[\centering logical correct, but timing incorrect]{{\includegraphics[width=7cm, 		   			height=5cm]{Images/image10.png} }}%
     \qquad
     \subfloat[\centering logical correct, and timing correct]{{\includegraphics[width=7cm, height=5cm]{Images/image11.png} }}%
     \qquad
-    %\caption{ Comparison of results of video 1 (checkerboard000)}%
     \label{fig:Fig 3}%
 \end{figure}
 
@@ -104,33 +100,25 @@ The validity of an operation of a real-time system depends on
 For real-time systems, the logical correctness \textbf{and} the timing correctness is required.
 
 \begin{itemize}
-	\item \textbf{Non Real-Time Systems}:  logical correctness  \textbf{OK}
-	\item \textbf{Real-Time Systems}:    logical correctness + timing correctness  \textbf{OK}
+	\item \textbf{Non Real-Time Systems}:  
+	\item \textbf{Real-Time Systems}:    
 \end{itemize}
+\newpage
 
-\textbf{Example}: Real-Time Requirements with a Traffic Light Control
+\textbf{Example}: Real-Time Requirements with a Traffic Light Control\\
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=14cm, height=9cm]{Images/image12.png}
-    %\caption{Moore's Law}
-    \label{fig:Fig 3}
+    \includegraphics[width=17cm, height=18cm]{Images/image12.png}
+    \label{fig:Fig 4}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=15cm, height=9cm]{Images/image13.png}
+    \includegraphics[width=15cm, height=10cm]{Images/image13.png}
     %\caption{Moore's Law}
-    \label{fig:Fig 3}
+    \label{fig:Fig 5}
 \end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=15cm, height=9cm]{Images/image14.png}
-    %\caption{Moore's Law}
-    \label{fig:Fig 3}
-\end{figure}
-
 \newpage
 \textbf{Solution}: Critical Section (Mutex) in AmpelTask:  see FSM Exercise\\
 
@@ -149,8 +137,6 @@ For real-time systems, the logical correctness \textbf{and} the timing correctne
 	}
   	end(mutex);
 \end{lstlisting}
-
-\newpage
 
 {\rot\bf A Definition of Real-Time Systems is given by DIN 44300 [1985]}\\
 
@@ -176,9 +162,9 @@ Thus, in a real-time system the logical correctness (functional correctness) of 
 
 The temporal behavior in real-time systems is part of the system specification and thus subject of the product verification.\\
 
-\textbf{Embedded systems} often have to meet \textbf{real-time requirements}.\\
+\textbf{Embedded systems} often have to meet \textbf{real-time requirements}.
 
-{\rot\bf Technical Process and Process Model}\\
+\subsection{Technical Process and Process Model}
 
 A technical process can be defined as follows (DIN 66 201):
 
@@ -190,7 +176,7 @@ Its input and state variables summarized in the vector \textbf{Z} can be measure
     \centering
     \includegraphics[width=14cm, height=6cm]{Images/image60.png}
     %\caption{Moore's Law}
-    \label{fig:Fig 3}
+    \label{fig:Fig 6}
 \end{figure}
 
 In automation, the process is controlled via control actions (vector \textbf{U}) so that after a given time, a desired process target or a desired state \textbf{Z\textit{${}_{D}$}} is reached. \\
@@ -201,9 +187,9 @@ quality, quantity (of the final product), speed, stability, security (during the
 
 The delay time in the loop is of \textbf{\textit{crucial importance}} for the \textbf{\textit{stability}} of the \textbf{\textit{entire system}}!
 
-This delay time must therefore be exactly specifiable  \textbf{\textit{Real-Time Programming}} !\\
+This delay time must therefore be exactly specifiable $\rightarrow$ \textbf{\textit{Real-Time Programming}} !
 
-{\rot\bf Timeliness}\\
+\subsection{Timeliness}
 
 The timeliness (=timing correctness) is directly derivable from the above considerations requirement for all real-time systems. For digital process computers timing correctness is, the output data must be calculated in time.\\
 
@@ -213,7 +199,7 @@ This also requires that the input data must be collected on time. The timing dea
     \centering
     \includegraphics[width=12cm, height=5cm]{Images/image61.png}
     %\caption{}
-    \label{fig:Fig 3}
+    \label{fig:Fig 7}
 \end{figure}
 
 Thus the allowed response time for the controller is limited to a known value, thus real-time systems are said to be \textbf{predictable} or \textbf{deterministic}.\\
@@ -233,54 +219,58 @@ However, due to complexity, the timing behavior of real-time systems \textbf{can
 The \textbf{time conditions} to monitor, and control a process can be in several variants
 
 \begin{enumerate}
-\item  A precise time \textit{t}${}_{0}$ for a controller action is defined. This action must not be executed earlier or later.
+\item Precise Time, Exact Time 
 	
 	\begin{figure}[h]
     \centering
-    \includegraphics[width=6cm, height=1.5cm]{Images/image62.png}
+    \includegraphics[width=6cm, height=1.2cm]{Images/image62.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 8}
 	\end{figure} 
-
+	
+A precise time \textit{t}${}_{0}$ for a controller action is defined. This action must not be executed earlier or later.\\
 \textbf{Examples}: Sampling Systems (DSP \& Digital Control),      clock display control.
 
-\item  A maximum time \textit{t}${}_{max}$ (=deadline) for a controller action is defined. This action must be finished latest at its deadline, but it can be finished earlier. 
+\item Latest Time Limit, Deadline 
 
 	\begin{figure}[h]
     \centering
-    \includegraphics[width=6cm, height=1.5cm]{Images/image63.png}
+    \includegraphics[width=6cm, height=1.2cm]{Images/image63.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 9}
     \end{figure}
     
+A maximum time \textit{t}${}_{max}$ (=deadline) for a controller action is defined. This action must be finished latest at its deadline, but it can be finished earlier.\\ 
 \textbf{Examples}: a sampling system calculating an output sample for the next sampling      period, Anti-Squeeze Control, maximum response time with switching      on/off a machine, UI control reaction time to a button, slider, {\dots}      e.g. \textit{t${}_{max}$} $\mathrm{<}$ 50ms with human reaction times  "\textit{immediately}"    
 
-\item  Earliest Time Limit A minimum time \textit{t}${}_{min}$ for a controller action is defined. The action must not be executed earlier, but it can be executed later. 
+\item Earliest Time Limit 
 	
 	\begin{figure}[h]
     \centering
-    \includegraphics[width=6cm, height=1.5cm]{Images/image64.png}
+    \includegraphics[width=6cm, height=1.2cm]{Images/image64.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 10}
     \end{figure}
     
+A minimum time \textit{t}${}_{min}$ for a controller action is defined. The action must not be executed earlier, but it can be executed later. \\
 \textbf{Examples}: transitions in state machines, an output may not occur before a state       transition has been finished.
 
-\item  Time IntervalAn action must be executed within a time interval [\textit{t}${}_{min}$, \textit{t}${}_{max}$], thus at any time earlier than \textit{t}${}_{max}$ and later than\textit{ t}${}_{min}$. 
+\item Time Interval  
 
 	\begin{figure}[h]
     \centering
-    \includegraphics[width=6cm, height=1.5cm]{Images/image65.png}
+    \includegraphics[width=6cm, height=1.2cm]{Images/image65.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 11}
     \end{figure}
 
+An action must be executed within a time interval [\textit{t}${}_{min}$, \textit{t}${}_{max}$], thus at any time earlier than \textit{t}${}_{max}$ and later than\textit{ t}${}_{min}$.\\
 \textbf{Example}:  airbag ignition in some crash situations an airbag shall be ignited      e.g. 10-30 ms, in other situations 5-8 ms after crash.
 \end{enumerate}
 
-Time conditions can be \textbf{periodic} or \textbf{non-periodic}. \\
+Time conditions can be \textbf{periodic} or \textbf{non-periodic}. 
 
-{\rot\bf Periodic Time Condition }\\
+\subsection{Periodic Time Condition}
 
 A periodic time condition is given with analog signals to be sampled and processed by a digital computer. Any analog signal has to be discretized in both value and time by a constant periodic sampling time \textit{T}${}_{s}$. This is typical for sampling systems realizing digital filters or digital control algorithms for processing quasi analog signals.
 
@@ -288,7 +278,7 @@ A periodic time condition is given with analog signals to be sampled and process
     \centering
     \includegraphics[width=12cm, height=4cm]{Images/image66.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 12}
     \end{figure}
 
 An example is the electric signal of a microphone which has to be sampled \textbf{strictly periodic} in order to have a \textbf{digital representation} of the \textbf{original analog sound signal}. Any deviation from the periodic sampling results in unwanted noise, which cannot be compensated. After time sampling the values of the voltage signal is discretized by an AD-Converter.\\
@@ -306,15 +296,27 @@ Sampling theorem violation:  tagesschau\_D10.wav\\
 
 Digital signal processing of analog signals involves very strict requirements to real-time conditions, due to the periodic and exact sampling conditions.\\
 
-\begin{tabular}{|p{2.2in}|p{1.9in}|} \hline 
-\textbf{Action} & \textbf{Time Condition} \\ \hline 
-input of a sample of an analog signal    & exact periodic sampling at  k$\mathrm{\bullet}$\textit{T}${}_{s}$ \\ \hline 
-computation of a signal sample  & time interval [k$\mathrm{\bullet}$\textit{T}${}_{s}$ + \textit{T${}_{ADC}$,} (k+1)$\mathrm{\bullet}$\textit{T}${}_{s}$] \\ \hline 
-output of the calculated signal sample & exact periodic sampling at  (k+1)$\mathrm{\bullet}$\textit{T}${}_{s}$ \\ \hline 
-\end{tabular}
-\newpage
 
-{\rot\bf Non-Periodic Time Condition}\\
+\begin{table}[h!]
+\setlength{\tabcolsep}{10pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.5} % Default value: 1
+\centering
+ \begin{tabular}{|l|l|} 
+ \hline
+ \textbf{Action} & \textbf{Time Condition} \\ [0.1ex] 
+ \hline
+ input of a sample of an analog signal & exact periodic sampling at  k.\textit{T}${}_{s}$ \\ 
+ \hline
+ computation of a signal sample & time interval [k.\textit{T}${}_{s}$ + \textit{T${}_{ADC}$,} (k+1).\textit{T}${}_{s}$] \\ 
+  \hline
+ output of the calculated signal sample & exact periodic sampling at  (k+1).\textit{T}${}_{s}$y  \\ 
+ \hline
+ \end{tabular}
+ %\caption{\textbf{}}
+ %\label{Intrinsic}
+\end{table}
+
+\subsection{Non-Periodic Time Condition}
 
 A non-periodic time condition is given frequently with digital signals to be processed at arbitrary, non-predictable times due to events like pushing or releasing a switch or a revolution sensor, producing a slope at discrete angles of a motor shaft.\\
 
@@ -322,7 +324,7 @@ A non-periodic time condition is given frequently with digital signals to be pro
     \centering
     \includegraphics[width=12cm, height=1.5cm]{Images/image67.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 13}
     \end{figure}
 
 \textbf{Absolute Time Condition }\\
@@ -333,10 +335,10 @@ With a relative time condition defined, an action must be executed relative to s
 
 All time conditions can arise in combinations.For meeting the time conditions a real-time system must have
 
-\begin{enumerate}
+\begin{itemize}
 	\item  \textbf{sufficient processing speed} to process the input and output data at the required speed (sampling frequency), which the technical process requires
 	\item  \textbf{deterministic time behavior}
-\end{enumerate}
+\end{itemize}
 
 \subsection{Hard and Soft Real-Time Systems}
 
@@ -350,11 +352,11 @@ For \textbf{soft real-time systems}, however, the level of tolerance is non-zero
 
 \begin{enumerate}
 	\item  \textbf{Hard Real-Time Conditions} \\
-	The time conditions must be met, or catastrophes occur !  Deviations from the time-conditions are not allowed and represent a serious error. In safety-related systems a violation of the hard real-time time conditions can endanger human life (e.g. if sampling controls become unstable). Systems, meeting the hard real-time conditions are called \textbf{\textit{Hard Real-Time Systems}}.\\
+	$\rightarrow$ The time conditions must be met, or catastrophes occur !  Deviations from the time-conditions are not allowed and represent a serious error. In safety-related systems a violation of the hard real-time time conditions can endanger human life (e.g. if sampling controls become unstable). Systems, meeting the hard real-time conditions are called \textbf{\textit{Hard Real-Time Systems}}.\\
 	
 \textbf{Examples}: Sampling Controls (closed-loop), aerospace flight controls, airbag ignition, automotive X-by-wire, pacemakers, {\dots} 
 	\item  \textbf{Soft Real-Time Conditions} \\
-	The deadlines must be met but with a degree of flexibility. The deadlines can contain varying levels of tolerance, average timing deadlines, and even statistical distribution of response times with different degrees of acceptability. A missed deadline does not result in system failure, but costs can rise in proportion to the delay, depending on the application. Systems meeting soft real-time conditions are called \textbf{\textit{Soft Real-Time Systems}}.\\
+	$\rightarrow$ The deadlines must be met but with a degree of flexibility. The deadlines can contain varying levels of tolerance, average timing deadlines, and even statistical distribution of response times with different degrees of acceptability. A missed deadline does not result in system failure, but costs can rise in proportion to the delay, depending on the application. Systems meeting soft real-time conditions are called \textbf{\textit{Soft Real-Time Systems}}.\\
 	
 \textbf{Examples}: multimedia-streams (speech, video, music, low level audio), toasters, refrigerators, {\dots} 
 \end{enumerate}
@@ -369,23 +371,23 @@ Example is about a CNC machine tool, where the x-y axes must be controlled simul
     \centering
     \includegraphics[width=12cm, height=5cm]{Images/image68.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 14}
     \end{figure}
 
 There is an relative time condition for both processes acting concurrently on the two drive axes x and y:
 
 	\begin{figure}[h]
     \centering
-    \includegraphics[width=14cm, height=5cm]{Images/image69.png}
+    \includegraphics[width=14cm, height=4cm]{Images/image69.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 15}
     \end{figure}
 
 If the time axis of x and y are shifted by some amount of time $\Delta$\textit{T} (e.g. due to different clocks for x- and y-drive control), the resulting path \textit{B}(\textit{x}, \textit{y}) = \textit{B}(\textit{x}(\textit{t}), \textit{y}(\textit{t-}$\Delta$\textit{T})) will be wrong.\\
 
 \textbf{Example}: Tolerances {\textbar}\textit{x}{\textbar}, {\textbar}\textit{y}{\textbar} $\mathrm{<}$ 0.05 mm,   Requirement    \textit{v${}_{x}$} = \textit{v${}_{y}$} = \textit{x}' = \textit{y}' = $\mathrm{\pm}$10 cm/s     Requirement     {\textbar}\textit{t}{\textbar} $\mathrm{<}$ {\textbar}\textit{x}{\textbar} / {\textbar}\textit{v${}_{x}$}{\textbar} = 0.5 ms       Synchronization, Real-Time Condition
 
-\subsection{ Realizations of Real-Time Systems with Concurrency Requirement}
+\subsection{Realizations of Real-Time Systems with Concurrency Requirement}
 
 To meet the requirement of concurrency, there are several possibilities:
 
@@ -397,9 +399,9 @@ To meet the requirement of concurrency, there are several possibilities:
 
 	\begin{figure}[h]
     \centering
-    \includegraphics[width=15cm, height=6cm]{Images/image70.png}
+    \includegraphics[width=15cm, height=5cm]{Images/image70.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 16}
     \end{figure}
     
 Each task is processed on a separate processor (e.g. microcontroller). There is a real parallel processing, each task has the full power of its own processor. This allows the independent consideration of each task, however, the tasks must be synchronized in most cases (e.g. x-y axis control of the CNC machine).\\
@@ -408,9 +410,9 @@ Each task executed on a processor that is allocated by a real-time scheduler(the
 
 From a hardware perspective, the simplest and most cost effective and realization: All tasks share a single processor \textbf{Multitasking}. A Real Time Scheduler controls the allocation of the processor to the task. This form of real-time scheduling is the easiest to analyze and control \\ 
 
-$\rightarrow$ preferred realization of most embedded systems.\\
+$\rightarrow$ preferred realization of most embedded systems.
 
-{\rot\bf  Availability: }\\
+\subsection{Availability}
 
 Real-time systems must be available without interruption, otherwise time conditions may be violated. This leads to the third basic requirement of real-time systems, the \textbf{availability}. \\
 
@@ -430,34 +432,33 @@ For example, the default Java implementation is not suitable for use in real-tim
 
 	\begin{figure}[h]
     \centering
-    \includegraphics[width=10cm, height=4cm]{Images/image71.png}
+    \includegraphics[width=8cm, height=4cm]{Images/image71.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 17}
     \end{figure}
 
 Remedy is the use of algorithms free of need for reorganization (such as for dynamic memory management).\\
-
+\newpage
 \textbf{Example }: Algorithm for Calculation of a Factorial in C 
 
 	\begin{figure}[h]
     \centering
-    \includegraphics[width=15cm, height=5.5cm]{Images/image72.png}
+    \includegraphics[width=14cm, height=4.5cm]{Images/image72.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 18}
     \end{figure}
 
 OK with Real-Time programming   \hspace{1.5cm}   Not OK with Real-Time programming ! (Exec.-Time of stack  operations not deterministic due to recursion). \\
-
 
 Another possibility is to divide the reorganization into small steps under control of the real-time scheduler to ensure that no time constraint is violated: 
 
 	\begin{figure}[h]
     \centering
-    \includegraphics[width=10cm, height=5cm]{Images/image73.png}
+    \includegraphics[width=9cm, height=3cm]{Images/image73.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 19}
     \end{figure}
-\newpage
+
 This method is been used by Real-Time Java (Real-Time Specification for Java (RTSJ)).Also, more traditional memory management strategies involve not predictable time for execution (like \textbf{malloc/free} of the C standard library, \textbf{new/delete} with C++)\\
 
 $\rightarrow$ dynamic memory management is typically avoided with hard real-time systems !\\
@@ -466,12 +467,12 @@ $\rightarrow$ dynamic memory management is typically avoided with hard real-time
 
 	\begin{figure}[h]
     \centering
-    \includegraphics[width=15cm, height=5cm]{Images/image74.png}
+    \includegraphics[width=14cm, height=4.5cm]{Images/image74.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 20}
     \end{figure}
     
-Not OK with Real-Time programming   \hspace{3cm}  OK with Real-Time programming !\\
+Not OK with Real-Time programming   \hspace{2cm} OK with Real-Time programming !\\
 (Exec.-Time of malloc() non deterministic)\\
 - but: malloc() in initialization possible  
 
@@ -500,14 +501,16 @@ In practice it is not easy to specify the processing/execution time for a certai
     \centering
     \includegraphics[width=15cm, height=5cm]{Images/image75.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 21}
     \end{figure}
 
 \textbf{Timeliness, Response time and Maximum Response Time}\\
 
-Timeliness means, that a task required at the time \textit{t}${}_{0}$\\
-\hspace{3cm} is done \textbf{not before} a specified time \textit{t}${}_{0}$ + \textit{T${}_{Zmin}$} and\\
-\hspace{3cm} is done \textbf{no later} than a specified time \textit{t}${}_{0}$ + \textit{T${}_{Zmax}$} (timeliness).\\
+Timeliness means, that a task required at the time \textit{t}${}_{0}$
+\begin{enumerate}
+\item is done \textbf{not before} a specified time \textit{t}${}_{0}$ + \textit{T${}_{Zmin}$} and
+\item is done \textbf{no later} than a specified time \textit{t}${}_{0}$ + \textit{T${}_{Zmax}$}
+\end{enumerate}
 
 The requirement for a minimum latency, i.e, that a task is not been done before a certain time, is often missing (\textit{T${}_{Zmin}$} = 0) or can be realized easily.\\ 
 
@@ -534,6 +537,7 @@ The total utilization ${}_{ges}$ is the sum of the utilization of all individual
 	\begin{array}{l} {\rho _{ges} =\sum _{i=1}^{n}\rho _{i} = \sum _{i=1}^{n}\frac{T_{Vi} }{T_{Pi} }  } \\ {\rho _{ges} <\, \, 1} \end{array}
 \label{EQ 3}
 \end{equation}
+\newpage
 
 \section{Real-Time Evidence}
 
@@ -543,11 +547,13 @@ In principle, the real-time evidence is based on
 
 \begin{enumerate}
 	\item  evaluate the relevant characteristics of the technical process,
-	\item  number of different requirements
-	\item  Minimum processing time for each request
-	\item  Minimum allowable response time for each request \textit{T${}_{Zmin}$}
-	\item  Maximum allowable response time for each request \textit{T${}_{Zmax}$}
-	\item  dependencies between events
+	\begin{itemize}
+		\item  number of different requirements
+		\item  Minimum processing time for each request
+		\item  Minimum allowable response time for each request \textit{T${}_{Zmin}$}
+		\item  Maximum allowable response time for each request \textit{T${}_{Zmax}$}
+		\item  dependencies between events
+	\end{itemize}
 	\item  identify the maximum processing time \textit{T${}_{VMax}$} (WCET = Worst Case Execution Time) for each request
 	\item  check the\textbf{ load condition} (\ref{EQ 3})
 	\item  verify the \textbf{timeliness condition} (determination of \textit{T${}_{Rmin}$} and \textit{T${}_{Rmax}$}).
@@ -574,31 +580,30 @@ Condition: Modification of the real-time software
 
 	\begin{figure}[h]
     \centering
-    \includegraphics[width=10cm, height=5cm]{Images/image76.png}
+    \includegraphics[width=10cm, height=4.5cm]{Images/image76.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 22}
     \end{figure}
-\newpage
 
 \textbf{Method for Measuring WCET}\\
 
-To measure this time can be divided into two basic methods:\\
+To measure this time can be divided into two basic methods:
 
-
-1st Measurement by the measure out piece of code itself (see above).The piece of code will be amended such that every time an event arrives and when the reaction took place, a time stamp\textit{ t}${}_{1}$ ( free running timer) is stored. At the end of the code, a second time stamp\textit{ t}${}_{2}$ is stored.\\
+\begin{enumerate}
+\item  1st Measurement by the measure out piece of code itself (see above).The piece of code will be amended such that every time an event arrives and when the reaction took place, a time stamp\textit{ t}${}_{1}$ ( free running timer) is stored. At the end of the code, a second time stamp\textit{ t}${}_{2}$ is stored.\\
 $\rightarrow$ the difference \textit{T${}_{Vi}$} = \textit{t}${}_{2}$ - \textit{t}${}_{1}$ is the actual execution time.\\
 	
 The first value \textit{T${}_{V}$}${}_{1}$ is stored as \textit{T${}_{Vmax}$}. With subsequent iterations, a newly calculated time \textit{T${}_{Vi}$}  is compared with the stored value. If the newly calculated time is greater than the previously measured WCET, the new value overwrites the existing WCET\\
 	
-\textit{T${}_{Vmax}$} = max(\textit{T${}_{Vi}$})\\
+\textit{T${}_{Vmax}$} = max(\textit{T${}_{Vi}$})
 
-External measurement of event and response (output), by means of an oscilloscope using port-toggle.
+\item External measurement of event and response (output), by means of an oscilloscope using port-toggle.
 
 	\begin{figure}[h]
     \centering
     \includegraphics[width=15cm, height=5cm]{Images/image77.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 23}
     \end{figure}
     
 For a WCET measure, appropriate input values and events must are generated. In addition, the entire system must be put under load (e.g. by an automatic tester).\\
@@ -611,7 +616,7 @@ For a WCET measure, appropriate input values and events must are generated. In a
 	\item  Can run as autonomous self-diagnosis
 \end{enumerate}
 
-\textbf{Disadvantages} of the method:\\
+\textbf{Disadvantages} of the method:
 
 \begin{itemize}
 	\item  The WCET of a code sequence can not be guaranteed, after all, it depends on many factors (background, loop iterations, caches, branches, etc ..).
@@ -621,6 +626,7 @@ For a WCET measure, appropriate input values and events must are generated. In a
 	\item  The code sequence to be measured out must be modified (for storing time stamps) $\rightarrow$ \textbf{timers}.
 	\item  It is sometimes difficult to put the system under the required load.
 \end{itemize}
+\end{enumerate}
 
 \subsection{Static Code Analysis}
 
@@ -644,9 +650,9 @@ Example: timer-interrupt routine for AVR microcontroller (e.g. ATmega8\_sum.pdf)
     \centering
     \includegraphics[width=17cm, height=5.5cm]{Images/image78.png}
     %\caption{}
-    \label{fig:Fig }
+    \label{fig:Fig 24}
     \end{figure}
-    
+ 
 The C-compiler generated assembly-/machine-code, ultimately determines the number of cycles to complete a section of code for a particular microcontroller (AVR here). The number of cycles multiplied by the instruction cycle time is the execution time.\\
 
 {\rot\bf Estimation of the Best Case Execution Time (BCET)}\\
