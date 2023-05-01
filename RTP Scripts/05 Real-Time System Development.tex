@@ -4,24 +4,29 @@ In many products specific real-time operating systems (RTOSes) are used, which i
 
 Despite the use of RTOSes, the temporal system behavior is difficult to predict, especially with high CPU loads. Thus, one approach is to utilize the processor(s) only 30 .. 50\%..\\
 
-\textbf{Host-Target Environment}\\
+\os{\newpage}
+
+{\rot\bf Host-Target Environment}\\
 
 Embedded systems development usually takes place in host-target environments, mainly with a PC as a host on which the development environment is installed, and a binary file to download to the target system.Since with C programming language programming close-to-the-hardware is relatively simple and required, C dominates the embedded much more than any other programming language (but still, for computationally intensive algorithms assembly language is used). With applications using powerful computer systems, there are other programming languages, for example in avionics systems Ada is used.\\
 
-\textbf{Software Tests}\\
+\os{\newpage}
+
+{\rot\bf Software Tests}\\
 
 A software test is a test during software development to measure the functionality of a software to the requirements and their quality, and to identify software errors.
 
-\begin{enumerate}
+\nsl{\begin{enumerate}
 \item  dynamic measures that require implementation of the software (e.g. test coverage)
 \item  static measures that can do without an implementation of the software (e.g. code reviews)
-\end{enumerate}
+\end{enumerate}}
 
 There are several definitions for software testing:\\
 
 ANSI/IEEE Std. 610.12-1990 defines test as the process of operating a system or component under specified conditions, observing or recording the results and making an evaluation of some aspects of the system or component.\\
 
 Denert [1], defines test as "the verifiable and repeatable evidence of the correctness of a software building module relative to pre-established requirements".\\
+\os{\newpage}
 
 {\rot\bf Aim}
 
@@ -36,7 +41,7 @@ The reason for this is that for a prove of correctness, all combinations of all 
 
 A \textbf{simple realistic example:}\\
 
-$\rightarrow$ 3 input variables, each 16 bit long leads to  \textit{N} = 2${}^{3}$${}^{\textrm{·}}$${}^{16\ =\ }$2${}^{48}$ $\mathrm{\sim}$ 10${}^{16}$ possible      combinations,     with 1 s time for testing each combination, a complete test would take 8.9 Mio years. The number of combinations with real programs is too large for complete tests.\\
+$\rightarrow$ 3 input variables, each 16 bit long leads to  \textit{N} = 2${}^{3.16}$ $\mathrm{\sim}$ 10${}^{16}$ possible combinations, with 1 s time for testing each combination, a complete test would take 8.9 Mio years. The number of combinations with real programs is too large for complete tests.\\
 
 For this reason, different test strategies / concepts exist to deal with the question, how to achieve a maximum test coverage with the lowest possible number of test cases. \\
 
@@ -45,20 +50,24 @@ The results of software tests help to assess the true quality of the software.\\
 {\rot\bf Test Planning}
 
 \begin{enumerate}
-\item \textbf{ }What \textbf{\textit{requirements}} shall be tested in what depth ? 
+\item  What requirements shall be tested in what depth ? 
 \item  The number and the complexity of the test cases must be sufficient.
 \item  Tests should be done at software development, ideally by the developers at  function/module level.
 \end{enumerate}
 
 The test design takes place in parallel to software development.\\
 
-\textbf{ Requirements Engineering (RM)}
+\os{\newpage}
+
+{\rot\bf Requirements Engineering (RM)}
 
 \begin{enumerate}
 \item \textbf{ }The purpose of Requirements Management is to ensure that \textbf{\textit{complex products}} and \textbf{\textit{systems}} can be developed \textbf{\textit{in time}}, with the right \textbf{\textit{quality}}, at the right \textbf{\textit{costs}} !
 \item  Requirements Management means, that \textbf{\textit{processes}} are defined and implemented for the tracing and documenting the complete development process: "intelligibility, clarity, traceability, consistency, completeness, testability". This \textbf{\textit{processes}} finally set the basis for defining the test cases !
 \item  RM is well established in automotive industry  ISO/IEC 15504 (\textbf{\textit{SPICE}}). RM is closely connected to version- and configuration-management. RM is supported by database tools (e.g. \textbf{\textit{DOORS }(IBM/Rational)\textit{ }})
 \end{enumerate}
+
+\os{\newpage}
 
 {\rot\bf V-Model of Testing}\\
 
@@ -69,16 +78,17 @@ The test design takes place in parallel to software development.\\
     \label{fig:Fig 155}
     \end{figure}
 
-The V-Model (or VEE model) of a systems engineering process.
+\begin{itemize}
+	\item The V-Model (or VEE model) of a systems engineering process.
+	\item The classification of the test levels follows the timely progress of the project. In general, there are 4 test levels or test phases in the V-model.
+\end{itemize}
 
-The classification of the test levels follows the timely progress of the project. In general, there are 4 test levels or test phases in the V-model   
-
-\begin{enumerate}
-\item  unit test,
-\item  integration test, 
-\item  system test and 
-\item  acceptance test.
-\end{enumerate}
+\nsl{\begin{enumerate}
+	\item  Unit test
+	\item  Integration test 
+	\item  System test 
+	\item  Acceptance test
+\end{enumerate}}
 
 During development at each stage is tested against the corresponding specification.\\
 \newpage
@@ -106,6 +116,7 @@ In an acceptance test, the black-box method is used, i.e. the customer does not 
 \item  different test objects
 \end{enumerate}
 
+\os{\newpage}
 {\rot\bf Test Automation}\\
 
 Particularly, tests that need to be repeated often, test automation is advisable, if aor test to be done manually is not feasible, difficult, or too expensive (e.g. lifetime tests).

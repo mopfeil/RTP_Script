@@ -1,27 +1,54 @@
-Digital, computer-based real-time systems became widespread rapidly with the availability of microprocessors getting more powerful and cheaper from year to year.
+\nsl{Digital, computer-based real-time systems became widespread rapidly with the availability of microprocessors getting more powerful and cheaper from year to year.}
 
 \section{Introduction}
 
-Real-Time systems, as used in the wide area of automation, have 2 basic requirements,
+Real-Time systems are used in the wide area of automation have 2 basic requirements.
 
 \begin{itemize}
-	\item  The \textbf{logical correctness} of the systems output as a response to its inputs, and
+	\item  The \textbf{logical correctness} of the systems output in response to its inputs.
 	\item  The \textbf{timeliness} of the outputs available.
 \end{itemize}
 
-For example, this is obvious for an airbag control, for which a correct decision for ignition is required at the right millisecond, otherwise the resulting behaviour can be harmful !\\
+For example, this is obvious for an airbag control, for which a correct decision for ignition is required at the right millisecond, otherwise the resulting behaviour can be harmful!\\
 
-Since there is a "digital revolution" the past few decades, a strong trend to applications with microprocessors and witch microcontrollers particularly can be observed. This means, that classical solutions for \textbf{real-time systems} (e.g. analog controller circuits) are replaced by \textbf{software applications} running on a microprocessor or a microcontroller.\\
+Since there is a "digital revolution" the past few decades, a strong trend to applications with microprocessors and with microcontrollers particularly can be observed. This means, that classical solutions for \textbf{real-time systems} (e.g. analog controller circuits) are replaced by \textbf{software applications} running on a microprocessor or a microcontroller.\\
 
-Thus, an important part of \textbf{a real-time system is software}. This type of software is much different from commonly used software known from PC applications like office programs, or internet browsers, since real-time requirements have to be met.\\
+\os{\newpage}
 
-In the area of real-time software development, the classical C programming language is widely used, due to its outstanding maturity and flexibility, especially with industrial PC applications, or with microcontroller applications. Furthermore there is a need for PLC controls (de: SPS) in industrial automation. Examples for Real-Time Systems
+Thus, an important part of \textbf{a real-time system is software}. This type of software is much different from commonly used software known from PC applications like office programs, or internet browsers, since real-time requirements have to be met.
 
-\begin{figure}%
+In the area of real-time software development, the classical C programming language is widely used, due to its outstanding maturity and flexibility, especially with industrial PC applications, or with micro-controller applications. \nsl{Furthermore there is a need for PLC controls (de: SPS) in industrial automation. Examples for Real-Time Systems.}
+
+\os{
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=7cm, height=7cm]{Images/image3.png}
+    \caption{Automotive Door Contol Unit with Anti-Squeeze}
+    \label{fig:Fig 2}
+\end{figure}
+\newpage
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=15cm, height=10cm]{Images/image193.png}
+    \caption{Car with $>$ 100 ECUs and Industrial robots}
+    \label{fig:Fig 2}
+\end{figure}
+\newpage
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=15cm, height=10cm]{Images/image194.png}
+    \caption{Electronic appliances and Pacemaker}
+    \label{fig:Fig 2}
+\end{figure}
+\newpage
+}
+
+\nsl{\begin{figure}%
     \centering
     \subfloat[\centering  Automotive Door Contol Unit with Anti-Squeeze ]{{\includegraphics[width=8cm, 		   			height=5.5cm]{Images/image3.png} }}%
     \qquad
-    \subfloat[\centering Undistorted image]{{\includegraphics[width=8cm, height=5.5cm]{Images/image4.png} }}%
+    \subfloat[\centering ]{{\includegraphics[width=8cm, height=5.5cm]{Images/image4.png} }}%
     \qquad
      \subfloat[\centering Car with $>$ 100 ECUs]{{\includegraphics[width=7cm, height=5.5cm]{Images/image5.png} }}%
     \qquad
@@ -33,9 +60,10 @@ In the area of real-time software development, the classical C programming langu
     \qquad
     \caption{ Comparison of results of video 1 (checkerboard000)}%
     \label{fig:Fig 1}%
-\end{figure}
+\end{figure}}
 
-\begin{itemize}
+Use cases of real-time systems can be found in the following areas: 
+\nsl{\begin{itemize}
 	\item Examples of the use of real-time systems are found in the following areas: 
 	\begin{multicols}{2}
 	\begin{itemize}
@@ -56,58 +84,78 @@ In the area of real-time software development, the classical C programming langu
 	\end{itemize}
 	\columnbreak
 	\end{multicols}
+\end{itemize}}
 
-$\rightarrow$ \textbf{The} need for Software\textbf{(mainly C-Code)in all areas of application grows rapidly}. 
+\os{\begin{itemize}
+	\item  Production 
+	\item  Aerospace 
+	\item  Automotive Electronics
+	\item  Medicine
+	\item  Military Technology
+	\item  e-Banking
+	\item e-Trading
+	\item  Telecommunications 
+	\item  Network Management
+	\item  Power Generation/Management 
+	\item Navigation
+\end{itemize}}
+
+\nsl{\textbf{The} need for Software\textbf{(mainly C-Code)in all areas of application grows rapidly}. 
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
   Moore's Law: “die Anzahl der Transistoren pro Chipfläche verdoppelt sich alle 2 Jahre”
-\end{tcolorbox}
+\end{tcolorbox}}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=15cm, height=11cm]{Images/image9.png}
+    \includegraphics[width=13cm, height=10cm]{Images/image9.png}
     \caption{Moore's Law}
     \label{fig:Fig 2}
 \end{figure}
 
-\item \textbf{ Software for Real-Time Systems} differs substantially from software for general purpose computers (PC) due to the \textbf{requirements on the real-time behaviour} !
+\os{\newpage}
+\os{.}
+\os{\vspace{0.5cm}}
+\begin{itemize}
+\item Software for Real-Time Systems differs substantially from software for general purpose computers (PC) due to the \textbf{requirements on the real-time behaviour}!
 
 \item Many methods of \textbf{classical software development} of non-real-time systems can not be used due to the lack of predictability.
 
 \item For the development of real-time systems, special methods are required.
+
 \end{itemize}
 
 \section{Requirements}
 
-The validity of an operation of a real-time system depends on
+\os{The validity of an operation of a real-time system depends on it's logical result, and physical time this result is available}
+
+\nsl{The validity of an operation of a real-time system depends on
 
 \begin{itemize}
-	\item  its logical result, and
-	\item  the physical time this result is available
-\end{itemize}
+	\item  It's logical result, and
+	\item  The physical time this result is available
+\end{itemize}}
 
 \begin{figure}[h]
     \centering
-    \subfloat[\centering logical correct, but timing incorrect]{{\includegraphics[width=7cm, 		   			height=5cm]{Images/image10.png} }}%
-    \qquad
-    \subfloat[\centering logical correct, and timing correct]{{\includegraphics[width=7cm, height=5cm]{Images/image11.png} }}%
-    \qquad
-    \label{fig:Fig 3}%
+    \includegraphics[width=12cm, height=3.5cm]{Images/image192.png}
+    %\caption{Moore's Law}
+    \label{fig:Fig 2}
 \end{figure}
 
-\textbf{The traffic light control must determine traffic light phases logically and temporally correct.}\\
+\nsl{\textbf{The traffic light control must determine traffic light phases logically and temporally correct.}\\}
 
-For real-time systems, the logical correctness \textbf{and} the timing correctness is required.
+For real-time systems, the logical correctness and the timing correctness is required.
 
 \begin{itemize}
-	\item \textbf{Non Real-Time Systems}:  
-	\item \textbf{Real-Time Systems}:    
+	\item Non Real-Time Systems 
+	\item Real-Time Systems   
 \end{itemize}
-\newpage
+\nsl{\newpage}
 
 \textbf{Example}: Real-Time Requirements with a Traffic Light Control\\
 
-\begin{figure}[h]
+\nsl{\begin{figure}[h]
     \centering
     \includegraphics[width=17cm, height=18cm]{Images/image12.png}
     \label{fig:Fig 4}
@@ -118,8 +166,24 @@ For real-time systems, the logical correctness \textbf{and} the timing correctne
     \includegraphics[width=15cm, height=10cm]{Images/image13.png}
     %\caption{Moore's Law}
     \label{fig:Fig 5}
+\end{figure}}
+
+\os{\newpage
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=15cm, height=11cm]{Images/image12.png}
+    \label{fig:Fig 4}
 \end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=14cm, height=8cm]{Images/image13.png}
+    %\caption{Moore's Law}
+    \label{fig:Fig 5}
+\end{figure}}
+
 \newpage
+
 \textbf{Solution}: Critical Section (Mutex) in AmpelTask:  see FSM Exercise\\
 
 \begin{lstlisting}[style=mystyle, language=c]
@@ -144,33 +208,25 @@ For real-time systems, the logical correctness \textbf{and} the timing correctne
 
 \textit{Realzeitbetrieb wird definiert als der Betrieb eines Rechensystems, beidem Programme zur Verarbeitung anfallender Daten st\"{a}ndig betriebsbereitsind, derart, dass die Verarbeitungsergebnisse innerhalb einer vorgegebenenZeitspanne verf\"{u}gbar sind. Die Daten k\"{o}nnen je nach Anwendungsfall nacheiner zeitlich zuf\"{a}lligen Verteilung oder zu vorherbestimmten Zeitpunktenanfallen.}\\
 
-{\rot\bf Wikipedia:}\\
+{\rot\bf Wikipedia:}
 
-In computer science, \textbf{real-time} computing (RTC), or reactive computing, is the study of hardware and software systems that are subject to a "real-time constraint", i.e., operational \textbf{deadlines} from \textbf{event to system response}. \\
-
-By contrast, a \textbf{non-real-time system}  is one for which there is \textbf{no deadline}, even if fast response or high performance is desired or preferred. \\
-
-The needs of real-time software are often addressed in the context of real-time operating systems, and synchronous programming languages, which provide frameworks on which to build real-time application software.\\
-
-A real time system may be one where its application can be considered (within context) to be mission critical. \\
-
-The anti-lock brakes on a car are a simple example of a real-time computing system - the real-time constraint in this system is the short time in which the brakes must be released to prevent the wheel from locking. \textbf{Real-time computations} can be said to have \textbf{failed if} they are \textbf{not completed before their deadline}, where their deadline is relative to an event. \\
-
-\textbf{A real-time deadline must be met, regardless of system load}.\\
-
-Thus, in a real-time system the logical correctness (functional correctness) of the answers with guaranteed response times (temporal correctness) is of essential importance. \\
-
-The temporal behavior in real-time systems is part of the system specification and thus subject of the product verification.\\
-
-\textbf{Embedded systems} often have to meet \textbf{real-time requirements}.
+\begin{itemize}
+\item In computer science, \textbf{real-time} computing (RTC), or reactive computing, is the study of hardware and software systems that are subject to a "real-time constraint", i.e., operational \textbf{deadlines} from \textbf{event to system response}.
+\item By contrast, a \textbf{non-real-time system}  is one for which there is \textbf{no deadline}, even if fast response or high performance is desired or preferred.
+\item The needs of real-time software are often addressed in the context of real-time operating systems, and synchronous programming languages, which provide frameworks on which to build real-time application software.
+\item A real time system may be one where its application can be considered (within context) to be mission critical.
+\item The anti-lock brakes on a car are a simple example of a real-time computing system - the real-time constraint in this system is the short time in which the brakes must be released to prevent the wheel from locking. \textbf{Real-time computations} can be said to have \textbf{failed if} they are \textbf{not completed before their deadline}, where their deadline is relative to an event.
+\item \textbf{A real-time deadline must be met, regardless of system load}.
+\item Thus, in a real-time system the logical correctness (functional correctness) of the answers with guaranteed response times (temporal correctness) is of essential importance.
+\item  The temporal behaviour in real-time systems is part of the system specification and thus subject of the product verification.
+\item \textbf{Embedded systems} often have to meet \textbf{real-time requirements}.
+\end{itemize}
 
 \subsection{Technical Process and Process Model}
 
-A technical process can be defined as follows (DIN 66 201):
+\nsl{A technical process can be defined as follows (DIN 66 201):}
 
-In a technical process materials, energy or information (the process media) are converted or transported (such as an end product) into grafted materials, energy or information. \\
-
-Its input and state variables summarized in the vector \textbf{Z} can be measured with sensors and controlled by actuators: \\
+In a technical process materials, energy or information (the process media) are converted or transported (such as an end product) into grafted materials, energy or information. Its input and state variables summarized in the vector \textbf{Z} can be measured with sensors and controlled by actuators: 
 
 \begin{figure}[h]
     \centering
@@ -183,7 +239,7 @@ In automation, the process is controlled via control actions (vector \textbf{U})
 
 The desired state can refer to the following:
 
-quality, quantity (of the final product), speed, stability, security (during the transforming process), production, yield, raw material consumption, emissions, or even reaching the next process step (e.g. with sequential processes).\\
+Quality, quantity (of the final product), speed, stability, security (during the transforming process), production, yield, raw material consumption, emissions, or even reaching the next process step (e.g. with sequential processes).\\
 
 The delay time in the loop is of \textbf{\textit{crucial importance}} for the \textbf{\textit{stability}} of the \textbf{\textit{entire system}}!
 
@@ -191,7 +247,7 @@ This delay time must therefore be exactly specifiable $\rightarrow$ \textbf{\tex
 
 \subsection{Timeliness}
 
-The timeliness (=timing correctness) is directly derivable from the above considerations requirement for all real-time systems. For digital process computers timing correctness is, the output data must be calculated in time.\\
+The timeliness (timing correctness) is directly derivable from the above considerations requirement for all real-time systems. For digital process computers timing correctness is, the output data must be calculated in time.\\
 
 This also requires that the input data must be collected on time. The timing deadlines, and are usually given by a technical process:\\
 
@@ -210,12 +266,9 @@ The primary requirement for a real-time control is the \textbf{constant ability 
 
 For a real-time system also means that it \textbf{monitors the temporal validity} of information and prevents the use of invalid data !\\
 
-This must apply regardless of whether the data to be processed are \textbf{event based} or at \textbf{predetermined (e.g. periodic) times}.\\
-
-However, due to complexity, the timing behavior of real-time systems \textbf{can never be predicted with 100~\% certainty}  System validation by tests !\\
+This must apply regardless of whether the data to be processed are \textbf{event based} or at \textbf{predetermined (e.g. periodic) times}. However, due to complexity, the timing behavior of real-time systems \textbf{can never be predicted with 100~\% certainty}  System validation by tests !\\
 
 {\rot\bf Time Conditions}\\
-
 The \textbf{time conditions} to monitor, and control a process can be in several variants
 
 \begin{enumerate}
@@ -227,7 +280,7 @@ The \textbf{time conditions} to monitor, and control a process can be in several
     %\caption{}
     \label{fig:Fig 8}
 	\end{figure} 
-	
+
 A precise time \textit{t}${}_{0}$ for a controller action is defined. This action must not be executed earlier or later.\\
 \textbf{Examples}: Sampling Systems (DSP \& Digital Control),      clock display control.
 
@@ -241,7 +294,7 @@ A precise time \textit{t}${}_{0}$ for a controller action is defined. This actio
     \end{figure}
     
 A maximum time \textit{t}${}_{max}$ (=deadline) for a controller action is defined. This action must be finished latest at its deadline, but it can be finished earlier.\\ 
-\textbf{Examples}: a sampling system calculating an output sample for the next sampling      period, Anti-Squeeze Control, maximum response time with switching      on/off a machine, UI control reaction time to a button, slider, {\dots}      e.g. \textit{t${}_{max}$} $\mathrm{<}$ 50ms with human reaction times  "\textit{immediately}"    
+\textbf{Examples}: a sampling system calculating an output sample for the next sampling      period, Anti-Squeeze Control, maximum response time with switching      on/off a machine, slider, {\dots}      e.g. \textit{t${}_{max}$} $\mathrm{<}$ 50ms with human reaction times  "\textit{immediately}"    
 
 \item Earliest Time Limit 
 	
@@ -253,7 +306,7 @@ A maximum time \textit{t}${}_{max}$ (=deadline) for a controller action is defin
     \end{figure}
     
 A minimum time \textit{t}${}_{min}$ for a controller action is defined. The action must not be executed earlier, but it can be executed later. \\
-\textbf{Examples}: transitions in state machines, an output may not occur before a state       transition has been finished.
+\textbf{Examples}: transitions in state machines, an output may not occur before a state transition has been finished.
 
 \item Time Interval  
 
@@ -265,7 +318,7 @@ A minimum time \textit{t}${}_{min}$ for a controller action is defined. The acti
     \end{figure}
 
 An action must be executed within a time interval [\textit{t}${}_{min}$, \textit{t}${}_{max}$], thus at any time earlier than \textit{t}${}_{max}$ and later than\textit{ t}${}_{min}$.\\
-\textbf{Example}:  airbag ignition in some crash situations an airbag shall be ignited      e.g. 10-30 ms, in other situations 5-8 ms after crash.
+\textbf{Example}:  airbag ignition in some crash situations an airbag shall be ignited e.g. 10-30 ms, in other situations 5-8 ms after crash.
 \end{enumerate}
 
 Time conditions can be \textbf{periodic} or \textbf{non-periodic}. 
@@ -282,6 +335,7 @@ A periodic time condition is given with analog signals to be sampled and process
     \end{figure}
 
 An example is the electric signal of a microphone which has to be sampled \textbf{strictly periodic} in order to have a \textbf{digital representation} of the \textbf{original analog sound signal}. Any deviation from the periodic sampling results in unwanted noise, which cannot be compensated. After time sampling the values of the voltage signal is discretized by an AD-Converter.\\
+\nsl{\newpage}
 
 {\rot\bf Sampling Theorem [Kamm], [Oppen]}
 
@@ -289,7 +343,7 @@ An example is the electric signal of a microphone which has to be sampled \textb
   The basic theorem of Shannon / Kotelnikov in signal theory states, that any analog signal x(t), which is sampled at constant frequency fs can be perfectly reconstructed from the sampling series x(k.Ts), apart from a constant delay, if the signal bandwidth Bx is not larger than half the sampling frequency fs = 1 / Ts, so Bx $<$ fs / 2.
 \end{tcolorbox}
 
-\textbf{Example}: CD-Audio: \textit{f}${}_{s}$ = 44.1 kHz, \textit{T}${}_{s}$ = 22.7 µs  \textit{B${}_{x}$} = 20 kHz $\mathrm{<}$ 0.5 \textit{f}${}_{s}$ = 22.05 kHz \\
+\nsl{\textbf{Example}: CD-Audio: \textit{f}${}_{s}$ = 44.1 kHz, \textit{T}${}_{s}$ = 22.7 µs  \textit{B${}_{x}$} = 20 kHz $\mathrm{<}$ 0.5 \textit{f}${}_{s}$ = 22.05 kHz \\}
 
 Correct sampling:       tagesschau\_44.1.wav \\
 Sampling theorem violation:  tagesschau\_D10.wav\\
@@ -342,23 +396,23 @@ All time conditions can arise in combinations.For meeting the time conditions a 
 
 \subsection{Hard and Soft Real-Time Systems}
 
-In the previous section, we saw that computation must complete before reaching a given deadline. In other words, real-time systems have timing constraints and are deadline-driven. Real-time systems can be classified, therefore, as either hard real-time systems or soft real-time systems.\\
+\nsl{In the previous section, we saw that computation must complete before reaching a given deadline. In other words, real-time systems have timing constraints and are deadline-driven. Real-time systems can be classified, therefore, as either hard real-time systems or soft real-time systems.\\
 
 What differentiates hard real-time systems and soft real-time systems are the degree of tolerance of missed deadlines, usefulness of computed results after missed deadlines, and severity of the penalty incurred for failing to meet deadlines.\\
 
 For \textbf{hard real-time systems}, the level of tolerance for a missed deadline is extremely small or zero tolerance. The computed \textbf{results after} the \textbf{missed} \textbf{deadline} \textbf{are} likely \textbf{useless} for many of these systems. The penalty incurred for a missed deadline is \textbf{catastrophic} (e.g. an unstable control loop). \\
 
-For \textbf{soft real-time systems}, however, the level of tolerance is non-zero. The computed \textbf{results after} the \textbf{missed deadline} have a \textbf{rate of depreciation}. The \textbf{usefulness} of the results does \textbf{not reach zero immediately} passing the deadline, as in the case of many hard real-time systems. The physical impact of a missed deadline is\textbf{ non-catastrophic}.
+For \textbf{soft real-time systems}, however, the level of tolerance is non-zero. The computed \textbf{results after} the \textbf{missed deadline} have a \textbf{rate of depreciation}. The \textbf{usefulness} of the results does \textbf{not reach zero immediately} passing the deadline, as in the case of many hard real-time systems. The physical impact of a missed deadline is\textbf{ non-catastrophic}.}
 
 \begin{enumerate}
 	\item  \textbf{Hard Real-Time Conditions} \\
-	$\rightarrow$ The time conditions must be met, or catastrophes occur !  Deviations from the time-conditions are not allowed and represent a serious error. In safety-related systems a violation of the hard real-time time conditions can endanger human life (e.g. if sampling controls become unstable). Systems, meeting the hard real-time conditions are called \textbf{\textit{Hard Real-Time Systems}}.\\
+	$\rightarrow$ The time conditions must be met, or catastrophes occur !  Deviations from the time-conditions are not allowed and represent a serious error. In safety-related systems a violation of the hard real-time time conditions can endanger human life (e.g. if sampling controls become unstable). Systems, meeting the hard real-time conditions are called \textbf{\textit{Hard Real-Time Systems}}.
 	
-\textbf{Examples}: Sampling Controls (closed-loop), aerospace flight controls, airbag ignition, automotive X-by-wire, pacemakers, {\dots} 
+\textbf{Examples}: Aerospace flight controls, Airbag ignition, pacemakers.
 	\item  \textbf{Soft Real-Time Conditions} \\
-	$\rightarrow$ The deadlines must be met but with a degree of flexibility. The deadlines can contain varying levels of tolerance, average timing deadlines, and even statistical distribution of response times with different degrees of acceptability. A missed deadline does not result in system failure, but costs can rise in proportion to the delay, depending on the application. Systems meeting soft real-time conditions are called \textbf{\textit{Soft Real-Time Systems}}.\\
+	$\rightarrow$ The deadlines must be met but with a degree of flexibility. The deadlines can contain varying levels of tolerance, average timing deadlines, and even statistical distribution of response times with different degrees of acceptability. A missed deadline does not result in system failure, but costs can rise in proportion to the delay, depending on the application. Systems meeting soft real-time conditions are called \textbf{\textit{Soft Real-Time Systems}}.
 	
-\textbf{Examples}: multimedia-streams (speech, video, music, low level audio), toasters, refrigerators, {\dots} 
+\textbf{Examples}: multimedia-streams, toasters, refrigerators.
 \end{enumerate}
 
 \subsection{Concurrency}
@@ -414,9 +468,7 @@ $\rightarrow$ preferred realization of most embedded systems.
 
 \subsection{Availability}
 
-Real-time systems must be available without interruption, otherwise time conditions may be violated. This leads to the third basic requirement of real-time systems, the \textbf{availability}. \\
-
-Real-time systems must be available over a longer period of time, maybe around the clock without any breaks, as with
+Real-time systems must be available without interruption, otherwise time conditions may be violated. This leads to the third basic requirement of real-time systems, the \textbf{availability}. Real-time systems must be available over a longer period of time, maybe around the clock without any breaks, as with
 
 \begin{itemize}
 	\item  Power Plant Controls
@@ -458,11 +510,10 @@ Another possibility is to divide the reorganization into small steps under contr
     %\caption{}
     \label{fig:Fig 19}
     \end{figure}
-
-This method is been used by Real-Time Java (Real-Time Specification for Java (RTSJ)).Also, more traditional memory management strategies involve not predictable time for execution (like \textbf{malloc/free} of the C standard library, \textbf{new/delete} with C++)\\
+    
+This method is been used by Real-Time Java (Real-Time Specification for Java (RTSJ)).Also, more traditional memory management strategies involve not predictable time for execution (like \textbf{malloc/free} of the C standard library, \textbf{new/delete} with C++)
 
 $\rightarrow$ dynamic memory management is typically avoided with hard real-time systems !\\
-
 \textbf{Example}:
 
 	\begin{figure}[h]
@@ -503,14 +554,12 @@ In practice it is not easy to specify the processing/execution time for a certai
     %\caption{}
     \label{fig:Fig 21}
     \end{figure}
-
+\os{\newpage}
+\nsl{\newpage}
 \textbf{Timeliness, Response time and Maximum Response Time}\\
 
-Timeliness means, that a task required at the time \textit{t}${}_{0}$
-\begin{enumerate}
-\item is done \textbf{not before} a specified time \textit{t}${}_{0}$ + \textit{T${}_{Zmin}$} and
-\item is done \textbf{no later} than a specified time \textit{t}${}_{0}$ + \textit{T${}_{Zmax}$}
-\end{enumerate}
+Timeliness means, that a task required at the time \textit{t}${}_{0}$ is done \textbf{not before} a specified time \textit{t}${}_{0}$ + \textit{T${}_{Zmin}$} and is done \textbf{no later} than a specified time \textit{t}${}_{0}$ + \textit{T${}_{Zmax}$}
+
 
 The requirement for a minimum latency, i.e, that a task is not been done before a certain time, is often missing (\textit{T${}_{Zmin}$} = 0) or can be realized easily.\\ 
 
@@ -541,12 +590,10 @@ The total utilization ${}_{ges}$ is the sum of the utilization of all individual
 
 \section{Real-Time Evidence}
 
-Evidence that all time requirements of all requests are met under all conditions, is very difficult (practically impossible). \\
-
-In principle, the real-time evidence is based on
+\nsl{Evidence that all time requirements of all requests are met under all conditions, is very difficult (practically impossible).}In principle, the real-time evidence is based on
 
 \begin{enumerate}
-	\item  evaluate the relevant characteristics of the technical process,
+	\item  Evaluate the relevant characteristics of the technical process,
 	\begin{itemize}
 		\item  number of different requirements
 		\item  Minimum processing time for each request
@@ -554,9 +601,9 @@ In principle, the real-time evidence is based on
 		\item  Maximum allowable response time for each request \textit{T${}_{Zmax}$}
 		\item  dependencies between events
 	\end{itemize}
-	\item  identify the maximum processing time \textit{T${}_{VMax}$} (WCET = Worst Case Execution Time) for each request
-	\item  check the\textbf{ load condition} (\ref{EQ 3})
-	\item  verify the \textbf{timeliness condition} (determination of \textit{T${}_{Rmin}$} and \textit{T${}_{Rmax}$}).
+	\item  Identify the maximum processing time \textit{T${}_{VMax}$} (WCET = Worst Case Execution Time) for each request
+	\item  Check the\textbf{ load condition} (\ref{EQ 3})
+	\item  Verify the \textbf{timeliness condition} (determination of \textit{T${}_{Rmin}$} and \textit{T${}_{Rmax}$}).
 \end{enumerate}
 
 With verifying the \textbf{timeliness condition} in particular, it is not trivial to determine the maximum response time \textit{T${}_{Rmax}$}.\\
@@ -568,15 +615,16 @@ The maximum processing time \textit{T${}_{VMax}$} -- often called Worst Case Exe
 Therefore, the WCET at best be estimated. In principle, two methods for determining the WCET can be distinguished:
 
 \begin{enumerate}
-	\item  measure the WCET 
-	\item  static code analysis with WCET determination (count operations,cycle).
+	\item  Measure the WCET 
+	\item  Static code analysis with WCET determination (count operations,cycle).
 \end{enumerate}
+\os{\newpage}
 
 {\rot\bf WCET Measure}\\
 
 The WCET is determined by execution of the code sequence that will be processed, normally on the target platform. The time between the onset of the event and output at the end of the code sequence is determined.\\
  
-Condition: Modification of the real-time software
+Condition: Modification of the real-time software\\
 
 	\begin{figure}[h]
     \centering
@@ -584,8 +632,9 @@ Condition: Modification of the real-time software
     %\caption{}
     \label{fig:Fig 22}
     \end{figure}
+\os{\newpage}
 
-\textbf{Method for Measuring WCET}\\
+{\rot\bf Method for Measuring WCET}\\
 
 To measure this time can be divided into two basic methods:
 
@@ -596,6 +645,8 @@ $\rightarrow$ the difference \textit{T${}_{Vi}$} = \textit{t}${}_{2}$ - \textit{
 The first value \textit{T${}_{V}$}${}_{1}$ is stored as \textit{T${}_{Vmax}$}. With subsequent iterations, a newly calculated time \textit{T${}_{Vi}$}  is compared with the stored value. If the newly calculated time is greater than the previously measured WCET, the new value overwrites the existing WCET\\
 	
 \textit{T${}_{Vmax}$} = max(\textit{T${}_{Vi}$})
+
+\os{\newpage}
 
 \item External measurement of event and response (output), by means of an oscilloscope using port-toggle.
 
@@ -642,13 +693,11 @@ As a safety margin factors of \textit{c} = 2, 3, sometimes are used to state an 
 
 \textit{t}${}_{Vmax}$ $\mathrm{\le}$ \textit{T${}_{SA}$ }· \textit{c}\\
 
-A manual determination of the number of cycles can be done in simple cases by inspection of the C-compiler generated assembler code:\\
-
-Example: timer-interrupt routine for AVR microcontroller (e.g. ATmega8\_sum.pdf).
+A manual determination of the number of cycles can be done in simple cases by inspection of the C-compiler generated assembler code. Example: timer-interrupt routine for AVR microcontroller (e.g. ATmega8\_sum.pdf).
 
 	\begin{figure}[h]
     \centering
-    \includegraphics[width=17cm, height=5.5cm]{Images/image78.png}
+    \includegraphics[width=17cm, height=5cm]{Images/image78.png}
     %\caption{}
     \label{fig:Fig 24}
     \end{figure}
@@ -660,4 +709,3 @@ The C-compiler generated assembly-/machine-code, ultimately determines the numbe
 The determination Best Case Execution Time of a job can be done as the WCET, with the least possible load on the system, which can be easily implemented in general-at least in a test environment.\\
 
 \textit{T${}_{Vmin}$} = min(\textit{T${}_{Vi}$})
-

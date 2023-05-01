@@ -1,12 +1,22 @@
 An \textbf{RTOS} (Real-time Operating System) must meet the same requirements as a standard general purpose operating system (GPOS) and offers services for
 
-\begin{itemize}
+\os{\begin{itemize}
+\item Task Management
+\item Resource Management
+\item Communication
+\item Synchronization
+\item Protection
+\end{itemize}
+\newpage
+}
+
+\nsl{\begin{itemize}
 \item  \textbf{Task Management: }This is the management and organization of the implemented programs to be processed, also called tasks. The mission of the task management is thus essentially in the allocation of the processor (or the processors in a multiprocessor system) to the task.
 \item  \textbf{Resource Management: }Tasks need resources for their execution, their allocation is the task of resource management. This mainly includes:- Memory management, responsible for allocating memory- Input/Output (I/O) management responsible for the allocation of I/O devices to  the tasks.
 \item  \textbf{Communication: }The communication between tasks, called inter-process communication.
 \item  \textbf{Synchronization: }A special form of communication is the synchronization, which refers to the timing of the tasks.
 \item  \textbf{Protection: }The protection of resources against unauthorized access by tasks.
-\end{itemize}
+\end{itemize}}
 
 These traditional requirements are exactly the same RTOSes as with GPOSes. Depending on the application, some of the services might be implemented only  rudimentary or completely absent. This is in particular with \textbf{embedded} \textbf{systems}, where the \textbf{RTOS} is kept as \textbf{lean as possible}, due to the limited resources.\\
 
@@ -23,9 +33,7 @@ These requirements of RTOS dominate the other requirements, even if compromises 
 
 A real-time operating system (RTOS) is a program that schedules execution in a timely manner, manages system resources, and provides a consistent foundation for developing application code.\\
 
-Early operating systems had a monolithic structure, i.e. all functionality was implemented in a uniform, not further subdivided software block. This led to a number of disadvantages such as poor maintainability, poor adaptability and high error rate.\\
-
-Today's operating systems therefore follow a hierarchical layers model. 
+Early operating systems had a monolithic structure, i.e. all functionality was implemented in a uniform, not further subdivided software block. This led to a number of disadvantages such as poor maintainability, poor adaptability and high error rate. Today's operating systems therefore follow a hierarchical layers model. 
 
 	\begin{figure}[h]
     \centering
@@ -42,29 +50,28 @@ Today's operating systems therefore follow a hierarchical layers model.
 	\end{itemize}
 
 		Ideally, the device drivers are the only hardware dependent layer in the OS. When adapting to other devices, only the device driver layer must be changed.
-	\item  \textbf{I/O (Input-/Output) Control}, realizes the \textbf{logical}, \textbf{hardware-independent} device control. 
+	\item  \textbf{I/O (Input-/Output) Control}, realizes the logical, hardware-independent device control. 
 	\item  \textbf{Resource Management: } responsible for (allocation) and de-allocation (release) of memory and I/O resources.
 	\item  \textbf{Task Management: } Responsible for the allocation of the processor to each task. 
 	\item  \textbf{API (Application Program Interface): } Realizes the interface to the application.
 \end{itemize}
 
-The OS kernel is critical for the stability and security, it is executed in the so-called \textbf{kernel mode} of the processor, which allows full access to all resources.\\
+The OS kernel is critical for the stability and security, it is executed in the so-called \textbf{kernel mode} of the processor, which allows full access to all resources.
 
-The \textbf{kernel mode} is a special operating mode of (advanced) microprocessors, enabling privileged instructions, direct access to memory and I/O, change configuration registers, etc.\\
-
-In normal \textbf{user mode} this privileged commands are blocked so that an application can not interfere with important operating system parts. This is one of the protection services of the operating system.\\
-
-In the previous layer model, the core operating system extends over the layers 1 -- 4. Since the core contains many layers, it is called a \textbf{macro core operating system}.
-
-Today's RTOSes must be highly configurable, especially in the field of \textbf{embedded systems} where scarce resources are typical  $\rightarrow$ FreeRTOS.\\
-
-It is therefore desirable to remove unwanted parts from the operating system, e.g. not needed scheduling or protection methods. This leads to the concept of the \textbf{micro-kernel operating system}.
+\begin{itemize}
+\item The \textbf{kernel mode} is a special operating mode of (advanced) microprocessors, enabling privileged instructions, direct access to memory and I/O, change configuration registers, etc.
+\item In normal \textbf{user mode} this privileged commands are blocked so that an application can not interfere with important operating system parts. This is one of the protection services of the operating system.
+\item In the previous layer model, the core operating system extends over the layers 1 -- 4. Since the core contains many layers, it is called a \textbf{macro core operating system}.
+\item Today's RTOSes must be highly configurable, especially in the field of \textbf{embedded systems} where scarce resources are typical  $\rightarrow$ FreeRTOS.
+\item It is therefore desirable to remove unwanted parts from the operating system, e.g. not needed scheduling or protection methods. This leads to the concept of the \textbf{micro-kernel operating system}.
+\end{itemize}
 
 \section{Task Management}
 
 The task management is a core task of operating systems. The most significant differences between standard and real-time operating systems are found here.\\
 
 The tasks in a real-time application must meet the requirements for \textbf{timeliness} and \textbf{concurrency}. This requires scheduling strategies for RTOSes different from those found in  standard operating systems.\\
+\os{\newpage}
 
 {\rot\bf Task Model}\\
 
@@ -101,11 +108,9 @@ A \textbf{task} realized as a \textbf{thread} is called a \textbf{lightweight pr
 	\item Low data protection between data of individual threads
 \end{itemize}
 
-To fulfill the \textbf{real-time requirements}, efficiency is usually more important than protection. \\
+To fulfil the \textbf{real-time requirements}, efficiency is usually more important than protection. Many real-time applications use \textbf{threads within a single task}.\\
 
-$\rightarrow$ Many real-time applications use \textbf{threads within a single task}.\\
-
-Often, a real-time application is realized by a \textbf{\textit{single}} \textbf{\textit{process}}, which contains threads to realize numerous tasks.\textbf{ Embedded systems} are often based on the \textbf{thread concept}, due to scarce resources.\\
+\nsl{Often, a real-time application is realized by a \textbf{\textit{single}} \textbf{\textit{process}}, which contains threads to realize numerous tasks.\textbf{ Embedded systems} are often based on the \textbf{thread concept}, due to scarce resources.\\}
 
 From the perspective of the real-time conditions (timeliness, concurrency, availability), \textbf{threads} aren't different from \textbf{processes}, both are usually identified by the term \textbf{task}.\\
 
@@ -119,6 +124,7 @@ Multitasking is the ability of the OS to handle multiple tasks within set deadli
     %\caption{}
     \label{fig:Fig 27}
     \end{figure}
+\os{\newpage}
 
 {\rot\bf Task States}\\
 
@@ -130,7 +136,7 @@ For each task (or threads) one can define 6 different states:
     %\caption{}
     \label{fig:Fig 28}
     \end{figure}
-
+\os{\newpage}
 \begin{itemize}
 	\item  \textbf{existent}
 	\item \textbf{ ready (}waiting\textbf{)}The task is ready, all conditions are fulfilled, resources are allocated, the task is waiting for the allocation of the processor.
@@ -144,9 +150,9 @@ For each task (or threads) one can define 6 different states:
 
 The main job of an RTOS task management is the allocation of the processor to the ready tasks. There are different strategies, so-called scheduling strategies.\\
 
-A \textbf{real-time scheduler} must divide all ready (runnable) tasks to the processor, so that all all time conditions are met. The set of tasks managed by the real-time scheduler is called \textbf{taskset}.\\
+A \textbf{real-time scheduler} must divide all ready (runnable) tasks to the processor, so that all time conditions are met. The set of tasks managed by the real-time scheduler is called \textbf{taskset}.\\
 
-For the evaluation of various scheduling strategies, the processor demand \textit{H} (=\textbf{utilization}) is an important quantity for the load of the processor, it is defined as
+For the evaluation of various scheduling strategies, the processor demand \textit{H} (\textbf{utilization}) is an important quantity for the load of the processor, it is defined as
 
 \begin{equation}
 	H = \frac{Demanded Processor Time}{Available Processor Time}
@@ -163,7 +169,7 @@ Each CPU can be utilized up to 100 \% at maximum.\\
     %\caption{}
     \label{fig:Fig 29}
     \end{figure}
-\newpage
+\nsl{\newpage}
 A second periodic task with a period of \textit{T}${}_{P2}$ = 100 ms and an execution time of \textit{T}${}_{e2}$ = 50 ms also causes a processor demand of \textit{H}${}_{2}$ = 50 \%.
 
 	\begin{figure}[h]
@@ -176,7 +182,7 @@ A second periodic task with a period of \textit{T}${}_{P2}$ = 100 ms and an exec
 An implicit timing condition for each periodic task is: task execution must be finished before the next period starts (deadline) !\\
 
 Both tasks cause a total processor demand \textit{H} = \textit{H}${}_{1}$ + \textit{H}${}_{2}$ = 100~\%.
-
+\os{\newpage}
 	\begin{figure}[h]
     \centering
     \includegraphics[width=10cm, height=3cm]{Images/image85.png}
@@ -188,11 +194,11 @@ One possible schedule for executing both tasks is to displace task 1 after exact
 
 	\begin{figure}[h]
     \centering
-    \includegraphics[width=12cm, height=8cm]{Images/image86.png}
+    \includegraphics[width=12cm, height=6cm]{Images/image86.png}
     %\caption{}
     \label{fig:Fig 32}
     \end{figure} 
-
+\os{\newpage}
 In general, for a tasklet of \textit{n} periodic tasks, the total processor demand
 
 \begin{equation}
@@ -211,7 +217,8 @@ $T_{ei}$ execution time of task i, $T_{pi}$ periodic time of task i\\
     %\caption{}
     \label{fig:Fig 33}
     \end{figure}
-    
+\os{\newpage}
+
 {\rot\bf Static Scheduling}\\
 
 Prior to the execution of a taskset an allocation table (dispatching table) with the start times exists, regarding time constraints and dependencies of each task. The dispatcher as part of the RTOS kernel assigns the individual tasks due to this table 
@@ -221,6 +228,7 @@ $\rightarrow$ principle of synchronous programming.\\
 \textbf{Advantage: }  minimal overhead, as no decisions are needed at runtime. \\
 
 \textbf{Disadvantage: }  restriction to periodic events.\\
+\os{\newpage}
 
 {\rot\bf Dynamic Scheduling}\\
 
@@ -230,11 +238,13 @@ Here for the execution of tasks different criteria are used by the dispatcher \t
 
 (Not to be confused with static/dynamic scheduling). The scheduler can use priorities for the allocation of resources (processor, memory, I/O,{\dots}) to a task. \textbf{Static priorities} are set before running the application and are never changed during runtime. \textbf{Dynamic priorities} can be adjusted for each task \textbf{at runtime}. Furthermore, there are algorithms, using \textbf{No Priorities} at all. 
 
-\subsection{Preemption}
+\subsection{Pre-emption}
 
-(= "Prioritization") is an important feature for a scheduler, which describes the capability for displacing a running task for later execution in favor of another task. 
+Prioritization is an important feature for a scheduler, which describes the capability for displacing a running task for later execution in favour of another task. \\
 
-\textbf{Preemptive scheduling }means that a less important task can be displaced by a more important task. The most important task with \textbf{\textit{ready}}-state will be executed immediately. The less important task will be continued again until no other more important task waits with \textbf{\textit{ready}}-state.
+{\rot\bf{Pre-emptive scheduling }}\\
+
+Pre-emptive scheduling means that a less important task can be displaced by a more important task. The most important task with \textbf{\textit{ready}}-state will be executed immediately. The less important task will be continued again until no other more important task waits with \textbf{\textit{ready}}-state.
 
 	\begin{figure}[h]
     \centering
@@ -242,16 +252,15 @@ Here for the execution of tasks different criteria are used by the dispatcher \t
     %\caption{}
     \label{fig:Fig 34}
     \end{figure}
+\os{\newpage}
+{\rot\bf{Non-preemptive scheduling}}\\
 
-\textbf{Non-preemptive scheduling} (= \textbf{cooperative scheduling}) means, that there is no displacement of a running task. Only after the current task is finished or blocked, the next task with \textbf{\textit{ready}} state is executed.\\
-
+Non-preemptive scheduling or co-operative scheduling means, that there is no displacement of a running task. Only after the current task is finished or blocked, the next task with \textbf{\textit{ready}} state is executed.\\
 
 {\rot\bf Time-Slice Scheduling (Round-Robin Scheduling)}\\
 
-Time-Slice Scheduling (time slicing) assigns each task a fixed time slice (Time Slice). The order of task execution corresponds to the sequence of \textbf{\textit{ready}}-tasks entering the task-list of the OS scheduler (FIFO principle). The duration of the time slice for a task can be set individually.\\
-
-This type of time-slice scheduling is a dynamic preemptive scheduling. 
-
+Time-Slice Scheduling (time slicing) assigns each task a fixed time slice (Time Slice). The order of task execution corresponds to the sequence of \textbf{\textit{ready}}-tasks entering the task-list of the OS scheduler (FIFO principle). The duration of the time slice for a task can be set individually. This type of time-slice scheduling is a dynamic pre-emptive scheduling. 
+\os{\newpage}
 \begin{itemize}
 	\item TSS does not use priorities
 	\item time slot duration can be chosen individually for each task
@@ -279,9 +288,7 @@ This type of time-slice scheduling is a dynamic preemptive scheduling.
   If a task changes state from \textbf{\textit{blocked}} to \textbf{\textit{ready}}, it will be put at the end of the FIFO queue
 \end{tcolorbox}
 
-Typical Applications: \textbf{Kernel-mode programs} \\ 
-
-Example 1: 3 Tasks with $H_{max}$ $<$ 0.778, from \textbf{[wörnB]}, same as in section 2.2.7:\\
+Typical Applications: \textbf{Kernel-mode programs}. Example: 3 Tasks with $H_{max}$ $<$ 0.778, same as in section 2.2.7:\\
 Task T1: period \textit{T}${}_{p1}$ = 10~ms, execution time \textit{T}${}_{e1}$ = 1~ms $\rightarrow$ \textit{H}${}_{1}$ = 0.1\\
 Task T2: period \textit{T}${}_{p2}$ = 10~ms, execution time\textit{ T}${}_{e2}$ = 5~ms $\rightarrow$ \textit{H}${}_{2}$ = 0.5\\
 Task T3: non-periodic, period \textit{T}${}_{p3}$ = deadline \textit{T}${}_{d3}$ = 15.4~ms, \textit{T}${}_{e3}$ = 2.62~ms $\rightarrow$ \textit{H}${}_{3}$ = 0.17\\
@@ -302,9 +309,7 @@ Task T3:     \textit{T}${}_{TS3}$ = 3 $.$\textit{T}${}_{TS}$ = 3 ms $\rightarrow
     \label{fig:Fig 36}
     \end{figure}
 
-In this example the assigned time slices were chosen to be larger than the execution times of each task, in order to avoid preemption.\\
-
-With TSS a context-switch can occur at the end of a time-slice only. which can cause some \textit{jitter} (as with task T1 above).\\
+In this example the assigned time slices were chosen to be larger than the execution times of each task, in order to avoid preemption. With TSS a context-switch can occur at the end of a time-slice only. which can cause some \textit{jitter} (as with task T1 above).\\
 
 {\rot\bf Fixed Time-Slice-Scheduling }\\
 
@@ -320,15 +325,13 @@ A strictly periodic schedule is created with a periodic time \textit{N·T${}_{TS
     \end{figure}
 
 Conditions for Events are polled within each task, if a task is not finished at the end of its timeslice, it can be preempted (\textbf{\textit{preemptive FTS}})or not (\textbf{\textit{cooperative FTS}}).\\
+\os{\newpage}
 
 The previous example with three tasks, and an idle task T4 at a period \textit{N}$\mathrm{\bullet}$\textit{T${}_{TS}$} = $\Sigma$\textit{T${}_{TS}$} = 10 ms is realized, the time slices are chosen as multiples of \textit{T${}_{TS}$} = 1 ms as follows \\
 
 Task T1:    \textit{T${}_{TS}$}${}_{1}$ = 1 $.$\textit{T${}_{TS}$} = 1 ms $\rightarrow$ \textit{H}${}_{1}$ = \textit{T${}_{TS}$}${}_{1}$/$\Sigma$\textit{T${}_{TS}$} = 1~ms / 10~ms = 10~\%
-
 Task T2:    \textit{T${}_{TS}$}${}_{2}$ = 5 $.$\textit{T${}_{TS}$} = 5 ms $\rightarrow$ \textit{H}${}_{2}$ = \textit{T${}_{TS}$}${}_{2}$/$\Sigma$\textit{T${}_{TS}$} = 5~ms / 10~ms = 50~\%
-
 Task T3:     \textit{T${}_{TS}$}${}_{3}$ = 3 $.$\textit{T${}_{TS}$} = 3 ms $\rightarrow$ \textit{H}${}_{3}$ = \textit{T${}_{TS}$}${}_{3}$/2$\Sigma$\textit{T${}_{TS}$} = 3~ms / 10~ms = 30~\%
-
 Task T4 (idle) \textit{T${}_{TS}$}${}_{4}$ = 1 $.$\textit{T${}_{TS}$} = 1 ms $\rightarrow$ \textit{H}${}_{4}$ = 10~\%
 
 	\begin{figure}[h]
@@ -367,6 +370,8 @@ From (2.3) it shows, that the total utilization of \textit{H} aiming with an inf
 \textit{   T${}_{TS}$} $\mathrm{\ge}$ max(\textit{T${}_{e}$}${}_{1}$,\textit{ T${}_{e}$}${}_{2}$,\textit{ T${}_{e}$}${}_{3}$, ..)\\
 
 With a non-preemptive schedule (cooperative task schedule) maximum execution times \textit{T${}_{ei}$} have to be determined carefully (WCET determination), such, that each task can complete execution within the basic \textit{T${}_{TS}$}. If a task gets delayed for some reasons (like high priority interrupts during execution) the complete schedule will get delayed.\\
+\os{\newpage}
+\nsl{\newpage}
 
 \textbf{Advantages }\\
 
@@ -385,7 +390,7 @@ Binary fixed time-slice scheduling is
 	\item \textbf{ }Binary time-slice scheduling is not fully flexible with arbitrary periodic times and execution times
 	\item  can turn into very complex software, especially with integrating tasks with execution time larger than \textit{T${}_{TS}$}.
 \end{itemize}
-
+\os{\newpage}
 \textbf{Lab-Experiment}   \textbf{\underbar{AVR-Timer-Interrupts-(FTS-Scheduling)}}
 
 	\begin{figure}[h]
@@ -397,60 +402,63 @@ Binary fixed time-slice scheduling is
 
 \textbf{\underbar{Sketch for Arduino Nano}  (FixedTimeSlice.ino)}\\
 \newpage
-\textbf{Example}: 4 periodic tasks (on an AVR µC, from section Digital PID Control with 4 Tasks) \\
+\textbf{Example}: 4 periodic tasks (on an AVR $\mu$C, from section Digital PID Control with 4 Tasks) \\
 
 \textit{T${}_{p}$}${}_{1}$ = \textit{T${}_{p}$}${}_{2}$ = 1 ms, \textit{T${}_{p}$}${}_{3}$ = 16 ms, \textit{T${}_{p}$}${}_{4}$ = 8 ms
 
-\textit{T${}_{e}$}${}_{1}$ = 50 µs, \textit{T${}_{e}$}${}_{2}$ = 0.3 ms, \textit{T${}_{p}$}${}_{3}$ = 40 µs, \textit{T${}_{p}$}${}_{4}$ = 40 µs
+\textit{T${}_{e}$}${}_{1}$ = 50 $\mu$s, \textit{T${}_{e}$}${}_{2}$ = 0.3 ms, \textit{T${}_{p}$}${}_{3}$ = 40 $\mu$s, \textit{T${}_{p}$}${}_{4}$ = 40 $\mu$s
 
 \textit{H}${}_{1}$ = 5 \%, \textit{H}${}_{2}$ = 30 \%, \textit{H}${}_{3}$ = 0.1/20 = 0.5 \%, $\rightarrow$ \textit{H}${}_{4}$ = 0.05/20 = 0.25 \%  \textit{H} = 30.75 \%\\
 
 Solution with Binary time-slice schedule with 3 Tasks, \textit{T${}_{TS}$} = 0.5 ms, \textit{T${}_{TS}$} $\mathrm{\ge}$ max(\textit{T${}_{ei}$}) = max(0.3, 0.05, 0.005 0.0025 ms) tasks with the same periodic times run in the same time-slice:\\
- $\rightarrow$ T1 und T2 executed successively in the 2 Timeslice 2·\textit{T${}_{TS}$ }= 1 ms\\
+
+$\rightarrow$ T1 und T2 executed successively in the 2 Timeslice 2·\textit{T${}_{TS}$ }= 1 ms\\
  
- 
- 	\begin{figure}[h]
+  	\os{\begin{figure}[h]
+    \centering
+    \includegraphics[width=15cm, height=10.8cm]{Images/image96.png}
+    %\caption{}
+    \label{fig:Fig 41}
+    \end{figure}}
+    
+ 	\nsl{\begin{figure}[h]
     \centering
     \includegraphics[width=15cm, height=11cm]{Images/image96.png}
     %\caption{}
     \label{fig:Fig 41}
-    \end{figure}
+    \end{figure}}
+\os{\newpage}
 
-\textbf{Proof for collision-free assignment of time-slice indexes } (with \textit{k},\textit{l} $\in$ \textbf{$\boldsymbol{\mathbb{Z}}$}  integers)\\
-
-for some period \textit{N} we get time slices at indexes  \textit{n${}_{k}$}  =  \textit{k$\bullet$N  +  $\frac{N}{2} $}  e.g.: 2, 6, 10, 14, ..\\
+Proof for collision-free assignment of time-slice indexes  (with \textit{k},\textit{l} $\in$ \textbf{$\boldsymbol{\mathbb{Z}}$}  integers). For some period \textit{N} we get time slices at indexes  \textit{n${}_{k}$}  =  \textit{k$\bullet$N  +  $\frac{N}{2} $}  e.g.: 2, 6, 10, 14, ..\\
 
 thus, for period 2\textit{N} (next time slice) we get    \textit{m${}_{l}$} =  \textit{l$\bullet$}2\textit{N  +  N  }e.g.: 4, 12, 20, 28, ..\\
 
-for a collision, we set \textit{n${}_{k}$} ${\mathop{=}\limits^{!}} $ \textit{m${}_{l}$}. Division by \textit{N} on both sides shows \textit{k} + 0.5 ${\mathop{=}\limits^{!}} $ 2$\mathrm{\bullet}$\textit{l} + 1, which has no solution with integers \textit{k} and \textit{l}, thus the above assignment is without any conflict all time slice indexes (proof by full induction) !
+for a collision, we set \textit{n${}_{k}$} ${\mathop{=}\limits^{!}} $ \textit{m${}_{l}$}. Division by \textit{N} on both sides shows \textit{k} + 0.5 ${\mathop{=}\limits^{!}} $ 2$\mathrm{\bullet}$\textit{l} + 1, which has no solution with integers \textit{k} and \textit{l}, thus the above assignment is without any conflict all time slice indexes (proof by full induction) !\\
 \newpage
 
-\subsection{FIFO Scheduling}
+{\rot\bf FIFO Scheduling}\\
 
-The name derives from the FIFO (first in, first out) principle of a waiting queue:    
+The name derives from the FIFO (first in, first out) principle of a waiting queue.
 
  	\begin{figure}[h]
     \centering
-    \includegraphics[width=10cm, height=5cm]{Images/image97.png}
+    \includegraphics[width=9cm, height=4cm]{Images/image97.png}
     %\caption{}
     \label{fig:Fig 42}
     \end{figure}
 
-where elements put into a queue in a certain order of sequence, are taken out in the same order of sequence.With a \textbf{FIFO scheduler}, the tasks are processed in the same order in which they have taken the ready state.  
+where elements put into a queue in a certain order of sequence, are taken out in the same order of sequence.With a \textbf{FIFO scheduler}, the tasks are processed in the same order in which they have taken the ready state. An running task is not interrupted, it is a \textbf{non-preemptive}, \textbf{dynamic} scheduler.\\
 
-$\rightarrow$ An running task is not interrupted, it is a \textbf{non-preemptive}, \textbf{dynamic} scheduler.\\
+\textbf{Advantage:}   Very simple implementation, sometimes used in universal OS\\
+\textbf{Disadvantage:}  Bad real-time performance, violations of time conditions even at low processing demands\\
 
-Advantage:   very simple implementation, sometimes used in universal OS\\
-
-Disadvantage:  bad real-time performance,        violations of time conditions even at low processing demands ( example)\\
-
-\textbf{Example}: Two tasks with FIFO scheduling\\
+\textbf{Example}: Two tasks with FIFO scheduling
 
 Task 1: \textit{T}${}_{p1}$ = 150 ms, \textit{T}${}_{e1}$ = 15 ms   \textit{H}${}_{1}$ = 0.1
 
-Task 2: \textit{T}${}_{p2}$ = 10 ms,  \textit{T}${}_{e2}$ = 1 ms    \textit{H}${}_{2}$ = 0.1\\
+Task 2: \textit{T}${}_{p2}$ = 10 ms,  \textit{T}${}_{e2}$ = 1 ms    \textit{H}${}_{2}$ = 0.1
 
-For both periodic tasks there is a time bound (deadline) with the next period. With (2.2) \\
+For both periodic tasks there is a time bound (deadline) with the next period. With (2.2) 
 
 \textit{H} = \textit{H}${}_{1}$ + \textit{H}${}_{2}$ = 0.1 + 0.1 = 0.2 
 
@@ -467,36 +475,33 @@ This simple example shows that even at a very low processor demand, a FIFO sched
 
 {\rot\bf Fixed-Priority Scheduling}\\
 
-For fixed-priority scheduling, each task is assigned a fixed priority. The \textbf{\textit{ready}}-task with the highest priority waiting in the scheduler's queue is assigned to the processor.  \\
-$\rightarrow$ fixed-priority scheduling is\textbf{ dynamic scheduling with static priorities}. (often used with interrupt processing of microprocessors, preemptive or non-preemptive):
+For fixed-priority scheduling, each task is assigned a fixed priority. The ready task with the highest priority waiting in the scheduler's queue is assigned to the processor. Fixed-priority scheduling is dynamic scheduling with static priorities. (often used with interrupt processing of microprocessors, pre-emptive or non-preemptive).
 
 \begin{enumerate}
 	\item  \textbf{Fixed-Priority-Preemptive Scheduling (FPP)}\\
-	If a \textbf{task with higher priority} than the currently running gets into the ready state, then the \textbf{current task is interrupted (displaced, preemted)} and the task with the higher priority is assigned to the processor immediately.
+	If a task with higher priority than the currently running gets into the ready state, then the current task is interrupted (displaced, preempted) and the task with the higher priority is assigned to the processor immediately.
 	
 	\item  \textbf{Fixed-Priority-Non-Preemptive Scheduling (FPN)}\\
-	If a \textbf{task with higher priority} than the currently running gets into the ready state, then the \textbf{task is assigned} to the processor only \textbf{after the current task} is either \textbf{completed} or \textbf{blocked}.
+	If a task with higher priority than the currently running gets into the ready state, then the task is assigned to the processor only after the current task is either completed or blocked.
 \end{enumerate}
 
 \textbf{Advantage}: with FPP, the compliance with the real-time conditions can be guaranteed (unlike to FIFO scheduling), if the priorities were assigned appropriate. \\
 
-The assignment of priorities to tasks is an important step in the development of a real-time application.\\
+\nsl{The assignment of priorities to tasks is an important step in the development of a real-time application.\\}
 
 {\rot\bf Rate-Monotonic-Scheduling (RMS)}\\
 
-For purely periodic applications, there is a rule, the so-called \textbf{rate-monotonic scheduling rule}, which states, that the priority of the tasks to be performed is inversely proportional to their periodic time:
+For purely periodic applications, there is a rule, the so-called \textbf{rate-monotonic scheduling rule}, which states, that the priority of the tasks to be performed is inversely proportional to their periodic time
 
 \begin{equation}
 	PR_{i} \sim \frac{1}{T_{pi} } 
 \label{EQ }
 \end{equation}
 
-$PR_i$ Priority task i, $T_{pi}$ Periodic time of task i\\
-
-under the (rather idealized) conditions:
+$PR_i$ Priority task i, $T_{pi}$ Periodic time of task i under the (rather idealized) conditions:
 
 \begin{itemize}
-	\item  Preemptive scheduling is used
+	\item  Pre-emptive scheduling is used
 	\item  The periodic times \textit{T${}_{Pi}$} are constant 		
 	\item  The time limits (deadlines) are equal to the periodic times \textit{T${}_{Pi}$}
 	\item  The execution times are known and constant \textit{T${}_{ei}$}
@@ -517,11 +522,7 @@ Task 2: \textit{T}${}_{p2}$ = 10 ms,  \textit{T}${}_{e2}$ = 1 ms   higher priori
 
 The running task 1 is displaced with an event for task 2, which has higher priority (its state goes from \textbf{\textit{blocked}}  \textbf{\textit{ready}}), so that the deadline of task 2 is not violated (in contrast to FIFO scheduling).\\
 
-Obviously,\textbf{ FPP scheduling} with \textbf{RMS} provides much better results than FIFO scheduling. \\
-
-In contrast, with \textbf{FPN}, the deadlines of task 2 would be violated !\\
-
-In general
+Obviously,\textbf{ FPP scheduling} with \textbf{RMS} provides much better results than FIFO scheduling. In contrast, with \textbf{FPN}, the deadlines of task 2 would be violated !. In general\\
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
  	With periodic tasks with fixed priorities and deadlines equal to their periodic times, rate-monotonic scheduling (RMS) provides for an optimal priority allocation.
@@ -564,14 +565,13 @@ The limit (2.5) can be used to examine the feasibility of a (periodic) taskset a
 
 However, there are problems at very high utilization (beyond or near \textit{H${}_{max}$}) and with RMS at the same or nearly the same time periods, delivering same task priorities. Furthermore, there are sometimes difficulties in approaching non-periodic processes by periodic processes with sufficient precision.\\
 
+\os{\newpage}
 \textbf{Example 1:} 3 Tasks with \textit{H}${}_{max}$ $\mathrm{>}$ 0.778, from [W\"{o}rnB] : \\
 Task T1: period \textit{T}${}_{p1}$ = 10~ms, execution time \textit{T}${}_{e1}$ = 1~ms $\rightarrow$ \textit{H}${}_{1}$ = 0.1\\
 Task T2: period \textit{T}${}_{p2}$ = 10~ms, execution time\textit{ T}${}_{e2}$ = 5~ms $\rightarrow$ \textit{H}${}_{2}$ = 0.5\\
 Task T3: non-periodic, deadline = \textit{T}${}_{d3}$ = 15.4~ms, execution time\textit{ T}${}_{e3}$ = 5.5~ms\\
 
-By (2.2) the total CPU utilization \textit{H} = 0.1 + 0.5 + 0.357 = 0.957, amost 100 \% !But with (2.5) \textit{H} $\mathrm{>}$ \textit{H}${}_{max}$ $\mathrm{>}$ 0.78 deadlines will be violated with \textbf{FPP/RMS} with 3 tasks.\\ 
-
-FPP/RMS \textbf{can't deliver an executable schedule}, as this example shows:\\
+By (2.2) the total CPU utilization \textit{H} = 0.1 + 0.5 + 0.357 = 0.957, amost 100 \% !But with (2.5) \textit{H} $\mathrm{>}$ \textit{H}${}_{max}$ $\mathrm{>}$ 0.78 deadlines will be violated with \textbf{FPP/RMS} with 3 tasks. FPP/RMS \textbf{can't deliver an executable schedule}, as this example shows:\\
 
 By (2.4) one has 2 choices for assigning the priorities due to the equal periods \textit{T}${}_{p1}$\textit{ }and \textit{T}${}_{p2}$:\\
 
@@ -594,7 +594,7 @@ By (2.4) one has 2 choices for assigning the priorities due to the equal periods
  %\caption{\textbf{}}
  %\label{Intrinsic}
 \end{table}
-
+\os{\newpage}
 In both cases there is a violation of the T3 deadline, if all tasks get \textbf{\textit{ready}} the same time at \textit{t} = 0: 
 
  	\begin{figure}[h]
@@ -603,14 +603,13 @@ In both cases there is a violation of the T3 deadline, if all tasks get \textbf{
     %\caption{}
     \label{fig:Fig 45}
     \end{figure}
-    
-Of course, the violation of T3 deadline in the example above occurs due to the deliberate disregard of the load limit \textit{H${}_{max}$}, by \eqref{GrindEQ__2_5_}. If one meets the max. load requirement \textit{H} $\mathrm{<}$ 78\% (n = 3), there is violation of the T3 deadline.\\
 
-However, with growing number of tasks the maximum load goes down as low as 70\% (from n $\mathrm{>}$ 10), which is surprisingly low.\\
+{\nsl{\newpage}}
+Of course, the violation of T3 deadline in the example above occurs due to the deliberate disregard of the load limit \textit{H${}_{max}$}, by \eqref{fig:Fig 45}. If one meets the max. load requirement \textit{H} $\mathrm{<}$ 78\% (n = 3), there is violation of the T3 deadline.\\
 
-Ideas to achieve higher processor loads lead to dynamic assignment of priorities.\\
+However, with growing number of tasks the maximum load goes down as low as 70\% (from n $\mathrm{>}$ 10), which is surprisingly low. Ideas to achieve higher processor loads lead to dynamic assignment of priorities.\\
 
- \textbf{Example 2:} 3 Tasks with \textit{H}${}_{max}$ $\mathrm{<}$ 0.778, from [W\"{o}rnB] :\\
+\textbf{Example 2:} 3 Tasks with \textit{H}${}_{max}$ $\mathrm{<}$ 0.778, from [W\"{o}rnB] :\\
 Task T1: period \textit{T}${}_{p1}$ = 10~ms, execution time \textit{T}${}_{e1}$ = 1~ms  $\rightarrow$ \textit{H}${}_{1}$ = 0.1\\
 Task T2: period \textit{T}${}_{p2}$ = 10~ms, execution time\textit{ T}${}_{e2}$ = 5~ms  $\rightarrow$ \textit{H}${}_{2}$ = 0.5\\
 Task T3: non-periodic, period \textit{T}${}_{p3}$ = deadline \textit{T}${}_{d3}$ = 15.4~ms, \textit{T}${}_{e3}$ = 2.62~ms  $\rightarrow$ \textit{H}${}_{3}$ = 0.17\\
@@ -647,42 +646,38 @@ In both cases there is no violation of the T3 deadline, even if all tasks get \t
     %\caption{}
     \label{fig:Fig 46}
     \end{figure}
-\newpage   
+\nsl{\newpage}
 $\rightarrow$ If one meets the max. load requirement \textit{H} $\mathrm{<}$ 78\% (n = 3), there is violation of the T3 deadline.\\
 
 However, with 3 tasks the maximum load allowed is as low as 77.8\% (for \textit{n} = 3), which is surprisingly low.\\
 
 Ideas to achieve higher processor loads lead to dynamic assignment of priorities \\
 $\rightarrow$ next sections.\\
+\os{\newpage}
 
 {\rot\bf Earliest-Deadline-First Scheduling (EDF)}\\
 
-In Earliest-Deadline-First Scheduling (EDF) the Task Processor is granted to that \textbf{\textit{ready}}-task, which is closest to its time limit (deadline). This is achieved by assigning the task priorities according to the vicinity to the individual deadlines.\\
-
-$\rightarrow$ EDF is dynamic scheduling with dynamic priorities, either preemptive or non-preemptive\\
+In Earliest-Deadline-First Scheduling (EDF) the Task Processor is granted to that \textbf{\textit{ready}}-task, which is closest to its time limit (deadline). This is achieved by assigning the task priorities according to the vicinity to the individual deadlines. EDF is dynamic scheduling with dynamic priorities, either preemptive or non-preemptive\\
 
 For \textbf{preemptive EDF scheduling} a context-switch is made, when a task with earlier time bound gets \textbf{\textit{ready}}. In \textbf{non-preemptive EDF scheduling} is the task with the shortest time interval ist executed only, if the currently running task is finished or blocked.\\
 
-Preemptive EDF scheduling, is used more frequently than non-preemptive EDF scheduling, which is essentially only used when non-interruptible processes are to be managed, such as disk access.\\
+Pre-emptive EDF scheduling, is used more frequently than non-preemptive EDF scheduling, which is essentially only used when non-interruptible processes are to be managed, such as disk access.\\
 
-\textbf{Advantage}: With \textbf{preemptive EDF scheduling }100 \% CPU utilization can be achieved. \\
+\textbf{Advantage}: With pre-emptive EDF scheduling 100 \% CPU utilization can be achieved. \\
 
-\textbf{Example} with 3 Tasks (same as in section 2.2.7): Task T1: period \textit{T}${}_{p1}$ = 10~ms, execution time \textit{T}${}_{e1}$ = 1~ms  \textit{H}${}_{1}$ = 0.1Task T2: period \textit{T}${}_{p2}$ = 10~ms, execution time\textit{ T}${}_{e2}$ = 5~ms  \textit{H}${}_{2}$ = 0.5Task T3: non-periodic, deadline = \textit{T}${}_{d3}$ = 15.4~ms, execution time\textit{ T}${}_{e3}$ = 5.5~ms(each periodic time is assumed to be deadline).\\
-
-Again, by (2.2) the total CPU utilization \textit{H} = 0.1 + 0.5 + 0.357 = 0.957, almost 100 \% !\\
+\textbf{Example} with 3 Tasks (same as in section 2.2.7): Task T1: period \textit{T}${}_{p1}$ = 10~ms, execution time \textit{T}${}_{e1}$ = 1~ms  \textit{H}${}_{1}$ = 0.1Task T2: period \textit{T}${}_{p2}$ = 10~ms, execution time\textit{ T}${}_{e2}$ = 5~ms  \textit{H}${}_{2}$ = 0.5Task T3: non-periodic, deadline = \textit{T}${}_{d3}$ = 15.4~ms, execution time\textit{ T}${}_{e3}$ = 5.5~ms(each periodic time is assumed to be deadline). Again, by (2.2) the total CPU utilization \textit{H} = 0.1 + 0.5 + 0.357 = 0.957, almost 100 \% !\\
 
  	\begin{figure}[h]
     \centering
-    \includegraphics[width=13cm, height=6cm]{Images/image101.png}
+    \includegraphics[width=13cm, height=5.5cm]{Images/image101.png}
     %\caption{}
     \label{fig:Fig 47}
     \end{figure}
 
-(at \textit{t} = 0, T1 and T2 have equal priorities, due to equal deadlines, in such a case, the scheduler decides randomly, e.g. for the task with the lower id)\\
 
-It can be seen, that with EDF scheduling an executable schedule is found. \\
+(at \textit{t} = 0, T1 and T2 have equal priorities, due to equal deadlines, in such a case, the scheduler decides randomly, e.g. for the task with the lower id).\\
 
-Liu [W\"{o}rnB] shows, that EDF scheduling is an optimal scheduling with\\
+It can be seen, that with EDF scheduling an executable schedule is found. Liu [W\"{o}rnB] shows, that EDF scheduling is an optimal scheduling with
 
 \begin{equation}
 	H \mathrm{<} 100 \% for\ preemptive\ EDF\ scheduling
@@ -692,17 +687,17 @@ Liu [W\"{o}rnB] shows, that EDF scheduling is an optimal scheduling with\\
 \textbf{Advantage}: 
 
 \begin{enumerate}
-\item  as long as the processor utilization is less than 100 \% with a uniprocessor system, EDF  scheduling delivers an executable schedule and compliance with all time conditions is guaranteed.
+\item  As long as the processor utilization is less than 100 \% with a uniprocessor system, EDF  scheduling delivers an executable schedule and compliance with all time conditions is guaranteed.
 \end{enumerate}
 
 \textbf{Disadvantages:}
 
 \begin{enumerate}
-\item \textbf{ }increased computational complexity for the dynamic priorities needed at run time.
+\item Increased computational complexity for the dynamic priorities needed at run time.
 
-\item  the sequence of task assignment is difficult to control.
+\item The sequence of task assignment is difficult to control.
 
-\item  the time of execution is difficult to control with fixed time requirements.
+\item The time of execution is difficult to control with fixed time requirements.
 \end{enumerate}
 \newpage
 
@@ -713,10 +708,10 @@ As most of the resources may only be used exclusively, tasks that request these 
 Thus, the OS provides \textbf{means for} \textbf{synchronization} either for 
 
 \begin{enumerate}
-\item  mutual exclusion, and 
-\item  cooperation (sequence of access).
+\item  Mutual exclusion, and 
+\item  Co-operation (sequence of access).
 \end{enumerate}
-
+\os{\newpage}
 {\rot\bf Synchronization }\\
 
 The problem of synchronization of tasks arises when these tasks are not independent from each other. Dependencies arise, when common resources are be used, then the access needs to be coordinated. Common resources may be
@@ -728,11 +723,11 @@ The problem of synchronization of tasks arises when these tasks are not independ
 
 	\item  \textbf{Programs: } Several tasks share common programs, such as device drivers. Competing calls to a device driver must be assured to leave consistent application states.
 \end{enumerate}
-
+\os{\newpage}
 \textbf{ Example}: Two tasks compete for access to a data table:\\
 
-task 1 is reading several temperature sensors, and stores these values in a table\\
-task 2 is reading this table, and prints out the temperature distribution.\\
+Task 1 is reading several temperature sensors, and stores these values in a table\\
+Task 2 is reading this table, and prints out the temperature distribution.\\
 
 Without synchronization, this can lead to erroneous results if, for example task 1, the common table has not yet been fully updated, while task 2 accesses. Then, task 2 gets mixed new and old temperature values, which can lead to undefined states !
 
@@ -755,12 +750,10 @@ There are two basic types of synchronization:
     %\caption{}
     \label{fig:Fig 49}
     \end{figure}
-
+\os{\newpage}
 \textbf{Example:} of temperature measurement using the \textbf{mutex} synchronization.\\
 
-\textbf{ }For the protection of the common temperature table, a \textbf{mutex} is defined, toexclude the possibility that both tasks \textbf{access} this resource simultaneously.Before entering the critical section a task tries to acquire the mutex from the OS. If the mutex is already occupied by the other task, the newly accessing task is blocked\textbf{\textit{ }}until the other task \textbf{releases} the \textbf{mutex} again. The task will \textbf{un-block,} acquisition of the \textbf{mutex} succeeds, allowing the task to enter the critical section.\\
-
-The sequence, which task 1 or 2 acquires the \textbf{mutex} does not matter.
+For the protection of the common temperature table, a \textbf{mutex} is defined, toexclude the possibility that both tasks \textbf{access} this resource simultaneously.Before entering the critical section a task tries to acquire the mutex from the OS. If the mutex is already occupied by the other task, the newly accessing task is blocked\textbf{\textit{ }}until the other task \textbf{releases} the \textbf{mutex} again. The task will \textbf{un-block,} acquisition of the \textbf{mutex} succeeds, allowing the task to enter the critical section. The sequence, which task 1 or 2 acquires the \textbf{mutex} does not matter.
 
 \item Synchronization, where the order of access to common resources matters is called \textbf{cooperation} --unlike as with\textbf{ mutex synchronization}, which doesn't regard the order of task requests.
 
@@ -773,7 +766,11 @@ The sequence, which task 1 or 2 acquires the \textbf{mutex} does not matter.
     
 Both, mutex synchronization and cooperation objects can be realized with semaphores.
 \end{enumerate}
-\newpage
+
+\os{\newpage}
+.
+\nsl{\newpage}
+
 
 \subsection{Semaphores}
 
@@ -858,11 +855,12 @@ A \textbf{cooperation synchronization} can be realized by means of two semaphore
 
  	\begin{figure}[h]
     \centering
-    \includegraphics[width=11cm, height=12cm]{Images/image107.png}
+    \includegraphics[width=11cm, height=10cm]{Images/image107.png}
     %\caption{}
     \label{fig:Fig 53}
     \end{figure}
 \newpage
+\os{\newpage}
 \textbf{Example: Cooperation in FreeRTOS  }
 
 \begin{lstlisting}[style=mystyle, language=c]
@@ -895,20 +893,20 @@ void vTask2(void * pvParameters)
 
 \subsection{Deadlocks}
 
-Synchronization of tasks can lead to a deadlock (\textbf{\textit{block}}, \textbf{\textit{deadly embrace}}), a situation, where the continuation of one or more tasks is blocked permanently. A simple example of a deadlock is an intersection with right-before-left right-of-way rule and four simultaneously arriving vehicles. After the priority rule any vehicle must wait for being right to another one, none of the Vehicles can drive. Only a break of the rule can release the deadlock.In task management, there are two types of deadlocks: deadlocks and livelocks.\\
+Synchronization of tasks can lead to a deadlock (\textbf{\textit{block}}, \textbf{\textit{deadly embrace}}), a situation, where the continuation of one or more tasks is blocked permanently. A simple example of a deadlock is an intersection with right-before-left right-of-way rule and four simultaneously arriving vehicles. After the priority rule any vehicle must wait for being right to another one, none of the Vehicles can drive. Only a break of the rule can release the deadlock.In task management, there are two types of deadlocks: deadlocks and live locks.\\
 
 In a deadlock tasks waiting on the release of resources for which they block each other. This leads to a standstill of the waiting tasks. The previous example with the traffic intersection describes such a deadlock.\\
 
 Deadlocks typically occur when multiple resources are to be protected at the same time over cross:
 
- 	\begin{figure}[h]
-    \centering
-    \includegraphics[width=12cm, height=11cm]{Images/image108.png}
-    %\caption{}
-    \label{fig:Fig 54}
-    \end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=11cm, height=10cm]{Images/image108.png}
+%\caption{}
+\label{fig:Fig 54}
+\end{figure}
 
-In the above program there is a risk for a deadlock, since whenever both tasks are executed nearly parallel in time, both semaphores Sa and Sb are acquired, but never released. Deadlocks are usually realized unintended, i.e. as \textbf{\textit{software bugs}} !\\
+\nsl{In the above program there is a risk for a deadlock, since whenever both tasks are executed nearly parallel in time, both semaphores Sa and Sb are acquired, but never released. Deadlocks are usually realized unintended, i.e. as \textbf{\textit{software bugs}} !\\}
 
 A simple rule to avoid deadlocks:
 
@@ -916,7 +914,7 @@ A simple rule to avoid deadlocks:
 	If several resources are to be protected at the same time, all accessing tasks must acquire / release semaphores in the same order to avoid deadlocks.
 \end{tcolorbox}
 
-Another, although less elegant, method is to remove deadlocks already occurred, by a defined waiting period for any task in blocked state, a so-called \textbf{\textit{timeout}}. If, after the time-out, a task is still in blocked state, that task is reset and all depending resources it occupied are released. This technique is implemented in some RTOSes, see also $\rightarrow$ Software Watchdog concept.
+\nsl{Another, although less elegant, method is to remove deadlocks already occurred, by a defined waiting period for any task in blocked state, a so-called \textbf{\textit{time-out}}. If, after the time-out, a task is still in blocked state, that task is reset and all depending resources it occupied are released. This technique is implemented in some RTOSes, see also $\rightarrow$ Software Watchdog concept.}
 
 \subsection{Livelocks}
 
@@ -924,32 +922,32 @@ Livelocks (starvation) designate a condition in which a task is constantly inhib
 
 \textbf{Example} FPP, task 1\textbf{: high priority}, task 2:\textbf{ low priority}, task 3:\textbf{ medium priority}
 
- 	\begin{figure}[h]
-    \centering
-    \includegraphics[width=12cm, height=6cm]{Images/image109.png}
-    %\caption{}
-    \label{fig:Fig 55}
-    \end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=12cm, height=6cm]{Images/image109.png}
+%\caption{}
+\label{fig:Fig 55}
+\end{figure}
 
 However, this can also happen in high-priority tasks, provided that a \textbf{\textit{priority inversion}} occurs: the high-priority task 1 is livelocked by the lower priority tasks 2 and 3:
 
- 	\begin{figure}[h]
-    \centering
-    \includegraphics[width=12cm, height=4cm]{Images/image110.png}
-    %\caption{}
-    \label{fig:Fig 56}
-    \end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=12cm, height=4cm]{Images/image110.png}
+%\caption{}
+\label{fig:Fig 56}
+\end{figure}
+
 \newpage
 The problem of livelock by priority inversion can be solved by the technique of \textbf{priority} \textbf{inheritance} [W\"{o}rnB]   in the example above: task 2 inherits the high priority of task 1 (both wait for the same mutex), such that task 2 running in the critical section cannot be interrupted by a medium priority task 3. \\
 
-A priority inversion condition occurs when a high-priority task must wait for synchronization objects of a lower-priority task (with \textbf{fixed priority scheduling}). This was the problem of the 1997 Mars mission "Sojourner" (running VxWorks), which was finally rescued by a watchdog [W\"{o}rnB] .
-
+\nsl{A priority inversion condition occurs when a high-priority task must wait for synchronization objects of a lower-priority task (with \textbf{fixed priority scheduling}). This was the problem of the 1997 Mars mission "Sojourner" (running VxWorks), which was finally rescued by a watchdog [W\"{o}rnB].}
 
 \subsection{Task Communication}
 
 Synchronization and communication tasks are very closely related. \textbf{Synchronization} can be thought of as\textbf{ communication without information}. On the other hand, communication can be used for synchronization.\\
 
-An example could be waiting for an order. With the order, information is transmitted, and by the time the order is sent, synchronization is possible (the job can start actually).\\
+\nsl{An example could be waiting for an order. With the order, information is transmitted, and by the time the order is sent, synchronization is possible (the job can start actually).\\}
 
 There are two basic variants of the task communication:
 
@@ -960,15 +958,11 @@ There are two basic variants of the task communication:
 	\item  \textbf{Messages (Events): }The data exchange and synchronization is done via sending messages.
 \end{enumerate}
 
-In general, the communication via shared memory is faster than communication via messages. Therefore, this variant is preferred used in real-time operating systems. \\
-
-In spatially \textbf{\textit{distributed systems}}, this is not possible because there is no physically shared memory. Here communication must take place via messages ($\rightarrow$ message queues).
+In general, the communication via shared memory is faster than communication via messages. Therefore, this variant is preferred used in real-time operating systems. In spatially \textbf{\textit{distributed systems}}, this is not possible because there is no physically shared memory. Here communication must take place via messages ($\rightarrow$ message queues).
 \newpage
 \subsection{Events}
 
-With a mutex synchronization the access of competing tasks to a jointly used resource was enabled. \\
-
-In contrast, for cooperating tasks time (and order) of execution has to be synchronized. This can be done by semaphores, but also with a simpler concept, an \textbf{\textit{event}}.\\
+With a mutex synchronization the access of competing tasks to a jointly used resource was enabled. In contrast, for cooperating tasks time (and order) of execution has to be synchronized. This can be done by semaphores, but also with a simpler concept, an \textbf{\textit{event}}.\\
 
 A task can wait on an \textbf{\textit{event}} (event wait), which is set by another task. Once set, the waiting tasks gets released from its blocking state.\\
 
@@ -981,8 +975,9 @@ Each of 3 tasks (task A, task B, task C) acquires a measurement value, which sha
     \caption{Data flow of an acquisition of measurement values: synchronization without events}
     \label{fig:Fig 57}
     \end{figure}
+\os{\newpage}
 
-Since the data memory (datenspeicher) is existing only once, it is a shared resource, and access to it is a critical section, which can be protected by a semaphore S\\
+Since the data memory  is existing only once, it is a shared resource, and access to it is a critical section, which can be protected by a semaphore S\\
 
 \begin{lstlisting}[style=mystyle, language=c]
 // Task A,B und C
@@ -994,12 +989,10 @@ Since the data memory (datenspeicher) is existing only once, it is a shared reso
  	 V(S); // leave critical section
 }
 ...
-}
 \end{lstlisting}
 
 \begin{lstlisting}[style=mystyle, language=c]
 // Task W
-...
 while( TRUE ) {
   	P(S); // enter critical section
  	 read(datenspeicher, buffer, sizeof(buffer));
@@ -1010,7 +1003,7 @@ while( TRUE ) {
 
 \textbf{Problems} with synchronization without events:
 
-\hspace{1cm} \textbf{the data memory} can be overwritten, without being read before by W
+\hspace{1cm} \textbf{Data memory} can be overwritten, without being read before by W
  
 \hspace{1cm} W can read the \textbf{data memory} repeatedly.\\
 
@@ -1028,13 +1021,14 @@ Therefore, it is not sufficient to protect the shared resources by using a semap
 
 An \textbf{event} can\textbf{ get "lost"}, if an event is sent when no process waits on it  !\\
 Since events are not stored -unlike semaphores-, events are used often in combination with a semaphore.
+\os{\newpage}
 
- 	\begin{figure}[h]
-    \centering
-    \includegraphics[width=10cm, height=4.5cm]{Images/image18.png}
-    %\caption{}
-    \label{fig:Fig 58}
-    \end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=10cm, height=4.5cm]{Images/image18.png}
+%\caption{}
+\label{fig:Fig 58}
+\end{figure}
 
 Data flow of an acquisition of measurement values: synchronization with events
 
@@ -1063,6 +1057,7 @@ while (1) {
 \end{lstlisting}
 
 The critical section is thus defined from the time which an acquiring task A,B, or C writes a value into the data memory, until task W has read the value out of the memory.\\
+\os{\newpage}
 
 \textbf{Problem}: Events can get lost, if sent when no task is waiting
 
@@ -1082,7 +1077,8 @@ The critical section is thus defined from the time which an acquiring task A,B, 
 	\item the event gets lost, cause task W is busy WorkingOnData(), not waiting:  \textbf{\textit{critical race condition !!}}
 	\item data loss A.
 \end{itemize}
-  
+\nsl{\newpage}
+
 \textbf{Solution}: Move he WorkOnData() call into the critical section:
 
 \begin{lstlisting}[style=mystyle, language=c]
@@ -1099,7 +1095,7 @@ Now, with this solution, the conflict is solved, since immediately after the cri
 
  	\begin{figure}[h]
     \centering
-    \includegraphics[width=14cm, height=4.5cm]{Images/image113.png}
+    \includegraphics[width=14cm, height=4cm]{Images/image113.png}
     %\caption{}
     \label{fig:Fig 60}
     \end{figure}
@@ -1134,10 +1130,11 @@ write( datenspeicher, buffer, sizeof(buffer) );
 SendEvent( Task_W );
 ...
 \end{lstlisting}
+\nsl{\newpage}
 
-\textbf{Posix Functions:}\\
+\nsl{\textbf{Posix Functions:}\\
 
-By these functions a critical section is entered, and left\\
+By these functions a critical section is entered, and left
 
 P(S):  int \textbf{pthread\_mutex\_lock }( pthread\_mutex\_t * \textit{mutex });
 
@@ -1148,7 +1145,7 @@ WaitForEventAndV(S):
 
 int \textbf{pthread\_cond\_wait}( pthread\_cond\_t * \textit{cond }, pthread\_mutex\_t * \textit{mutex });
 
-\textbf{Alternative Solution: increase Memory, use }Message Queues \textbf{as a standard solution !}
+\textbf{Alternative Solution: increase Memory, use }Message Queues \textbf{as a standard solution !}}
 
 \subsection{Signals}
 
@@ -1171,8 +1168,9 @@ A message queue without a restriction for the number of messages is called \text
     %\caption{}
     \label{fig:Fig 62}
     \end{figure}
-\newpage    
+\nsl{\newpage}    
 \textbf{Example}: FreeRTOS - Queue (www.freertos.org)
+\os{\newpage}
 
 \begin{lstlisting}[style=mystyle, language=c]
 #include <FreeRTOS/queue.h>
@@ -1218,70 +1216,65 @@ void vATask(void *pvParameters)
 }
 \end{lstlisting}
 
-The \textbf{QueueReceive()} command places the calling task into the \textbf{\textit{blocked (waiting)}} state if the message queue is empty. If not, it returns the object to which the read (out-) pointer points to, and the read (out-) pointer set to the next message object.\\
+The \textbf{QueueReceive()} command places the calling task into the blocked (waiting) state if the message queue is empty. If not, it returns the object to which the read (out) pointer points to, and the read (out) pointer set to the next message object.\\
 
-The \textbf{QueueSend()} command places the calling task into the blocked (waiting) state only, if the message queue is full. If not, the object is being stored at the position the write (in-) pointer references, and the pointer is set to the next free space in which the next transmitted (posted) message object is stored.\\
+The \textbf{QueueSend()} command places the calling task into the blocked (waiting) state only, if the message queue is full. If not, the object is being stored at the position the write (in) pointer references, and the pointer is set to the next free space in which the next transmitted (posted) message object is stored.\\
 
-In many RTOS, a maximum blocking time can be specified (as with FreeRTOS).\\
-
-Lab-experiment "Message Queue with ARM LPC4357 µC (FreeRTOS)"
+In many RTOS, a maximum blocking time can be specified (as with FreeRTOS). Lab-experiment "Message Queue with ARM LPC4357 $\mu$C (FreeRTOS)"
 
 \subsection{Socket Interface}
 
-The most important interface for inter-process communication on different computers connected via Ethernet, is the \textbf{socket interface}.\\
+The most important interface for inter-process communication on different computers connected via Ethernet, is the socket interface.\\ 
 
-By using sockets, data can be exchanged between processes, which are located on different hosts (distributed system). \\
+By using sockets, data can be exchanged between processes, which are located on different hosts (distributed system).\\ 
 
-The socket interface provides access to TCP/IP (connection-oriented) and UDP/IP (connectionless) protocols for communications. \\
+The socket interface provides access to TCP/IP (connection-oriented) and UDP/IP (connectionless) protocols for communications.\\
 
-Once a socket connection between two processes has been established, the data can be exchanged with some basic system functions (open, read, write, close ...), the so-called \\
-
-\textbf{Sockets Service Primitives}
+Once a socket connection between two processes has been established, the data can be exchanged with some basic system functions (open, read, write, close ...), the so called Sockets Service Primitives.
 
  	\begin{figure}[h]
     \centering
-    \includegraphics[width=12cm, height=5.5cm]{Images/image19.png}
+    \includegraphics[width=12cm, height=5cm]{Images/image195.png}
     %\caption{}
-    \label{fig:Fig 63}
+    \label{fig:Fig 64}
     \end{figure}
     
-$\rightarrow$ \textbf{ RTP ProgC Repetition Workspace}: ``\textbf{socket\_client, socket\_server}''\\
+RTP ProgC RepetitionWorkspace: "socket client, socket server"\\
 
-{\rot\bf Python Sockets Programming:}\\
+{\rot \bf Python Sockets Programming}\\
 
 The server connects to a client and echoes its message:
 
  	\begin{figure}[h]
     \centering
-    \includegraphics[width=14cm, height=2cm]{Images/image188.png}
+    \includegraphics[width=14cm, height=2cm]{Images/image196.png}
     %\caption{}
     \label{fig:Fig 64}
     \end{figure}
-\newpage  
-\textbf{(A) Server script }
+\nsl{\newpage}
+
+{\bf(A) Server script}\\
+
+First, the server executes LISTEN (line 12), and it remains blocked until a client connects. Then a client task executes CONNECT to establish a connection with the server (line 9). It must specify an IP address (the server's) and port number (must me common to both).
 
  	\begin{figure}[h]
     \centering
-    \includegraphics[width=16cm, height=9cm]{Images/image20.png}
+    \includegraphics[width=14cm, height=6cm]{Images/image197.png}
     %\caption{}
-    \label{fig:Fig 65}
+    \label{fig:Fig 64}
     \end{figure}
-   
-First, the server executes LISTEN (line 12), and it remains blocked until a client connects. Then a client task executes CONNECT to establish a connection with the server (line 9). It must specify an IP address (the server's) and port number (must me common to both).\\
 
-\textbf{(B) Client script }
+{\bf(B) Client script}\\
 
  	\begin{figure}[h]
     \centering
-    \includegraphics[width=16cm, height=5cm]{Images/image118.png}
+    \includegraphics[width=14cm, height=6cm]{Images/image198.png}
     %\caption{}
-    \label{fig:Fig 66}
+    \label{fig:Fig 64}
     \end{figure}
 
-The OS then sends an IP packet to the opposite computer (peer). The client process is blocked until the server responds.\\
-
-If a confirmation is received, the client and server have established a connection and the connect() - or listen() function are released from blocking, and data can be exchanged until the end of the connection (close()).
-\newpage
+The OS then sends an IP packet to the opposite computer (peer). The client process is blocked until the server responds. If a confirmation is received, the client and server have established a connection and the connect() - or listen() function are released from blocking, and data can be exchanged until the end of the connection (close()).
+\nsl{\newpage}
 
 \section{Memory Management}
 
@@ -1293,6 +1286,7 @@ The main task of memory management is essentially providing access to the memory
 	\item  the protection of the storage areas of individual tasks
 	\item  the displacement of memory areas
 \end{itemize}
+\os{\newpage}
 
 One can distinguish between different forms of memory allocation:
 
@@ -1306,7 +1300,8 @@ One can distinguish between different forms of memory allocation:
 \item  \textbf{Displacing memory allocation: }\\Allocated memory may be removed from a task at runtime, the memory is paged to peripheral memory (e.g. a swap-file).
 \end{enumerate}
 
-\textbf{Embedded systems} mainly use \textbf{static memory allocation}, since the dynamic allocation of memory is hardly predictable (and thus real-time compliant).Execution times of \textbf{malloc(), free(), new(), delete()}, .. can't be guaranteed to be smaller than a certain limit  availability.\\
+\nsl{\textbf{Embedded systems} mainly use \textbf{static memory allocation}, since the dynamic allocation of memory is hardly predictable (and thus real-time compliant).Execution times of \textbf{malloc(), free(), new(), delete()}, .. can't be guaranteed to be smaller than a certain limit  availability.\\}
+\os{\newpage}
 
 The usage of an \textbf{MMU} (\textbf{M}emory \textbf{M}anagement \textbf{U}nit), which is quite common with many CPUs (x86, ARM Cortex A Series, ..), allows processors to deal with a virtual address space. Thus, memory access from the process is strictly separated from the OS and from other processes (= safety). However, with translation of the virtual addresses into physikalical addresses long delays can occur, which cannot be determined in advance! This is a contradiction to the required determinism with hard real-time requirements ! Thus, microcontrollers for applications having hard real-time requirements often do \textbf{\underbar{NOT}}\underbar{ have an MMU} and use \underbar{direct physical addressing} instead (AVR, ARM Cortex M Series, ..) 
 
@@ -1319,7 +1314,7 @@ The usage of an \textbf{MMU} (\textbf{M}emory \textbf{M}anagement \textbf{U}nit)
     
 \section{Input/Output Management (I/O)}
 
-Along with task- and memory-management the\textbf{ }I/O-management is the 3${}^{rd}$  important component of a real-time operating system, especially with embedded systems, where I/O tasks for sensors and actors have hard real-time requirements.\\
+Along with task and memory management the\textbf{ }I/O management is the 3${}^{rd}$  important component of a real-time operating system, especially with embedded systems, where I/O tasks for sensors and actors have hard real-time requirements.\\
 
 In addition to that, synchronous an asynchronous serial interfaces, and networking subsystems require high performance I/O-management.\\
 
@@ -1328,8 +1323,8 @@ In addition to that, synchronous an asynchronous serial interfaces, and networki
 The tasks of the I/O-management can be divided into two groups:
 
 \begin{itemize}
-\item  assigning and sharing of devices for the tasks
-\item  use of assigned and shared devices by the tasks
+\item  Assigning and sharing of devices for the tasks
+\item  Use of assigned and shared devices by the tasks
 \end{itemize}
 
 The connected devices differ greatly in speed and data format. The OS has therefore the task, to abstract from implementation details and provide a \textbf{simple, uniform and transparent interface}. \\
@@ -1346,18 +1341,18 @@ This can be achieved by a multi-layer architecture of the I/O management:
 The main 2 layers of I/O-management:
 
 \begin{enumerate}
-\item  \textbf{I/O-Control: }\\This layer is above the layer of the device driver and interfaces with the tasks.It is hardware independent, i.e. implementation and operation is no longer depending on the type of connected devices. It takes care for data transport, data format, data buffering, and messaging. If a certain device needs to be exchanged, its device driver needs to be exchanged too, but not the I/O control.The I/O control abstracts from the specific devices and provides a \textbf{simple, uniform and transparent interface} to the \textbf{tasks}.
+\item  \textbf{I/O-Control: }\nsl{\\This layer is above the layer of the device driver and interfaces with the tasks.It is hardware independent, i.e. implementation and operation is no longer depending on the type of connected devices. It takes care for data transport, data format, data buffering, and messaging. If a certain device needs to be exchanged, its device driver needs to be exchanged too, but not the I/O control.The I/O control abstracts from the specific devices and provides a \textbf{simple, uniform and transparent interface} to the \textbf{tasks}.}
 
-\item   \textbf{Device Driver:}\\The device driver is a layer next to the hardware, i.e. its realization depends on the connected devices. It takes into account all device-specific properties, including direct communication with the devices. It produces all necessary control signals, evaluates the status signals andhandles the device's interrupts. The device driver monitors all transfers, and possibly do some error handling, e.g. evaluate parity bits and initiate the repetition of a failed transmission.
+\item   \textbf{Device Driver:}\nsl{\\The device driver is a layer next to the hardware, i.e. its realization depends on the connected devices. It takes into account all device-specific properties, including direct communication with the devices. It produces all necessary control signals, evaluates the status signals andhandles the device's interrupts. The device driver monitors all transfers, and possibly do some error handling, e.g. evaluate parity bits and initiate the repetition of a failed transmission.}
 \end{enumerate}
 
 \textbf{Example}: I/O-management of a hard disk drive:\\
 
-Each drive has a unique device driver, that takes into account their specific characteristics such as speed, number of heads, cylinders and sectors. At the level of I/O-control, each disk is treated equally, for the task addressing of data is done by a block number, abstracted from the device-specific parameters: \\
+\nsl{Each drive has a unique device driver, that takes into account their specific characteristics such as speed, number of heads, cylinders and sectors. At the level of I/O-control, each disk is treated equally, for the task addressing of data is done by a block number, abstracted from the device-specific parameters: \\
 
-\textbf{FILE *fp =  fopen("c:{\textbackslash}test.bin"); fseek(fp, {\dots}), fwrite(fp, {\dots}), fclose(fp);}\\
+\textbf{FILE *fp =  fopen("c:{\textbackslash}test.bin"); fseek(fp, {\dots}), fwrite(fp, {\dots}), fclose(fp);}\\}
 
-Typical interface functions provided by the\textbf{ }I/O control layer
+Typical interface functions provided by the I/O control layer
 
 \begin{table}[h!]
 \setlength{\tabcolsep}{10pt} % Default value: 6pt
@@ -1380,19 +1375,15 @@ Ioctl & Issues control commands to the I/O device (I/O control) \\ \hline
 The main functions of the I/O control layer are:
 
 \begin{enumerate}
-	\item  \textbf{Symbolic Names: }devices addressing by symbolic addresses, or names.
-	\item  \textbf{Handling of I/O-Requests: }queuing, buffering I/O-requests  queues.
-	\item  \textbf{Assignment of Devices: }assignment of the device (shared resource) to tasks dynamically or 	statically,using priorities for competing requests. 
-
-	\item  \textbf{Synchronization: }I/O-requests affect a tasks state, (e.g. waiting  \textbf{\textit{blocked}} state), interface between I/O-control to task-management.
-
-	\item  \textbf{Device Protection: } prevent unauthorized access by unauthorized tasks - protection against deadlocks and livelocks due to competing access- resets after programmable timeouts (protect against software failure).
-
-	\item  \textbf{Communication with the device drivers: }forwarded executable device requests to the device driver, handle feedback, e.g., status or error codes 
-
-	\item  \textbf{Buffering: }synchronization of different speeds of task-management and I/O-devices by temporary storage in buffer memory, handle buffter state events to the task/device
-
-	\item  \textbf{Unique Data Format: }abstract from the device's physical data format, e.g. \textbf{endianness}.
+\item  \textbf{Symbolic Names: }devices addressing by symbolic addresses, or names.
+\item  \textbf{Handling of I/O-Requests: }queuing, buffering I/O-requests  queues.
+\os{\newpage}
+\item  \textbf{Assignment of Devices: }assignment of the device (shared resource) to tasks dynamically or 	statically,using priorities for competing requests. 
+\item  \textbf{Synchronization: }I/O-requests affect a tasks state, (e.g. waiting  \textbf{\textit{blocked}} state), interface between I/O-control to task-management.
+\item  \textbf{Device Protection: } prevent unauthorized access by unauthorized tasks - protection against deadlocks and livelocks due to competing access- resets after programmable timeouts (protect against software failure).
+\item  \textbf{Communication with the device drivers: }forwarded executable device requests to the device driver, handle feedback, e.g., status or error codes 
+\item  \textbf{Buffering: }synchronization of different speeds of task-management and I/O-devices by temporary storage in buffer memory, handle buffter state events to the task/device
+\item  \textbf{Unique Data Format: }abstract from the device's physical data format, e.g. \textbf{endianness}.
 \end{enumerate}
 
 The boundary between I/O control and device drivers is floating and system dependent. For efficiency reasons with some RTOSes, functionality is moved into the device driver, which increases the effort for adapting new devices.\\
@@ -1414,22 +1405,22 @@ The storage of the hexadecimal number 0x0A0B0C0D = 168496141 results in a differ
 \item  With \textbf{big-endian} hardware the most significant byte (\textbf{MSB}) is stored with the \textbf{lowest} \textbf{memory} (byte) \textbf{address}
 \end{enumerate}
 
-Most RTOS's provide functionality to abstract from \textbf{endianness} in the device driver. Example:
+\nsl{Most RTOS's provide functionality to abstract from \textbf{endianness} in the device driver. Example:
 
  	\begin{figure}[h]
     \centering
     \includegraphics[width=14cm, height=6cm]{Images/image121.png}
     %\caption{}
     \label{fig:Fig 70}
-    \end{figure}
+    \end{figure}}
 
 \subsection{I/O Synchronization}
 
-The communication between peripheral devices and the processor is performed by interface devices\textbf{ }(\textbf{interface units}). These \textbf{interface devices} also define the base for synchronization between the processor (tasks), and devices operating at different speeds using certain registers:
+The communication between peripheral devices and the processor is performed by interface devices. These \textbf{interface devices} also define the base for synchronization between the processor, and devices operating at different speeds using certain registers.
 
  	\begin{figure}[h]
     \centering
-    \includegraphics[width=12cm, height=4.5cm]{Images/image122.png}
+    \includegraphics[width=10cm, height=4cm]{Images/image122.png}
     %\caption{}
     \label{fig:Fig 71}
     \end{figure}
@@ -1437,22 +1428,22 @@ The communication between peripheral devices and the processor is performed by i
 The typical components of an interface device are:
 
 \begin{enumerate}
-	\item  \textbf{Data register(s)} to read/write the data to be received/transmitted.
-	\item  \textbf{Control register(s)} for configuring the device (e.g. operating mode, speed of serial ports, e.g. UART).
-	\item  \textbf{Status register(s)} reflecting the devices current state (e.g. sent data, received data bits, e.g. ADC).
+	\item  \textbf{Data register} to read/write the data to be received/transmitted.
+	\item  \textbf{Control register} for configuring the device (e.g. operating mode, speed of serial ports, UART).
+	\item  \textbf{Status register} reflecting the devices current state (e.g. sent/received data bits, ADC).
 \end{enumerate}
 
-A running task can synchronize  (for changing data) with the interface device either by
+\nsl{A running task can synchronize  (for changing data) with the interface device either by
 
 \begin{enumerate}
 	\item  Polling
 	\item  Interrupts
-\end{enumerate}
+\end{enumerate}}
 
-{\rot\bf Polling}\\
+\subsection{Polling}
 
-With the simplest synchronization method --polling- a task reads the status register continuously in a loop:
-
+With the simplest synchronization method polling a task reads the status register continuously in a loop:
+\nsl{\newpage}
  	\begin{figure}[h]
     \centering
     \includegraphics[width=14cm, height=10cm]{Images/image123.png}
@@ -1460,23 +1451,24 @@ With the simplest synchronization method --polling- a task reads the status regi
     \label{fig:Fig 72}
     \end{figure}
 
-After initialization (by setting the control register) the task is waiting in an active loop on a status flag --which is a particular bit within the status register of the device- indicating that  data is available in the data register  
+After initialization (by setting the control register) the task is waiting in an active loop on a status flag which is a particular bit within the status register of the device indicating that  data is available in the data register. The task reads the data from the data register.\\
 
-$\rightarrow$ the task reads the data from the data register.\\
+\textbf{Advantages}
 
-\textbf{Advantages of polling:}\\
+\begin{itemize}
+\item Simple synchronization type
+\end{itemize}
 
-\hspace{1cm} Simple synchronization type\\
+\textbf{Disadvantages}
 
-\textbf{Disadvantages of polling:}\\
+\begin{itemize}
+\item Consumption of processor time for the active loop
+\item Slow response times when multiple devices within a task are polled simultaneously.
+\end{itemize}
 
-\hspace{1cm} Consumption of processor time for the active loop
-
-\hspace{1cm} Slow response times when multiple devices within a task are polled simultaneously.\\
-
-\textbf{Conclusion}: Overall, polling is usually not favorable, due to inefficient CPU usage.\\
+\textbf{Conclusion}: Overall, polling is usually not favourable, due to inefficient CPU usage.\\
 \newpage
-{\rot\bf Busy Polling}\\
+\subsection{Busy Polling}
 
 With busy polling, the properties of simple polling are improved with performing some activity (typically short) within the waiting loop:
 
@@ -1505,7 +1497,7 @@ A disadvantage is, however, the response time slows down. Longer activities must
     \label{fig:Fig 74}
     \end{figure}
 \newpage
-{\rot\bf Interrupts}\\
+\subsection{Interrupts}
 
 With synchronization by interrupts the interface executes an interrupt request with the processing CPU, which forces a currently running task to be interrupted in favor of a defined interrupt service routine \textbf{ISR}:
 
@@ -1518,17 +1510,23 @@ With synchronization by interrupts the interface executes an interrupt request w
 
 In the interrupt service routine (ISR), the data can be read from or written to the device.\\
 
-\textbf{Advantage: }\\Processing time is consumed only, when data needs to be transferred\\
+\textbf{Advantage: }
 
-\textbf{Disadvantage: }\\Activating the ISR causes an overhead as the current processor state must be    saved for the old task to resume after return of the ISR    (equivalent to preemption with task-scheduling).\\
+\begin{itemize}
+\item Processing time is consumed only, when data needs to be transferred
+\end{itemize}
 
-To reduce the effect of overhead, larger amounts of data are transmitted in blocks, usually in conjunction with direct memory access (DMA).\\
+\textbf{Disadvantage: }
+\begin{itemize}
+\item Activating the ISR causes an overhead as the current processor state must be    saved for the old task to resume after return of the ISR    (equivalent to pre-emption with task-scheduling).
+\item To reduce the effect of overhead, larger amounts of data are transmitted in blocks, usually in conjunction with direct memory access (DMA).
+\item .The technique of synchronization with interrupts is very well suited for real-time applications and thus interrupts are widely used with micro-controllers with both synchronous and asynchronous real-time programming.
+\end{itemize}
 
-The technique of synchronization with interrupts is very well suited for real-time applications and thus interrupts are widely used with microcontrollers with both synchronous and asynchronous real-time programming.
-
+\os{\newpage}
 \subsection{Interrupts and Task-Scheduling}
 
-Interrupt handling in real-time operating systems raises the question, how these interruptions integrate with the task scheduling. On current processor CPUs a hardware interrupt causes the automatic invocation of an interrupt service routine (ISR). \\
+\nsl{Interrupt handling in real-time operating systems raises the question, how these interruptions integrate with the task scheduling. On current processor CPUs a hardware interrupt causes the automatic invocation of an interrupt service routine (ISR). \\}
 
 The real-time operating system then has two options:
 
@@ -1564,7 +1562,7 @@ The real-time operating system then has two options:
 
 \item This kind of direct processing of interrupts with interruption of the task-oriented   processing is used for RTOS's with less performant microcontrollers,   better solution: integration of interrupts with task-scheduling.- The total available processor utilization for task-scheduled processing is reduced from originally 100 \% !
 \end{itemize}
-
+\os{\newpage}
 \item {\rot\bf Integration of Interrupts with the Task-Oriented Processing: }\\
 
 There is a separate task, integrated with task-scheduling, which is responsible for interrupt processing. Thus, whenever the processor gets a hardware interrupt, the ISR starts that separate task, responsible for interrupts.\\
@@ -1588,10 +1586,10 @@ There is a separate task, integrated with task-scheduling, which is responsible 
     %\caption{}
     \label{fig:Fig 77}
     \end{figure}
-
+\os{\newpage}
 The integration of interrupts into the task-oriented processing is suitable for real-time operating systems using more powerful micro-controllers.
 \end{enumerate}
-\newpage
+\nsl{\newpage}
 
 \section{Specialized RTOS}
 
@@ -1606,7 +1604,7 @@ The integration of interrupts into the task-oriented processing is suitable for 
 
 \subsection{ Classification of Real-Time Operating Systems}
 
-For classifying RTOSes there can be made a separation into five basic types [1]:
+For classifying RTOSes there can be made a separation into five basic types:
 
 \begin{enumerate}
 \item  \textbf{Minimal Real-Time Operating System (MinOS)} 
@@ -1621,67 +1619,79 @@ For classifying RTOSes there can be made a separation into five basic types [1]:
 \item  \textbf{Controller System (CS)} 
 
 \begin{itemize}
-	\item Minimal real-time operating system      \\ + a file system      \\ + better error handling.
+	\item Minimal real-time operating system 
+	\begin{itemize}
+	\item File system
+	\item Better error handling.
+	\end{itemize}
 \end{itemize}
-
+\os{\newpage}
 \item  \textbf{Dedicated System (DS)}   
 \begin{itemize}
-	\item  Controller System      \\ + memory management.    \\ + protected mode.
+	\item  Controller System
+	\begin{itemize}
+	\item Memory management.
+	\item Protected mode
+	\end{itemize}	     
 \end{itemize}
 
 \item  \textbf{Standard OS Extension (ExtOS)}
 \begin{itemize}
-	\item  Standard OS (Windows, Linux, ..)  \\ + some RTOS features
+	\item  Standard OS (Windows, Linux, ..)  
+	\begin{itemize}
+	\item Some RTOS features
+	\end{itemize}
 \end{itemize} 
 
 \item  \textbf{Universal Real-Time OS (RTOS)} 
 \begin{itemize}
-	\item  Fully featured RTOS.  \\ + features of standard OS.
+\item  Fully featured RTOS.
+	\begin{itemize}
+	\item Features of standard OS.
+	\end{itemize}
 \end{itemize} 
 \end{enumerate}
 
 \subsection{Selection Criteria}
 
-A first selection criterion is the classification described in 2.6, which is set by the scope and functionality of a real-time operating system (RTOS).\\
-
-Other criteria selecting an RTOS are:
+A first selection criterion is the classification described in 2.6, which is set by the scope and functionality of a real-time operating system (RTOS).Other criteria selecting an RTOS are:
 
 \begin{enumerate}
 \item  \textbf{Development and Target Environment}
 
-\begin{itemize}
+\nsl{\begin{itemize}
 	\item  Are there well-proven tools and libraries for both development and target ?
 	\item Is the desired programming language supported (C, C++, ..) ?
 	\item Smooth, reliable and fast communication process between the  target system and development system (re-flash cycle) ?
 	\item What are the debug options and debugging tools on the target system  (E.g., source-level debugging)?
-\end{itemize}
+\end{itemize}}
 
 \item  \textbf{Modularity and Core Size}
 
-\begin{itemize}
+\nsl{\begin{itemize}
 	\item  This criterion refers to the configuration and the memory requirements.
 	\item Can the system be configured flexibly to the application ?
 	\item Can it be restricted to the necessary components ? 
 	\item What is the achievable size, application + libraries ?
-\end{itemize}
+\end{itemize}}
 
 \item  \textbf{Adaptability}
 
-\begin{itemize}
+\nsl{\begin{itemize}
 	\item Is the RTOS adaptable for a particular microcontroller/peripherals ?
 	\item How much effort is that adaption ?
 	\item What field-bus systems or networks are supported ?
-\end{itemize}
+\end{itemize}}
 
 \item  \textbf{General Features}
 
-\begin{itemize}
+\nsl{\begin{itemize}
 	\item What is the user interface of the operating system (GUI, cmd, None) ?
-	\item Which libraries are part of the operating system ? (e.g. math, graphical, ...)
-	\item What other tools are offered, (e.g. for version management, data management, ..)
-\end{itemize}
+	\item Which libraries are part of the operating system ? (e.g. math, graphical)
+	\item What other tools are offered, (e.g. for version management, data management)
+\end{itemize}}
 
-\item  \textbf{Performance}\\ (usually a major criterion for selection). 
+\item  \textbf{Performance}\\ \nsl{(usually a major criterion for selection). 
 \begin{itemize}
 	\item How large is the maximum number of tasks ?   (small automation app: 10 tasks, complex app: $\mathrm{>}$ 100 tasks)
 	\item What task-scheduling methods are available ?
@@ -1689,29 +1699,25 @@ Other criteria selecting an RTOS are:
 	\item What is the time for a context-switch ?
 	\item What is the latency time with responding to interrupts ?
 	\item For which class of real-time application the OS is designed ?  (e.g. can hard or firm real-time requirements be met ?)
-\end{itemize}
+\end{itemize}}
 \end{enumerate}
 
 \subsection{ VxWorks}
 
-VxWorks, by Wind River Company [2004], is a general purpose real-time operating system. In in its basic form, it supports no virtual memory ( $\rightarrow$ advanced product VxVMI).\\
-
-VxWorks uses heavyweight processes as tasks. However, task-switch was optimized to enable fast task switching. \\
-
-The context VxWorks stores in a task-control block (TCB) includes:
+VxWorks, by Wind River Company [2004], is a general purpose real-time operating system. In in its basic form, it supports no virtual memory ( $\rightarrow$ advanced product VxVMI). VxWorks uses heavyweight processes as tasks. However, task-switch was optimized to enable fast task switching. The context VxWorks stores in a task-control block (TCB) includes:
 
 \begin{enumerate}
-\item  the program counter of the task,
+\item  The program counter of the task,
 
-\item  the contents of processor registers and floating-point,
+\item  The contents of processor registers and floating-point,
 
-\item  the stack of the dynamic variables,
+\item  The stack of the dynamic variables,
 
-\item  the associated I / O devices,
+\item  The associated I / O devices,
 
-\item  the signal handler and
+\item  The signal handler and
 
-\item  various debugging information
+\item  Various debugging information
 \end{enumerate}
 
 The VxWorks state model for the tasks differs not much from the general model from section 2.1.3:
@@ -1724,20 +1730,18 @@ The VxWorks state model for the tasks differs not much from the general model fr
     \end{figure}
 
 \begin{enumerate}
-\item  \textbf{running} the task is executed (run).
+\item  \textbf{Running} the task is executed (run).
 
-\item  \textbf{ready} (ready) the task is ready to execute.
+\item  \textbf{Ready} the task is ready to execute.
 
-\item  \textbf{blocked} (pending) the task is waiting for the release of a resource and is blocked.
+\item  \textbf{Blocked} (pending) the task is waiting for the release of a resource and is blocked.
 
-\item  \textbf{delay} (delayed) the task is stopped for a certain period of time.
+\item  \textbf{Delay} (delayed) the task is stopped for a certain period of time.
 
-\item  \textbf{suspended} (suspend) the task was suspended. This is intended for debugging purposes only.
+\item  \textbf{Suspended} (suspend) the task was suspended. This is intended for debugging purposes only.
 \end{enumerate}
 
-By default, VxWorks uses FPP scheduling. Each task is assigned an initial priority. This priority can be adjusted during runtime ( function \textbf{taskPrioritySet}() ).\\
-
-VxWorks defines 256 priority levels, with 
+By default, VxWorks uses FPP scheduling. Each task is assigned an initial priority. This priority can be adjusted during runtime ( function \textbf{taskPrioritySet}() ). VxWorks defines 256 priority levels, with 
 
 \begin{enumerate}
 \item  level \textbf{0} corresponding to the \textbf{highest}, and 
@@ -1745,12 +1749,11 @@ VxWorks defines 256 priority levels, with
 \item  level \textbf{255} to the \textbf{lowest priority}.
 \end{enumerate}
 
-The VxWorks task scheduler can be turned on and off explicitly by two functions (\textbf{taskLock() and taskUnlock()} ). The switch will prevent, that the current task is preempted by a higher priority task  realization of non-preemptive scheduling (FPN).\\
+The VxWorks task scheduler can be turned on and off explicitly by two functions (\textbf{taskLock() and taskUnlock()} ). The switch will prevent, that the current task is pre-empted by a higher priority task  realization of non-preemptive scheduling (FPN).\\
 
-However, a task can still be interrupted by hardware interrupts. Deactivation of the task-scheduler is called \textbf{preemption locking}. It can be used for the protection of (short) critical sections.\\
+However, a task can still be interrupted by hardware interrupts. Deactivation of the task-scheduler is called \textbf{pre-emption locking}. It can be used for the protection of (short) critical sections. VxWorks also supports Time Slice Scheduling for tasks with equal priority.\\
 
-VxWorks also supports Time Slice Scheduling for tasks with equal priority.\\
-
+\os{\newpage}
 {\rot\bf Priority inversion}\\
 
 With priority based scheduling the priority inversion problem can arise, which became popular with the mars pathfinder mission "Sojourner", 1997): \\
@@ -1759,27 +1762,28 @@ With priority based scheduling the priority inversion problem can arise, which b
 
 The priority-inheritance protocol assures that a\textbf{ task that holds a resource executes} at the \textbf{priority of the highest-priority task blocked} on that \textbf{resource}. In VxWorks the priority-inheritance protocol can be activated for a mutual-exclusion semaphore with the option \textbf{SEM\_INVERSION\_SAFE} enabled. \\
 
+\os{\newpage}
 For communication between tasks VxWorks provides the following mechanisms:
 
 \begin{enumerate}
-\item  shared memory,
+\item  Shared memory
 
-\item  signals
+\item  Signals
 
-\item  semaphore,
+\item  Semaphore
 
-\item  message pipes,
+\item  Message pipes
 
-\item  sockets to communicate with other computers via network, and
+\item  Sockets to communicate with other computers via network
 
-\item  non-local procedure calls (Remote Procedure Calls) to other computersover the network.
+\item  Non-local procedure calls (Remote Procedure Calls) to other computers over the network.
 \end{enumerate}
 
 With VxWorks it is also possible to use libraries or program routines for several tasks simultaneously (shared code)  \textbf{reentrancy techniques}
 
 \subsection{ FreeRTOS}
 
-\textbf{FreeRTOS} is an Open-Source  real-time operating system for Embedded Systems. FreeRTOS was ported to a large number  of different microcontrollers with different performance:
+\textbf{FreeRTOS} is an Open-Source  real-time operating system for Embedded Systems. FreeRTOS was ported to a large number  of different micro-controllers with different performance.
 
  	\begin{figure}[h]
     \centering
@@ -1796,23 +1800,22 @@ With VxWorks it is also possible to use libraries or program routines for severa
 \item  Freescale Semiconductor HCS12-Familie and Coldfire V2
 \item  Xilinx MicroBlaze and PowerPC PPC405
 \item  Texas Instruments MSP430
-\item  Microchip Technology PIC18, PIC24, dsPIC, PIC32
+\nsl{\item  Microchip Technology PIC18, PIC24, dsPIC, PIC32
 \item  Renesas H8/S SuperH
 \item  Fujitsu MB91460 32bit and MB96340 16bit
 \item  NEC V850ES 32bit and 78K0R 16bit
-\item  x86-Arcitecture
-\item  {\dots}
+\item  x86-Arcitecture}
 \end{itemize}
 
 \textbf{Features}\\
 
 To ensure good maintainability, FreeRTOS is developed mostly in C, only a few functions are implemented in assembler. The scheduler can be configured for preemptive and cooperative operation. The OS (since version 4) supports two different task classes: "real" tasks and coroutines, the latter are recommended where little space is available.\\
 
-At www.FreeRTOS.org a very extensive documentation to \textbf{FreeRTOS}, tutorials and implementation examples realized on various microcontrollers.\\
+\nsl{At www.FreeRTOS.org a very extensive documentation to \textbf{FreeRTOS}, tutorials and implementation examples realized on various microcontrollers.\\
 
 \textbf{SafeRTOS} is a derivate of \textbf{FreeRTOS}, designed for safety-critical applications  by IEC 61508. \textbf{SafeRTOS} is cerified by \textbf{T\"{U}V S\"{u}d} up to SIL level 3.\\
 
-\textbf{Example}: AD-DA Task of a Sampling Controller\\
+\textbf{Example}: AD-DA Task of a Sampling Controller\\}
 
  	\begin{figure}[h]
     \centering
@@ -1821,6 +1824,7 @@ At www.FreeRTOS.org a very extensive documentation to \textbf{FreeRTOS}, tutoria
     \label{fig:Fig 81}
     \end{figure}
 \newpage
+
 \subsection{ FreeRTOS Task-Model}
 
  	\begin{figure}[h]
@@ -1830,7 +1834,7 @@ At www.FreeRTOS.org a very extensive documentation to \textbf{FreeRTOS}, tutoria
     \label{fig:Fig 82}
     \end{figure}
 
-{\rot\bf FreeRTOS API-Funktionen (Selection)}\\
+\nsl{{\rot\bf FreeRTOS API-Funktionen (Selection)}\\
 
 \begin{table}[h!]
 \setlength{\tabcolsep}{10pt} % Default value: 6pt
@@ -1862,8 +1866,9 @@ xTaskGetTickCount() & Ticks since the Scheduler was started ( WCET) \\ \hline
 \begin{itemize}
 \item Offers a "\textbf{Basic Priority Inheritence}" mechanism for mutex and semaphore objects for avoidance of \textbf{Livelocks}.
 \item various student projects use FreeRTOS on ARM boards (or similar) at the Real-Time Programming department of the Hochschule Ravensvburg-Weingarten $\rightarrow$ template PingPong
-\end{itemize}
+\end{itemize}}
 
+\os{\newpage}
 {\rot\bf Lab Experiment PingPong}\\
 
 Task diagram for 4 parallel running tasks (3 + 1 init):\\
@@ -1875,6 +1880,7 @@ Task diagram for 4 parallel running tasks (3 + 1 init):\\
     \label{fig:Fig 83}
     \end{figure}
 
+\os{\newpage}
 \begin{lstlisting}[style=mystyle, language=c]
 // ----------------------------------------------------------------------------
 /// \file		 PingPong.c
@@ -1968,7 +1974,7 @@ void vPrintTask(void * pvParameters)
 	}	
 }
 \end{lstlisting}
-
+\os{\newpage}
 {\rot\bf Lab Experiment Multitasking}\\
 
  	\begin{figure}[h]
@@ -1977,7 +1983,7 @@ void vPrintTask(void * pvParameters)
     %\caption{}
     \label{fig:Fig 84}
     \end{figure}
-    
+\os{\newpage}    
 Lab-Experiment \textbf{\textit{Multitasking}}: The following tasks run (quasi) simultaneously:
 
 \begin{enumerate}
@@ -1997,15 +2003,16 @@ OSEK means "Open systems and interfaces for automotive electronics", it stands f
 The 1993 committee consists of developers several car manufacturers, their suppliers and software services. Founding members were BMW, Daimler-Benz, Opel, Volkswagen, Bosch, Siemens and the Institute for Industrial Information Technology of the University of Karlsruhe (TH). \\
 
 The work of the OSEK committee is continued since 2003 under the \textbf{AUTOSAR} project www.autosar.org\textit{.}\\
+\os{\newpage}
 
 {\rot\bf OSEK Task Management}\\
 
 The task-scheduler of the OSEK OS distinguishes between
 
 \begin{itemize}
-\item  \textbf{Basic Tasks}\\run continuously until they are completed, or, until the OS switches to another task, or, when an interrupt occurs.
+\item  \textbf{Basic Tasks} run continuously until they are completed, or, until the OS switches to another task, or, when an interrupt occurs.
 
-\item  \textbf{Extended Tasks}\\can have a waiting state, by a call of \textbf{WaitEvent()} allowing the processor to be released for other tasks
+\item  \textbf{Extended Tasks} can have a waiting state, by a call of \textbf{WaitEvent()} allowing the processor to be released for other tasks
 \end{itemize}
     
     \begin{figure}[h]
@@ -2014,6 +2021,5 @@ The task-scheduler of the OSEK OS distinguishes between
     \caption{Task states of Basic Tasks (left) and an Extended Task (right)}
     \label{fig:Fig 85}
     \end{figure}  
-
+\os{\newpage}
 Extended tasks can change into the state of \textbf{waiting} (\textbf{blocked}), if they have the processor, but can not continue because they have to wait for an event (e.g. the controller sends a CAN message and wait for the confirmation).
-

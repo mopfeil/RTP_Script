@@ -16,9 +16,19 @@
 \usepackage{wrapfig}
 \usepackage{typed-checklist} 
 \usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{upgreek}
 \usepackage{morefloats}
-\usepackage{color}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage[most]{tcolorbox}
 \usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{lipsum}
+\usepackage{setspace}
 
 %Define the listings environment for code
 \usepackage{listings}
@@ -146,7 +156,7 @@ captionpos=b
 \\[2cm]
 &Slides to
 \\[5mm]
-&{\Huge\sf Lecture Near Field Communication}
+&{\Huge\sf Real-Time Programming}
 \\[1cm]
 
 &{\large Prof. Dr. Markus Pfeil}\\ [1cm]
@@ -171,7 +181,9 @@ captionpos=b
        \textcolor{headcol}{\begin{center}\Huge\bfseries
       \thechapter~ #1\end{center}}\addcontentsline{toc}{chapter}{#1}
 }
-
+\begin{spacing}{1.15}
 \input{text.tex}
+\end{spacing}
+
 
 \end{document}

@@ -1,4 +1,4 @@
-Real-time programming is about the acquisition and the processing of process variables (see section 1.1.1) of a technical process by means of digital programmable processors. 
+Real-time programming is about the acquisition and the processing of process variables of a technical process by means of digital programmable processors. 
 
     \begin{figure}[h]
     \centering
@@ -7,13 +7,13 @@ Real-time programming is about the acquisition and the processing of process var
     \label{fig:Fig 86}
     \end{figure}
     
-For the acquisition of physical quantities, there are \textbf{sensors}, which convert a physical quantity to be measured into an electrical signal (= a function of time).\\
+For the acquisition of physical quantities, there are sensors, which convert a physical quantity to be measured into an electrical signal (a function of time).\\
 
 \textbf{Analog signals}, are \textbf{continuous in value} (real valued) and they can be \textbf{continuous in time}, or \textbf{time discrete}. \\
 
 \textbf{Digital signals} are \textbf{discrete in value}, and either \textbf{time discrete} or \textbf{continuous in time}.\\
 
-Since \textbf{computers} can \textbf{process time discrete} and \textbf{value discrete signals} only, analog \textbf{sensor input signals} have to be converted into digital (\textbf{time- and value discrete) signals}.
+Since \textbf{computers} can \textbf{process time discrete} and \textbf{value discrete signals} only, analog \textbf{sensor input signals} have to be converted into digital (\textbf{time and value discrete) signals}.
 
     \begin{figure}[h]
     \centering
@@ -22,11 +22,11 @@ Since \textbf{computers} can \textbf{process time discrete} and \textbf{value di
     \label{fig:Fig 87}
     \end{figure}
 
-Since a process can be affected by actor (actuator), the \textbf{digital}, \textbf{time discrete} control signal, produced by a real-time computer program, must be converted back into an analog signal.
+Since a process can be affected by actuator, the \textbf{digital}, \textbf{time discrete} control signal, produced by a real-time computer program, must be converted back into an analog signal.
 
 \section{Signal Conversion}
 
-An analog sensor signal \textit{x}(\textit{t}) (time- and value continuous) is first made time discrete by a sample-and-hold element. The sampling times are given from the I/O system of the computer. Analog signals are sampled at a constant sampling frequency \textit{f${}_{s}$} with sampling period \textit{T${}_{s}$} = 1${}_{\ }$/${}_{\ }$\textit{f${}_{s}$} .\\
+An analog sensor signal \textit{x}(\textit{t}) (time and value continuous) is first made time discrete by a sample-and-hold element. The sampling times are given from the I/O system of the computer. Analog signals are sampled at a constant sampling frequency \textit{f${}_{s}$} with sampling period \textit{T${}_{s}$} = 1${}_{\ }$/${}_{\ }$\textit{f${}_{s}$} .\\
 
 It is usually ensured that the signal \textit{x}(\textit{t}) has no higher frequency components some limit frequency \textit{f${}_{g}$} $\mathrm{\le}$ 0.5·\textit{f${}_{s}$} . This is indicated by the analog low-pass filter with cutoff frequency \textit{f${}_{g}$}  sampling theorem see section 3.1.1.
 
@@ -645,8 +645,8 @@ void vT1(void * pvParameters)					// re-factored vPrintTask
 \textbf{Exercise 2: }PI controller (for ATmega microcontrollers)
 
 \begin{enumerate}
-\item Design a real-time program for a PI controller with the non-preemptive binary fixed time-slice method (FTS) for the following parameters \\- execution times: \textit{T}${}_{e1}$ = 50 µs, \textit{T}${}_{e2}$ = 300 µs, \textit{T}${}_{e3}$ = 100 µs, \textit{T}${}_{e4}$ = 50 µs.\\ - T3 und T4 shall be able to process asynchronous events about 20 times per sec.\\- the initial control parameters: \textit{k${}_{R}$} = 5, \textit{T${}_{N}$} = 20 ms.
-\item Determine a new Schedule for the case where due to halving of the clock frequency of the microcontroller, each task has approximately twice the execution time of (1).
+\item Design a real-time program for a PI controller with the non-preemptive binary fixed time-slice method (FTS) for the following parameters \\ execution times: \textit{T}${}_{e1}$ = 50 $\mu$s, \textit{T}${}_{e2}$ = 300 $\mu$s, \textit{T}${}_{e3}$ = 100 $\mu$s, \textit{T}${}_{e4}$ = 50 $\mu$s.\\ - T3 und T4 shall be able to process asynchronous events about 20 times per sec.\\- the initial control parameters: \textit{k${}_{R}$} = 5, \textit{T${}_{N}$} = 20 ms.
+\item Determine a new Schedule for the case where due to halving of the clock frequency of the micro-controller, each task has approximately twice the execution time of (1).
 \end{enumerate}
 
 \textbf{Solution:}
@@ -671,7 +671,7 @@ $\rightarrow$ periodic timer events with basic time-slice\textit{ T${}_{TS}$} = 
 \item the execution times of all 4 tasks are well below the maximum time $T_{TS}$ = 0.5 ms.
 \end{itemize}
 
-\item  Doubled execution time (e.g. due to reduction of the CPU clock frequency)\\  \textit{T}${}_{e1}$ = 100 µs, \textit{T}${}_{e2}$ = 600 µs, \textit{T}${}_{e3}$ = 200 µs und \textit{T}${}_{e4}$ = 100 µs\textit{ }\\
+\item  Doubled execution time (e.g. due to reduction of the CPU clock frequency)\\  \textit{T}${}_{e1}$ = 100 $\mu$s, \textit{T}${}_{e2}$ = 600 $\mu$s, \textit{T}${}_{e3}$ = 200 $\mu$s und \textit{T}${}_{e4}$ = 100 $\mu$s\textit{ }\\
 
 \textit{ H}${}_{1}$ = 10 \%, \textit{H}${}_{2}$ = 60 \%, \textit{H}${}_{3}$ = 0.2/20 = 1 \%, \textit{H}${}_{4}$ = 0.1/20 = 0.5 \%  \textit{H} = 71.5 \%\\
 
@@ -688,9 +688,9 @@ $\rightarrow$ periodic timer events with basic time-slice \textit{T${}_{TS}$} = 
     \end{figure}
    
 \begin{itemize}
-\item T4 runs every 8 ms (=time-slice 8)
-\item T3 runs every 16 ms (=time-slice16), both asynchronous to the periodic timer events  (after T1-T2) !
-\item The maximum execution time is within time-slice 8: $T_{e1}$ + $T_{e2}$ + $T_{e3}$ = 900 µs.
+\item T4 runs every 8 ms (time-slice 8)
+\item T3 runs every 16 ms (time-slice 16), both asynchronous to the periodic timer events  (after T1-T2) !
+\item The maximum execution time is within time-slice 8: $T_{e1}$ + $T_{e2}$ + $T_{e3}$ = 900 $\mu$s.
 \end{itemize}
 \end{enumerate} 
 \newpage 

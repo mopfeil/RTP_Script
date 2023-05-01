@@ -1,33 +1,19 @@
-\contentsline {chapter}{Reference}{3}{chapter*.1}%
+\contentsline {chapter}{Reference}{2}{chapter*.1}%
 \contentsline {chapter}{Real-Time Systems}{3}{chapter.1}%
 \contentsline {section}{Introduction}{4}{section.1.1}%
-\contentsline {section}{Requirements}{7}{section.1.2}%
-\contentsline {section}{Timing Definitions}{26}{section.1.3}%
-\contentsline {section}{Real-Time Evidence}{29}{section.1.4}%
-\contentsline {chapter}{Real-Time Operating Systems}{35}{chapter.2}%
-\contentsline {section}{Structure of an RTOS}{37}{section.2.1}%
-\contentsline {section}{Task Management}{39}{section.2.2}%
-\contentsline {section}{Real-Time Scheduling}{43}{section.2.3}%
-\contentsline {section}{Task-Synchronization and Communication}{66}{section.2.4}%
-\contentsline {section}{Memory Management}{92}{section.2.5}%
-\contentsline {section}{Input/Output Management (I/O)}{94}{section.2.6}%
-\contentsline {section}{Specialized RTOS}{104}{section.2.7}%
-\contentsline {chapter}{Real-Time Programming}{122}{chapter.3}%
-\contentsline {section}{Signal Conversion}{123}{section.3.1}%
-\contentsline {section}{Digital Filters}{132}{section.3.2}%
-\contentsline {section}{Digital Controls}{137}{section.3.3}%
-\contentsline {section}{Finite State Machines (FSM)}{150}{section.3.4}%
-\contentsline {chapter}{Microprocessor Peripherals}{158}{chapter.4}%
-\contentsline {section}{Processor Core and Peripherals}{159}{section.4.1}%
-\contentsline {section}{Timers and Counters}{161}{section.4.2}%
-\contentsline {section}{Watchdog}{164}{section.4.3}%
-\contentsline {section}{DA Converters}{167}{section.4.4}%
-\contentsline {section}{AD Converters}{175}{section.4.5}%
-\contentsline {section}{Direct Memory Access (DMA)}{187}{section.4.6}%
-\contentsline {section}{Serial IO (Synchronous SPI)}{188}{section.4.7}%
-\contentsline {section}{Serial IO (USART)}{190}{section.4.8}%
-\contentsline {section}{Parallel IO (Ports)}{194}{section.4.9}%
-\contentsline {section}{Interrupts}{198}{section.4.10}%
-\contentsline {section}{CAN Networking}{200}{section.4.11}%
-\contentsline {section}{Ethernet}{205}{section.4.12}%
-\contentsline {chapter}{Real-Time System Development}{210}{chapter.5}%
+\contentsline {section}{Requirements}{11}{section.1.2}%
+\contentsline {section}{Timing Definitions}{36}{section.1.3}%
+\contentsline {section}{Real-Time Evidence}{41}{section.1.4}%
+\contentsline {chapter}{Real-Time Operating Systems}{50}{chapter.2}%
+\contentsline {section}{Structure of an RTOS}{52}{section.2.1}%
+\contentsline {section}{Task Management}{55}{section.2.2}%
+\contentsline {section}{Real-Time Scheduling}{62}{section.2.3}%
+\contentsline {section}{Task-Synchronization and Communication}{97}{section.2.4}%
+\contentsline {section}{Memory Management}{133}{section.2.5}%
+\contentsline {section}{Input/Output Management (I/O)}{136}{section.2.6}%
+\contentsline {section}{Specialized RTOS}{152}{section.2.7}%
+\contentsline {chapter}{Real-Time Programming}{175}{chapter.3}%
+\contentsline {section}{Signal Conversion}{177}{section.3.1}%
+\contentsline {section}{Digital Filters}{190}{section.3.2}%
+\contentsline {section}{Digital Controls}{200}{section.3.3}%
+\contentsline {section}{Finite State Machines (FSM)}{220}{section.3.4}%
